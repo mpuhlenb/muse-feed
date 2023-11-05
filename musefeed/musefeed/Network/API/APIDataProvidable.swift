@@ -9,11 +9,25 @@ import Foundation
 
 protocol APIDataProvidable {
     var session: URLSession { get }
-    func fetch<T: Codable>(type: T.Type, with request: URLRequest) async throws -> T
+    func fetch<T: Decodable>(type: T.Type, with request: URLRequest) async throws -> Result<T, ApiError>
+    func requestAPIData<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> Result<T, ApiError>
 }
 
 extension APIDataProvidable {
-    func fetch<T: Codable>(type: T.Type, with request: URLRequest) async throws -> T {
+    func requestAPIData<T>(endpoint: Endpoint, responseModel: T.Type) async throws -> Result<T, ApiError> where T : Decodable {
+        var urlComponents = URLComponents()
+        urlComponents.path = endpoint.baseUrl
+        guard let url = urlComponents.url else { return .failure(.requestFailed(description: "")) }
+        var request = URLRequest(url: url)
+        do {
+            guard let model = try await fetch(type: responseModel, with: request) as? T else { return .failure(.jsonConversionFailure(description: ""))}
+            return .success(model)
+        } catch {
+            return .failure(.requestFailed(description: ""))
+        }
+    }
+    
+    private func fetch<T: Decodable>(type: T.Type, with request: URLRequest) async throws -> Result<T, ApiError> {
         let (data, response) = try await session.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse else { throw ApiError.requestFailed(description: "Invalid response") }
         guard httpResponse.statusCode == 200 else {
@@ -21,7 +35,8 @@ extension APIDataProvidable {
         }
         do {
             let decoder = JSONDecoder()
-            return try decoder.decode(type, from: data)
+            let decodedResponse = try decoder.decode(type, from: data)
+            return .success(decodedResponse)
         } catch {
             throw ApiError.jsonConversionFailure(description: error.localizedDescription)
         }
