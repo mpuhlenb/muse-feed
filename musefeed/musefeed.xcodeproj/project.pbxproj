@@ -137,7 +137,6 @@
 		A9852EFC2AF7B46F00AD7C5C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A9852F022AF7C79800AD7C5C /* Client */,
 				A9852EFD2AF7B47E00AD7C5C /* API */,
 			);
 			path = Network;
@@ -151,13 +150,6 @@
 				A9852F052AF7E54F00AD7C5C /* Endpoint.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		A9852F022AF7C79800AD7C5C /* Client */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
