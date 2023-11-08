@@ -19,6 +19,8 @@
 		A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */; };
 		A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F002AF7B5E100AD7C5C /* APIError.swift */; };
 		A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F052AF7E54F00AD7C5C /* Endpoint.swift */; };
+		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
+		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		A9852F052AF7E54F00AD7C5C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A9D3274C2AFB9CE20057F86C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,7 @@
 		A9852EFC2AF7B46F00AD7C5C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A9D3274E2AFBA3610057F86C /* Endpoint */,
 				A9852EFD2AF7B47E00AD7C5C /* API */,
 			);
 			path = Network;
@@ -151,9 +155,17 @@
 			children = (
 				A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */,
 				A9852F002AF7B5E100AD7C5C /* APIError.swift */,
-				A9852F052AF7E54F00AD7C5C /* Endpoint.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		A9D3274E2AFBA3610057F86C /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				A9852F052AF7E54F00AD7C5C /* Endpoint.swift */,
+				A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */,
+			);
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +300,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9852ED12AF7B1B700AD7C5C /* ViewController.swift in Sources */,
+				A9D327512AFBA41E0057F86C /* Environment.swift in Sources */,
+				A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */,
 				A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */,
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */,
