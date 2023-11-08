@@ -23,7 +23,7 @@ extension APIDataProvidable {
             URLQueryItem(name: key, value: value)
         }
         guard let url = urlComponents.url else { return .failure(.requestFailed(description: "")) }
-        var request = URLRequest(url: url)
+        let request = URLRequest(url: url)
         do {
            return try await fetch(type: responseModel, with: request)
         } catch {
