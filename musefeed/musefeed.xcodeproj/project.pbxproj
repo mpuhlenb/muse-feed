@@ -56,6 +56,7 @@
 		A9852F002AF7B5E100AD7C5C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A9852F052AF7E54F00AD7C5C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A9D3274C2AFB9CE20057F86C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +87,7 @@
 		A9852EC02AF7B1B700AD7C5C = {
 			isa = PBXGroup;
 			children = (
+				A9D3274D2AFBA1520057F86C /* Environment.swift */,
 				A9D3274C2AFB9CE20057F86C /* Config.xcconfig */,
 				A9852ECB2AF7B1B700AD7C5C /* musefeed */,
 				A9852EE22AF7B1B800AD7C5C /* musefeedTests */,
@@ -348,6 +350,7 @@
 /* Begin XCBuildConfiguration section */
 		A9852EF12AF7B1B800AD7C5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D3274C2AFB9CE20057F86C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -411,6 +414,7 @@
 		};
 		A9852EF22AF7B1B800AD7C5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D3274C2AFB9CE20057F86C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
