@@ -16,20 +16,25 @@ protocol APIDataProvidable {
 extension APIDataProvidable {
     func requestAPIData<T>(endpoint: Endpoint, responseModel: T.Type) async throws -> Result<T, ApiError> where T : Decodable {
         var urlComponents = URLComponents()
-        urlComponents.path = endpoint.baseUrl
+        urlComponents.scheme = endpoint.scheme
+        urlComponents.host = endpoint.host
+        urlComponents.path = endpoint.path
+        urlComponents.queryItems = endpoint.parameters.map { (key, value) in
+            URLQueryItem(name: key, value: value)
+        }
         guard let url = urlComponents.url else { return .failure(.requestFailed(description: "")) }
         var request = URLRequest(url: url)
         do {
-            guard let model = try await fetch(type: responseModel, with: request) as? T else { return .failure(.jsonConversionFailure(description: ""))}
-            return .success(model)
+           return try await fetch(type: responseModel, with: request)
         } catch {
             return .failure(.requestFailed(description: ""))
         }
     }
     
-    private func fetch<T: Decodable>(type: T.Type, with request: URLRequest) async throws -> Result<T, ApiError> {
+    func fetch<T: Decodable>(type: T.Type, with request: URLRequest) async throws -> Result<T, ApiError> {
         let (data, response) = try await session.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse else { throw ApiError.requestFailed(description: "Invalid response") }
+        guard let httpResponse = response as? HTTPURLResponse else { throw ApiError.requestFailed(description: "Invalid response")
+        }
         guard httpResponse.statusCode == 200 else {
             throw ApiError.responseUnsuccessful(description: "Status code: \(httpResponse.statusCode)")
         }
