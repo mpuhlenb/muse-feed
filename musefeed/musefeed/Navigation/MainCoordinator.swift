@@ -17,8 +17,15 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = ViewController.instantiate()
+        let vc = GetStartedViewController.instantiate()
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func showFeedsModal() {
+        let vc = FeedSelectionModalViewController.instantiate()
+        vc.coordinator = self
+        navigationController.show(vc, sender: nil)
     }
     
     

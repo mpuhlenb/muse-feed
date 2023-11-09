@@ -12,9 +12,12 @@
 		A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */; };
 		A94E4BBD2AFBBF9700D10EF6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBC2AFBBF9700D10EF6 /* Storyboarded.swift */; };
 		A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BC02AFBC6DF00D10EF6 /* MainCoordinator.swift */; };
+		A94E4BC62AFBCF7700D10EF6 /* MuseFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */; };
+		A94E4BC82AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BC72AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift */; };
+		A94E4BCB2AFBDC4100D10EF6 /* MuseFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BCA2AFBDC4100D10EF6 /* MuseFeeds.swift */; };
 		A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */; };
 		A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */; };
-		A9852ED12AF7B1B700AD7C5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ED02AF7B1B700AD7C5C /* ViewController.swift */; };
+		A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */; };
 		A9852ED42AF7B1B700AD7C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED22AF7B1B700AD7C5C /* Main.storyboard */; };
 		A9852ED62AF7B1B800AD7C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED52AF7B1B800AD7C5C /* Assets.xcassets */; };
 		A9852ED92AF7B1B800AD7C5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED72AF7B1B800AD7C5C /* LaunchScreen.storyboard */; };
@@ -51,10 +54,13 @@
 		A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		A94E4BBC2AFBBF9700D10EF6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		A94E4BC02AFBC6DF00D10EF6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedViewController.swift; sourceTree = "<group>"; };
+		A94E4BC72AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionModalViewController.swift; sourceTree = "<group>"; };
+		A94E4BCA2AFBDC4100D10EF6 /* MuseFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeeds.swift; sourceTree = "<group>"; };
 		A9852EC92AF7B1B700AD7C5C /* musefeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musefeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A9852ED02AF7B1B700AD7C5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		A9852ED32AF7B1B700AD7C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9852ED52AF7B1B800AD7C5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9852ED82AF7B1B800AD7C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,6 +137,24 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		A94E4BC22AFBCEDD00D10EF6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */,
+				A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */,
+				A94E4BC72AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A94E4BC92AFBDC2B00D10EF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A94E4BCA2AFBDC4100D10EF6 /* MuseFeeds.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A9852EC02AF7B1B700AD7C5C = {
 			isa = PBXGroup;
 			children = (
@@ -156,11 +180,12 @@
 		A9852ECB2AF7B1B700AD7C5C /* musefeed */ = {
 			isa = PBXGroup;
 			children = (
+				A94E4BC92AFBDC2B00D10EF6 /* Models */,
+				A94E4BC22AFBCEDD00D10EF6 /* ViewControllers */,
 				A94E4BB92AFBBF3400D10EF6 /* Navigation */,
 				A9852EFC2AF7B46F00AD7C5C /* Network */,
 				A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */,
 				A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */,
-				A9852ED02AF7B1B700AD7C5C /* ViewController.swift */,
 				A9852ED22AF7B1B700AD7C5C /* Main.storyboard */,
 				A9852ED52AF7B1B800AD7C5C /* Assets.xcassets */,
 				A9852ED72AF7B1B800AD7C5C /* LaunchScreen.storyboard */,
@@ -346,19 +371,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9852ED12AF7B1B700AD7C5C /* ViewController.swift in Sources */,
+				A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */,
 				A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */,
 				A9D327512AFBA41E0057F86C /* Environment.swift in Sources */,
 				A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */,
 				A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */,
 				A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */,
+				A94E4BC62AFBCF7700D10EF6 /* MuseFeedViewController.swift in Sources */,
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */,
 				A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */,
 				A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */,
+				A94E4BCB2AFBDC4100D10EF6 /* MuseFeeds.swift in Sources */,
 				A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */,
 				A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */,
 				A94E4BBD2AFBBF9700D10EF6 /* Storyboarded.swift in Sources */,
+				A94E4BC82AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
