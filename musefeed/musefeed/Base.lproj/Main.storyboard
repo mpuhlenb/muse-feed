@@ -61,31 +61,20 @@
             <point key="canvasLocation" x="-1088" y="-115"/>
         </scene>
         <!--Feed Selection Modal View Controller-->
-        <scene sceneID="ih3-nB-MAi">
+        <scene sceneID="udj-RP-BcL">
             <objects>
-                <viewController storyboardIdentifier="FeedSelectionModalViewController" id="F71-9x-yli" customClass="FeedSelectionModalViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="07k-iC-kh9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <viewController storyboardIdentifier="FeedSelectionModalViewController" modalPresentationStyle="pageSheet" id="Zus-97-dkJ" customClass="FeedSelectionModalViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0y9-GI-UHk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats You Opened the Modal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83t-e0-hFa">
-                                <rect key="frame" x="72.666666666666686" y="428" width="248" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.90196078430000004" green="0.33333333329999998" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="krc-SJ-BR5"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="83t-e0-hFa" firstAttribute="centerX" secondItem="krc-SJ-BR5" secondAttribute="centerX" id="Gx4-t4-fIO"/>
-                            <constraint firstItem="83t-e0-hFa" firstAttribute="centerY" secondItem="krc-SJ-BR5" secondAttribute="centerY" id="OVz-tM-9M8"/>
-                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Udi-P8-Eu5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bF2-pG-R6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NmL-dg-zoZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1595" y="-792"/>
+            <point key="canvasLocation" x="-553" y="318"/>
         </scene>
     </scenes>
     <resources>

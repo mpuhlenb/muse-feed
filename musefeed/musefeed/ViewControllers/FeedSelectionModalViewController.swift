@@ -2,30 +2,60 @@
 //  FeedSelectionModalViewController.swift
 //  musefeed
 //
-//  Created by Morris Uhlenbrauck on 11/8/23.
+//  Created by Morris Uhlenbrauck on 11/11/23.
 //
 
 import UIKit
 
 class FeedSelectionModalViewController: UIViewController, Storyboarded {
-    weak var coordinator: MainCoordinator?
     
+    var coordinator: MainCoordinator?
+    var feedTableView: TableView
+    var feedDataSource: DataSource
+    var viewModel: FeedSelectionViewModel?
+    
+    required init?(coder: NSCoder) {
+        self.feedTableView = TableView(style: .insetGrouped)
+        self.feedDataSource = DataSource(feedTableView)
+        super.init(coder: coder)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        feedTableView.intialize()
+        view.addSubview(feedTableView)
+        NSLayoutConstraint.activate(feedTableView.layoutConstraints(in: view))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = viewModel?.viewTitle
+        feedTableView.register(FeedSelectionTableViewCell.self)
+        feedTableView.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        reload()
     }
-    */
-
+    
+    func reload() {
+        feedDataSource.reload([
+            .init(key: .feeds, values: FeedOption.allCases.map { .source($0) })
+        ])
+    }
 }
+
+extension FeedSelectionModalViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /// coming soon...
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        /// coming soon...
+    }
+}
+
+

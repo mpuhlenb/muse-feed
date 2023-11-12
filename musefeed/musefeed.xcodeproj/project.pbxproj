@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */; };
 		A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */; };
 		A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */; };
 		A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */; };
 		A94E4BBD2AFBBF9700D10EF6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBC2AFBBF9700D10EF6 /* Storyboarded.swift */; };
 		A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BC02AFBC6DF00D10EF6 /* MainCoordinator.swift */; };
 		A94E4BC62AFBCF7700D10EF6 /* MuseFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */; };
-		A94E4BC82AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BC72AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift */; };
-		A94E4BCB2AFBDC4100D10EF6 /* MuseFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BCA2AFBDC4100D10EF6 /* MuseFeeds.swift */; };
+		A96CFC732AFFADA7006C6383 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC722AFFADA7006C6383 /* UITableView+Cell.swift */; };
+		A96CFC752AFFAEDD006C6383 /* FeedSelectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC742AFFAEDD006C6383 /* FeedSelectionCellModel.swift */; };
+		A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */; };
+		A96CFC7A2AFFB15F006C6383 /* FeedSelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */; };
+		A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC7B2AFFB249006C6383 /* TableView.swift */; };
 		A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */; };
 		A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */; };
 		A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */; };
@@ -29,6 +33,9 @@
 		A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F052AF7E54F00AD7C5C /* Endpoint.swift */; };
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
 		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
+		A9FA97712B01049400B35468 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97702B01049400B35468 /* DataSource.swift */; };
+		A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97722B0104BD00B35468 /* FeedOption.swift */; };
+		A9FA97752B01052A00B35468 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97742B01052A00B35468 /* Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,14 +56,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionViewModel.swift; sourceTree = "<group>"; };
 		A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMusuemApiService.swift; sourceTree = "<group>"; };
 		A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtObjects.swift; sourceTree = "<group>"; };
 		A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		A94E4BBC2AFBBF9700D10EF6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		A94E4BC02AFBC6DF00D10EF6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedViewController.swift; sourceTree = "<group>"; };
-		A94E4BC72AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionModalViewController.swift; sourceTree = "<group>"; };
-		A94E4BCA2AFBDC4100D10EF6 /* MuseFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeeds.swift; sourceTree = "<group>"; };
+		A96CFC722AFFADA7006C6383 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
+		A96CFC742AFFAEDD006C6383 /* FeedSelectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionCellModel.swift; sourceTree = "<group>"; };
+		A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionModalViewController.swift; sourceTree = "<group>"; };
+		A96CFC7B2AFFB249006C6383 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		A9852EC92AF7B1B700AD7C5C /* musefeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musefeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +87,9 @@
 		A9D3274C2AFB9CE20057F86C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
+		A9FA97702B01049400B35468 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		A9FA97722B0104BD00B35468 /* FeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOption.swift; sourceTree = "<group>"; };
+		A9FA97742B01052A00B35468 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90C96B72AFE809600E27F07 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A90C96BA2AFE822200E27F07 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A9FA97702B01049400B35468 /* DataSource.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		A91C78602AFBA8E30042F8B9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +172,7 @@
 			children = (
 				A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */,
 				A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */,
-				A94E4BC72AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift */,
+				A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,9 +180,29 @@
 		A94E4BC92AFBDC2B00D10EF6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A94E4BCA2AFBDC4100D10EF6 /* MuseFeeds.swift */,
+				A90C96B72AFE809600E27F07 /* ViewModels */,
+				A96CFC742AFFAEDD006C6383 /* FeedSelectionCellModel.swift */,
+				A9FA97722B0104BD00B35468 /* FeedOption.swift */,
+				A9FA97742B01052A00B35468 /* Section.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A96CFC712AFFAD59006C6383 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A96CFC722AFFADA7006C6383 /* UITableView+Cell.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A96CFC762AFFAFEE006C6383 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */,
+				A96CFC7B2AFFB249006C6383 /* TableView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A9852EC02AF7B1B700AD7C5C = {
@@ -180,6 +230,9 @@
 		A9852ECB2AF7B1B700AD7C5C /* musefeed */ = {
 			isa = PBXGroup;
 			children = (
+				A96CFC762AFFAFEE006C6383 /* Views */,
+				A96CFC712AFFAD59006C6383 /* Extensions */,
+				A90C96BA2AFE822200E27F07 /* Utilities */,
 				A94E4BC92AFBDC2B00D10EF6 /* Models */,
 				A94E4BC22AFBCEDD00D10EF6 /* ViewControllers */,
 				A94E4BB92AFBBF3400D10EF6 /* Navigation */,
@@ -371,22 +424,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FA97712B01049400B35468 /* DataSource.swift in Sources */,
+				A96CFC732AFFADA7006C6383 /* UITableView+Cell.swift in Sources */,
 				A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */,
 				A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */,
+				A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */,
 				A9D327512AFBA41E0057F86C /* Environment.swift in Sources */,
 				A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */,
 				A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */,
 				A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */,
 				A94E4BC62AFBCF7700D10EF6 /* MuseFeedViewController.swift in Sources */,
+				A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */,
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
+				A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */,
+				A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */,
 				A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */,
+				A9FA97752B01052A00B35468 /* Section.swift in Sources */,
 				A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */,
 				A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */,
-				A94E4BCB2AFBDC4100D10EF6 /* MuseFeeds.swift in Sources */,
+				A96CFC752AFFAEDD006C6383 /* FeedSelectionCellModel.swift in Sources */,
+				A96CFC7A2AFFB15F006C6383 /* FeedSelectionModalViewController.swift in Sources */,
 				A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */,
 				A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */,
 				A94E4BBD2AFBBF9700D10EF6 /* Storyboarded.swift in Sources */,
-				A94E4BC82AFBD44F00D10EF6 /* FeedSelectionModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

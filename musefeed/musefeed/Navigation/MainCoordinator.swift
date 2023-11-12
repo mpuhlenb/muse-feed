@@ -25,8 +25,6 @@ class MainCoordinator: Coordinator {
     func showFeedsModal() {
         let vc = FeedSelectionModalViewController.instantiate()
         vc.coordinator = self
-        navigationController.show(vc, sender: nil)
+        navigationController.pushViewController(vc, animated: false)
     }
-    
-    
 }
