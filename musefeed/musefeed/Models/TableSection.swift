@@ -11,11 +11,11 @@ enum TableSection: Hashable {
     case feeds
 }
 
-enum SectionItem: Hashable {
+enum TableSectionItem: Hashable {
     case source(FeedOption)
 }
 
-struct SectionData {
+struct TableSectionData {
     var key: TableSection
-    var values: [SectionItem]
+    var values: [TableSectionItem]
 }

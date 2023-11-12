@@ -12,7 +12,7 @@ class FeedSelectionModalViewController: UIViewController, Storyboarded {
     
     var coordinator: MainCoordinator?
     var feedTableView: TableView
-    var feedDataSource: DataSource
+    var feedDataSource: TableDataSource
     var viewModel: FeedSelectionViewModel?
     var feedButton: UIButton?
     
@@ -25,7 +25,7 @@ class FeedSelectionModalViewController: UIViewController, Storyboarded {
     
     required init?(coder: NSCoder) {
         self.feedTableView = TableView(style: .plain)
-        self.feedDataSource = DataSource(feedTableView)
+        self.feedDataSource = TableDataSource(feedTableView)
         super.init(coder: coder)
         
     }
@@ -84,6 +84,7 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        // Only 2 maximum selected
         if numberOfSelectedFeeds < 2 {
             return indexPath
         } else {
@@ -112,6 +113,7 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
         feedButton?.translatesAutoresizingMaskIntoConstraints = false
         feedButton?.setTitle("Get Items", for: .normal)
         feedButton?.setTitleColor(.blue, for: .normal)
+        feedButton?.setTitleColor(.white, for: .disabled)
         feedButton?.backgroundColor = .green
         feedButton?.isEnabled = viewModel?.shouldButtonEnable ?? false
         feedButton?.isOpaque = true
