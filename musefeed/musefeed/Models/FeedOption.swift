@@ -14,6 +14,10 @@ enum FeedOption: String, CaseIterable {
 }
 
 extension FeedOption: FeedSelectionCellModel {
+    var feedUrlString: String {
+        return ""
+    }
+    
     var feedName: String {
         switch self {
         case .rijks:

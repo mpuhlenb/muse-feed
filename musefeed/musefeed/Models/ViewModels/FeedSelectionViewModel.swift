@@ -6,9 +6,22 @@
 //
 
 import Foundation
+import Combine
 
 
 
 public class FeedSelectionViewModel {
     public let viewTitle = "Feed Selections (Choose 2)"
+    @Published var shouldButtonEnable: Bool = false
+    var selectedOptions: [FeedOption] = []
+    
+    func shouldButtonEnable(for selectedItems: Int) {
+        shouldButtonEnable = selectedItems == 2
+    }
+    
+    func updateSelectedOptions(with feeds: [FeedOption]) {
+        selectedOptions.removeAll()
+        selectedOptions.append(contentsOf: feeds)
+    }
+    
 }

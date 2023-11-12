@@ -13,6 +13,7 @@ class MuseFeedViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Your Muses"
 
         // Do any additional setup after loading the view.
     }
