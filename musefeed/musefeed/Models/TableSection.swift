@@ -1,5 +1,5 @@
 //
-//  Section.swift
+//  TableSection.swift
 //  musefeed
 //
 //  Created by Morris Uhlenbrauck on 11/12/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Section: Hashable {
+enum TableSection: Hashable {
     case feeds
 }
 
@@ -16,6 +16,6 @@ enum SectionItem: Hashable {
 }
 
 struct SectionData {
-    var key: Section
+    var key: TableSection
     var values: [SectionItem]
 }

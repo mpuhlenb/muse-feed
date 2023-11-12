@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DataSource: UITableViewDiffableDataSource<Section, SectionItem> {
+final class TableDataSource: UITableViewDiffableDataSource<TableSection, TableSectionItem> {
     
     init(_ tableView: UITableView) {
         super.init(tableView: tableView) { tableView, indexPath, itemIdentifier in
@@ -21,7 +21,7 @@ final class DataSource: UITableViewDiffableDataSource<Section, SectionItem> {
         }
     }
     
-    func reload(_ data: [SectionData], animated: Bool = true) {
+    func reload(_ data: [TableSectionData], animated: Bool = true) {
         var snapshot = snapshot()
         snapshot.deleteAllItems()
         for item in data {
