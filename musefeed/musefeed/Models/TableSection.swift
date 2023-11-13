@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Move into FeedSelectionViewModel
 enum TableSection: Hashable {
     case feeds
 }
