@@ -10,12 +10,11 @@ import UIKit
 class MuseFeedViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
+    var viewModel: MuseFeedViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Your Muses"
-
-        // Do any additional setup after loading the view.
     }
     
 

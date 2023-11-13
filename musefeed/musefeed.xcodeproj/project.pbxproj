@@ -19,6 +19,10 @@
 		A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */; };
 		A96CFC7A2AFFB15F006C6383 /* FeedSelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */; };
 		A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC7B2AFFB249006C6383 /* TableView.swift */; };
+		A96EE9FA2B020EFA003189B7 /* MuseFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EE9F92B020EFA003189B7 /* MuseFeedViewModel.swift */; };
+		A96EEA002B0218B4003189B7 /* MuseFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */; };
+		A96EEA022B021A3E003189B7 /* MuseItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */; };
+		A96EEA042B021AC9003189B7 /* MuseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EEA032B021AC9003189B7 /* MuseItem.swift */; };
 		A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */; };
 		A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */; };
 		A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */; };
@@ -68,6 +72,10 @@
 		A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionModalViewController.swift; sourceTree = "<group>"; };
 		A96CFC7B2AFFB249006C6383 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		A96EE9F92B020EFA003189B7 /* MuseFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedViewModel.swift; sourceTree = "<group>"; };
+		A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedCollectionViewController.swift; sourceTree = "<group>"; };
+		A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		A96EEA032B021AC9003189B7 /* MuseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseItem.swift; sourceTree = "<group>"; };
 		A9852EC92AF7B1B700AD7C5C /* musefeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musefeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */,
+				A96EE9F92B020EFA003189B7 /* MuseFeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -173,6 +182,7 @@
 				A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */,
 				A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */,
 				A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */,
+				A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +194,7 @@
 				A96CFC742AFFAEDD006C6383 /* FeedSelectionCellModel.swift */,
 				A9FA97722B0104BD00B35468 /* FeedOption.swift */,
 				A9FA97742B01052A00B35468 /* TableSection.swift */,
+				A96EEA032B021AC9003189B7 /* MuseItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 			children = (
 				A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */,
 				A96CFC7B2AFFB249006C6383 /* TableView.swift */,
+				A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,16 +436,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96EEA042B021AC9003189B7 /* MuseItem.swift in Sources */,
 				A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */,
 				A96CFC732AFFADA7006C6383 /* UITableView+Cell.swift in Sources */,
 				A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */,
 				A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */,
+				A96EEA022B021A3E003189B7 /* MuseItemCollectionViewCell.swift in Sources */,
 				A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */,
 				A9D327512AFBA41E0057F86C /* Environment.swift in Sources */,
 				A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */,
 				A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */,
 				A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */,
 				A94E4BC62AFBCF7700D10EF6 /* MuseFeedViewController.swift in Sources */,
+				A96EE9FA2B020EFA003189B7 /* MuseFeedViewModel.swift in Sources */,
 				A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */,
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */,
@@ -444,6 +459,7 @@
 				A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */,
 				A96CFC752AFFAEDD006C6383 /* FeedSelectionCellModel.swift in Sources */,
 				A96CFC7A2AFFB15F006C6383 /* FeedSelectionModalViewController.swift in Sources */,
+				A96EEA002B0218B4003189B7 /* MuseFeedCollectionViewController.swift in Sources */,
 				A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */,
 				A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */,
 				A94E4BBD2AFBBF9700D10EF6 /* Storyboarded.swift in Sources */,

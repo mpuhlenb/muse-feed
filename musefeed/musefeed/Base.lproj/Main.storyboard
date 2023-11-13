@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,6 +29,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="66" y="-2"/>
+        </scene>
+        <!--Muse Feed Collection View Controller-->
+        <scene sceneID="R68-XS-Qhi">
+            <objects>
+                <collectionViewController storyboardIdentifier="MuseFeedCollectionViewController" id="qGe-cc-w55" customClass="MuseFeedCollectionViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ocg-3E-gIG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wv5-Yk-QZd">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="MuseItemCollectionViewCell" id="1Ng-Qo-zzr" customClass="MuseItemCollectionViewCell" customModule="musefeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AIv-qv-HUA">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="148"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fre-NY-sZh">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="133"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="133" id="JD0-ic-xry"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMq-Sc-lft">
+                                            <rect key="frame" x="0.0" y="133" width="128" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="BQh-rh-btY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fMq-Sc-lft" firstAttribute="top" secondItem="fre-NY-sZh" secondAttribute="bottom" id="JCu-2p-YKa"/>
+                                        <constraint firstItem="fMq-Sc-lft" firstAttribute="leading" secondItem="AIv-qv-HUA" secondAttribute="leading" id="M5V-3P-sRp"/>
+                                        <constraint firstAttribute="trailing" secondItem="fMq-Sc-lft" secondAttribute="trailing" id="T6b-v7-iLQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="fre-NY-sZh" secondAttribute="trailing" id="XTl-mg-hJu"/>
+                                        <constraint firstItem="fre-NY-sZh" firstAttribute="leading" secondItem="AIv-qv-HUA" secondAttribute="leading" id="eVv-dY-NEV"/>
+                                        <constraint firstItem="fre-NY-sZh" firstAttribute="top" secondItem="AIv-qv-HUA" secondAttribute="top" id="oIV-3w-1QH"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="128" height="148"/>
+                                <connections>
+                                    <outlet property="itemImageView" destination="fre-NY-sZh" id="pYQ-eP-AyK"/>
+                                    <outlet property="titleLabel" destination="fMq-Sc-lft" id="6XY-gc-ghh"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="qGe-cc-w55" id="CEp-nx-ZP8"/>
+                            <outlet property="delegate" destination="qGe-cc-w55" id="8bB-2b-oet"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAe-xL-skU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1938.1679389312976" y="403.52112676056339"/>
         </scene>
         <!--Muse Feed View Controller-->
         <scene sceneID="d6F-d5-eEF">

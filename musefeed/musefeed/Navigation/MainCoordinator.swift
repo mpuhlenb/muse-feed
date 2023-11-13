@@ -30,9 +30,9 @@ class MainCoordinator: Coordinator {
     }
     
     func showMuseFeed(for feeds: [FeedOption]) {
-        let vc = MuseFeedViewController.instantiate()
+        let vc = MuseFeedCollectionViewController.instantiate()
         vc.coordinator = self
-        print("***** feeds \(feeds)")
+        vc.viewModel = MuseFeedViewModel(selectedOptions: feeds)
         navigationController.pushViewController(vc, animated: false)
     }
 }
