@@ -13,7 +13,7 @@ private let reuseIdentifier = "MuseItemCollectionViewCell"
 class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded {
     var coordinator: MainCoordinator?
     
-    private lazy var dataSource = makeDataSource()
+    private var dataSource: DataSource?
     
     typealias DataSource = UICollectionViewDiffableDataSource<MuseFeedViewModel.Section, MuseItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<MuseFeedViewModel.Section, MuseItem>
@@ -35,8 +35,11 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
             }
         }
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataSource = makeDataSource()
         title = viewModel?.viewTitle ?? ""
         configureLayout()
         getItems()
@@ -75,7 +78,7 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         guard firstFeedItems.count != 0, secondFeedItems.count != 0 else { return }
         snapshot.appendItems(firstFeedItems, toSection: .firstFeed)
         snapshot.appendItems(secondFeedItems, toSection: .secondFeed)
-        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
+        dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
     // MARK: UICollectionViewDelegate
@@ -113,20 +116,16 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
 extension MuseFeedCollectionViewController {
     func configureLayout() {
         collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalHeight(1.0))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.75), heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.5))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 6)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 12, bottom: 10, trailing: 12)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(0.4))
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            section.orthogonalScrollingBehavior = .continuous
             return section
-//            let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(0.33), heightDimension: NSCollectionLayoutDimension.fractionalHeight(0.5))
-//            let itemCount = 6
-//            let item = NSCollectionLayoutItem(layoutSize: size)
-//            let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, repeatingSubitem: item, count: itemCount)
-//            let section = NSCollectionLayoutSection(group: group)
-//            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-//            return section
         })
     }
 }
