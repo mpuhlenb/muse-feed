@@ -18,16 +18,15 @@ extension UIImageView {
 class MuseItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     
     var museItem: MuseItem? {
         didSet {
-            titleLabel.text = museItem?.title
             guard let imageUrl = museItem?.itemImageUrl else { return }
             Task {
                 do {
                     let data = try await itemImageView.downloadImageData(from: imageUrl)
                     let image = UIImage(data: data)
+                    itemImageView.contentMode = .scaleAspectFill
                     itemImageView.image = image
                 } catch  {
                     print("Error: \(error.localizedDescription)")
