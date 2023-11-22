@@ -5,23 +5,125 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Get Started View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="GetStartedViewController" id="BYZ-38-t0r" customClass="GetStartedViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xCq-08-LpM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Get Started"/>
+                        <connections>
+                            <action selector="tappedGetStarted" destination="BYZ-38-t0r" eventType="touchUpInside" id="rtq-Vz-yYI"/>
+                        </connections>
+                    </button>
+                    <connections>
+                        <outlet property="getStartedButton" destination="xCq-08-LpM" id="kie-Zl-zBO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="66" y="-2"/>
+        </scene>
+        <!--Muse Feed Collection View Controller-->
+        <scene sceneID="R68-XS-Qhi">
+            <objects>
+                <collectionViewController storyboardIdentifier="MuseFeedCollectionViewController" id="qGe-cc-w55" customClass="MuseFeedCollectionViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="ocg-3E-gIG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wv5-Yk-QZd">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="MuseItemCollectionViewCell" id="1Ng-Qo-zzr" customClass="MuseItemCollectionViewCell" customModule="musefeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AIv-qv-HUA">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fre-NY-sZh">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="fre-NY-sZh" secondAttribute="bottom" id="I3h-4r-Lx8"/>
+                                        <constraint firstItem="fre-NY-sZh" firstAttribute="leading" secondItem="AIv-qv-HUA" secondAttribute="leading" id="MLn-WC-j2V"/>
+                                        <constraint firstItem="fre-NY-sZh" firstAttribute="top" secondItem="AIv-qv-HUA" secondAttribute="top" id="OcV-le-DOl"/>
+                                        <constraint firstAttribute="trailing" secondItem="fre-NY-sZh" secondAttribute="trailing" id="YFe-PY-Tai"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.33333333329999998" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="itemImageView" destination="fre-NY-sZh" id="pYQ-eP-AyK"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="qGe-cc-w55" id="CEp-nx-ZP8"/>
+                            <outlet property="delegate" destination="qGe-cc-w55" id="8bB-2b-oet"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAe-xL-skU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1938.1679389312976" y="403.52112676056339"/>
+        </scene>
+        <!--Muse Feed View Controller-->
+        <scene sceneID="d6F-d5-eEF">
+            <objects>
+                <viewController storyboardIdentifier="MuseFeedViewController" id="dyZ-fv-Qqn" customClass="MuseFeedViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r5J-k5-19d">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats You Navigated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81g-oq-2dr">
+                                <rect key="frame" x="104" y="428" width="185" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="T7X-no-A61"/>
+                                    <constraint firstAttribute="height" constant="21" id="o6M-vc-6Ir"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c9I-f1-79j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="81g-oq-2dr" firstAttribute="centerY" secondItem="c9I-f1-79j" secondAttribute="centerY" id="W73-Gw-1s5"/>
+                            <constraint firstItem="81g-oq-2dr" firstAttribute="centerX" secondItem="c9I-f1-79j" secondAttribute="centerX" id="eKM-eb-stn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lRg-jY-zCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1088" y="-115"/>
+        </scene>
+        <!--Feed Selection Modal View Controller-->
+        <scene sceneID="udj-RP-BcL">
+            <objects>
+                <viewController storyboardIdentifier="FeedSelectionModalViewController" modalPresentationStyle="pageSheet" id="Zus-97-dkJ" customClass="FeedSelectionModalViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0y9-GI-UHk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Udi-P8-Eu5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NmL-dg-zoZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-553" y="318"/>
         </scene>
     </scenes>
     <resources>
