@@ -35,6 +35,8 @@
 		A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */; };
 		A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F002AF7B5E100AD7C5C /* APIError.swift */; };
 		A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F052AF7E54F00AD7C5C /* Endpoint.swift */; };
+		A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */; };
+		A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */; };
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
 		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
 		A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97702B01049400B35468 /* TableDataSource.swift */; };
@@ -92,6 +94,8 @@
 		A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvidable.swift; sourceTree = "<group>"; };
 		A9852F002AF7B5E100AD7C5C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A9852F052AF7E54F00AD7C5C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImageView.swift; sourceTree = "<group>"; };
+		A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9D3274C2AFB9CE20057F86C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				A94E4BC52AFBCF7700D10EF6 /* MuseFeedViewController.swift */,
 				A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */,
 				A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */,
+				A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */,
 				A96CFC7B2AFFB249006C6383 /* TableView.swift */,
 				A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */,
+				A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */,
 				A96EEA042B021AC9003189B7 /* MuseItem.swift in Sources */,
 				A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */,
 				A96CFC732AFFADA7006C6383 /* UITableView+Cell.swift in Sources */,
@@ -463,6 +470,7 @@
 				A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */,
 				A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */,
 				A94E4BBD2AFBBF9700D10EF6 /* Storyboarded.swift in Sources */,
+				A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
