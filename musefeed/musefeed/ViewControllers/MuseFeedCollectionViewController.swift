@@ -50,6 +50,8 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         let dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, museItem) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MuseItemCollectionViewCell
             cell?.museItem = museItem
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapItem(_:)))
+            cell?.addGestureRecognizer(tapGesture)
             return cell
         })
         return dataSource
@@ -81,6 +83,19 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
+    @IBAction func didTapItem(_ sender: UITapGestureRecognizer) {
+        guard let indexPath = collectionView.indexPathForItem(at: sender.location(in: self.collectionView)) else { return }
+        let section = MuseFeedViewModel.Section.allCases[indexPath.section]
+        var item: MuseItem
+        switch section {
+        case .firstFeed:
+            item = firstFeedItems[indexPath.row]
+        case .secondFeed:
+            item = secondFeedItems[indexPath.row]
+        }
+
+        coordinator?.showDetailView(for: item)
+    }
     // MARK: UICollectionViewDelegate
     
     /*

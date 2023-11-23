@@ -76,7 +76,53 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAe-xL-skU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1938.1679389312976" y="403.52112676056339"/>
+            <point key="canvasLocation" x="-2244" y="330"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ZDo-38-xa5">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="icM-pA-NQM" customClass="DetailViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bFW-eX-Hkw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIR-4u-6XS">
+                                <rect key="frame" x="15" y="64" width="363" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HJs-Dz-XFr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bv3-hh-cED" customClass="PanZoomImageView" customModule="musefeed" customModuleProvider="target">
+                                <rect key="frame" x="76" y="116" width="240" height="661"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="yHZ-0Y-mj6"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="8AN-1a-0cz"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0sx-Jb-oNV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0sx-Jb-oNV" firstAttribute="trailing" secondItem="wIR-4u-6XS" secondAttribute="trailing" constant="15" id="9aD-Sd-zxW"/>
+                            <constraint firstItem="wIR-4u-6XS" firstAttribute="leading" secondItem="0sx-Jb-oNV" secondAttribute="leading" constant="15" id="MqF-7G-cYr"/>
+                            <constraint firstItem="Bv3-hh-cED" firstAttribute="centerY" secondItem="0sx-Jb-oNV" secondAttribute="centerY" id="RoX-UN-1tg"/>
+                            <constraint firstItem="wIR-4u-6XS" firstAttribute="top" secondItem="0sx-Jb-oNV" secondAttribute="top" constant="5" id="SHm-R7-9mt"/>
+                            <constraint firstItem="Bv3-hh-cED" firstAttribute="leading" secondItem="0sx-Jb-oNV" secondAttribute="leading" constant="5" id="Vb2-cB-mAn"/>
+                            <constraint firstItem="Bv3-hh-cED" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wIR-4u-6XS" secondAttribute="bottom" constant="5" id="nTe-nQ-FZE"/>
+                            <constraint firstItem="0sx-Jb-oNV" firstAttribute="trailing" secondItem="Bv3-hh-cED" secondAttribute="trailing" constant="5" id="oig-Xk-PdZ"/>
+                            <constraint firstItem="Bv3-hh-cED" firstAttribute="centerX" secondItem="0sx-Jb-oNV" secondAttribute="centerX" id="uyq-V1-prG"/>
+                            <constraint firstItem="0sx-Jb-oNV" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bv3-hh-cED" secondAttribute="bottom" constant="5" id="vWQ-Tc-mR5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="creatorLabel" destination="wIR-4u-6XS" id="afO-eK-gyg"/>
+                        <outlet property="detailImageView" destination="Bv3-hh-cED" id="hj3-VQ-Fy5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBt-DM-CsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1576.3358778625955" y="345.77464788732397"/>
         </scene>
         <!--Muse Feed View Controller-->
         <scene sceneID="d6F-d5-eEF">
@@ -107,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRg-jY-zCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088" y="-115"/>
+            <point key="canvasLocation" x="-1207" y="-280"/>
         </scene>
         <!--Feed Selection Modal View Controller-->
         <scene sceneID="udj-RP-BcL">
