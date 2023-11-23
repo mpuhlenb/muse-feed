@@ -8,21 +8,7 @@
 import UIKit
 
 class PanZoomImageView: UIScrollView {
-    var imageUrl: URL? {
-        didSet {
-            guard let imageUrl = imageUrl else { return }
-            Task {
-                do {
-                    let data = try await imageView.downloadImageData(from: imageUrl)
-                    let image = UIImage(data: data)
-                    imageView.image = image
-                } catch {
-                    print("**** error getting image")
-                }
-            }
-        }
-    }
-    
+
     private let imageView = UIImageView()
     
     override init(frame: CGRect) {
@@ -34,11 +20,6 @@ class PanZoomImageView: UIScrollView {
         super.init(coder: coder)
         commonInit()
     }
-    
-//    convenience init(imageUrl: URL) {
-//        self.init(frame: .zero)
-//        self.imageUrl = imageUrl
-//    }
     
     private func commonInit() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,8 +36,33 @@ class PanZoomImageView: UIScrollView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         delegate = self
+        
+        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTapRecognizer.numberOfTapsRequired = 2
+        addGestureRecognizer(doubleTapRecognizer)
+    }
+    
+    func setScrollImage(with imageUrl: URL) {
+        Task {
+            do {
+                let data = try await imageView.downloadImageData(from: imageUrl)
+                let image = UIImage(data: data)
+                imageView.image = image
+            } catch {
+                print("**** error getting image")
+            }
+        }
+    }
+    
+    @objc private func handleDoubleTap(_ sender: UITapGestureRecognizer) {
+        if zoomScale == 1 {
+            setZoomScale(2, animated: true)
+        } else {
+            setZoomScale(1, animated: true)
+        }
     }
 }
+
 
 extension PanZoomImageView: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
