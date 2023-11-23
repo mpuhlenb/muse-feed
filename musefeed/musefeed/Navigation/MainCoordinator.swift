@@ -35,4 +35,11 @@ class MainCoordinator: Coordinator {
         vc.viewModel = MuseFeedViewModel(selectedOptions: feeds)
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    func showDetailView(for item: MuseItem) {
+        let vc  = DetailViewController.instantiate()
+        vc.coordinator = self
+        vc.museItem = item
+        navigationController.pushViewController(vc, animated: false)
+    }
 }

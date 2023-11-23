@@ -10,13 +10,17 @@ import UIKit
 class MuseItem: Hashable {
     var id: String
     var title: String
+    var detailId: String
     var itemImageUrl: URL?
     var link: URL?
+    var maker: String
     
-    init(id: String, title: String, itemImageUrl: String? = nil, link: URL? = nil) {
+    init(id: String, title: String, detailId: String,  itemImageUrl: String? = nil, link: URL? = nil, maker: String) {
         self.id = id
         self.title = title
+        self.detailId = detailId
         self.link = link
+        self.maker = maker
         guard let urlString = itemImageUrl, let imageUrl = URL(string: urlString) else { return }
         self.itemImageUrl = imageUrl
     }

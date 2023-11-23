@@ -35,11 +35,15 @@ public class MuseFeedViewModel {
         switch feedOption {
         case .rijks, .metro, .photo:
             let service = RijksMusuemApiService()
-            firstFeedItems = await service.getCollectionItems().prefix(6).map { return MuseItem(id: $0.id, title: $0.title, itemImageUrl: $0.webImage.url)
+            let feedItems = await service.getCollectionItems().map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker )
             }
-            secondFeedItems = await service.getCollectionItems().suffix(6).map { return MuseItem(id: $0.id, title: $0.title, itemImageUrl: $0.webImage.url)
+            let firstItems = feedItems.shuffled().prefix(6)
+            let secondItems = feedItems.shuffled().suffix(6)
+            firstFeedItems.append(contentsOf: firstItems)
+            secondFeedItems.append(contentsOf: secondItems)
+//            secondFeedItems = await service.getCollectionItems().suffix(6).map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker)
                 
-            }
+//            }
         }
     }
 }
