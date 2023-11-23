@@ -112,9 +112,9 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
            feedButton?.layer.masksToBounds = true
         feedButton?.translatesAutoresizingMaskIntoConstraints = false
         feedButton?.setTitle("Get Items", for: .normal)
-        feedButton?.setTitleColor(.blue, for: .normal)
-        feedButton?.setTitleColor(.white, for: .disabled)
-        feedButton?.backgroundColor = .green
+        feedButton?.setTitleColor(.background, for: .normal)
+        feedButton?.setTitleColor(.secondary, for: .disabled)
+        feedButton?.backgroundColor = .foreground
         feedButton?.isEnabled = viewModel?.shouldButtonEnable ?? false
         feedButton?.isOpaque = true
         guard let feedButton = feedButton else { return footerView }

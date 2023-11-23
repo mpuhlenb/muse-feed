@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         title = museItem?.title
         creatorLabel?.text = "Creator: " + (museItem?.maker ?? "")
+        creatorLabel?.textColor = .secondary
         setImage()
     }
     
