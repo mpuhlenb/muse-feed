@@ -20,6 +20,7 @@ open class TableView: UITableView {
     }
     
    func intialize() {
+       self.backgroundColor = UIColor(resource: .background)
      translatesAutoresizingMaskIntoConstraints = false
        allowsMultipleSelection = true
     }

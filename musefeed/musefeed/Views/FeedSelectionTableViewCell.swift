@@ -15,22 +15,12 @@ class FeedSelectionTableViewCell: UITableViewCell {
         super.updateConfiguration(using: state)
         var contentConfig = defaultContentConfiguration().updated(for: state)
         contentConfig.text = cellModel?.feedName
-        
+        contentConfig.textProperties.color = UIColor(resource: .foreground)
         if state.isHighlighted || state.isSelected {
             contentConfig.image = UIImage(systemName: "checkmark")
+            contentConfig.image?.withTintColor(.secondary)
         }
         contentConfiguration = contentConfig
+        self.backgroundColor = UIColor(resource: .background)
     }
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-
 }

@@ -42,6 +42,7 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         dataSource = makeDataSource()
         title = viewModel?.viewTitle ?? ""
         configureLayout()
+        collectionView.backgroundColor = .background
         getItems()
         subscribeToViewModel()
     }
@@ -50,6 +51,10 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         let dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, museItem) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MuseItemCollectionViewCell
             cell?.museItem = museItem
+            cell?.contentView.layer.cornerRadius = 5.0
+            cell?.contentView.layer.masksToBounds = true
+            cell?.layer.cornerRadius = 5.0
+            cell?.layer.masksToBounds = false
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapItem(_:)))
             cell?.addGestureRecognizer(tapGesture)
             return cell
