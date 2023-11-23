@@ -14,6 +14,8 @@ struct RijksArtObjects: Decodable {
 struct RijksArtObject: Decodable {
     let id: String
     let title: String
+    let objectNumber: String
+    let principalOrFirstMaker: String
     let hasImage: Bool
     let webImage: RijksWebImage
 }
