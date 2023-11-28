@@ -25,6 +25,18 @@ class MuseItem: Hashable {
         self.itemImageUrl = imageUrl
     }
     
+    init(artwork: ArtInstituteArtwork, imageBaseUrl: String) {
+        self.id = "\(artwork.id)"
+        self.title = artwork.title
+        self.detailId = ""
+        self.maker = artwork.artist
+        if let imageId = artwork.imageId {
+            let artUrlString = imageBaseUrl + "/\(imageId)" + "/full/843,/0/default.jpg"
+            self.itemImageUrl = URL(string: artUrlString)
+        }
+        
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
