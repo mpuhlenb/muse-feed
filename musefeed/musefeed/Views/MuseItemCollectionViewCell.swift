@@ -13,6 +13,16 @@ extension UIImageView {
         let (data, _) = try await URLSession.shared.data(for: request)
         return data
     }
+    
+    func setImage(from url: URL) async {
+        do {
+            let data = try await self.downloadImageData(from: url)
+            let image = UIImage(data: data)
+            self.image = image
+        } catch {
+            
+        }
+    }
 }
 
 class MuseItemCollectionViewCell: UICollectionViewCell {
@@ -23,14 +33,8 @@ class MuseItemCollectionViewCell: UICollectionViewCell {
         didSet {
             guard let imageUrl = museItem?.itemImageUrl else { return }
             Task {
-                do {
-                    let data = try await itemImageView.downloadImageData(from: imageUrl)
-                    let image = UIImage(data: data)
-                    itemImageView.contentMode = .scaleAspectFill
-                    itemImageView.image = image
-                } catch  {
-                    print("Error: \(error.localizedDescription)")
-                }
+                await itemImageView.setImage(from: imageUrl)
+                itemImageView.contentMode = .scaleAspectFill
             }
         }
     }
