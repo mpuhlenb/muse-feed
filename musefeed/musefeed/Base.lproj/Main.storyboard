@@ -89,17 +89,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creator: With extra long creator name for some reason" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIR-4u-6XS">
-                                <rect key="frame" x="15" y="64" width="363" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="HJs-Dz-XFr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bv3-hh-cED" customClass="PanZoomImageView" customModule="musefeed" customModuleProvider="target">
-                                <rect key="frame" x="76" y="116" width="240" height="661"/>
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="yHZ-0Y-mj6"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="8AN-1a-0cz"/>
                             </scrollView>
@@ -107,19 +98,13 @@
                         <viewLayoutGuide key="safeArea" id="0sx-Jb-oNV"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="0sx-Jb-oNV" firstAttribute="trailing" secondItem="wIR-4u-6XS" secondAttribute="trailing" constant="15" id="9aD-Sd-zxW"/>
-                            <constraint firstItem="wIR-4u-6XS" firstAttribute="leading" secondItem="0sx-Jb-oNV" secondAttribute="leading" constant="15" id="MqF-7G-cYr"/>
-                            <constraint firstItem="Bv3-hh-cED" firstAttribute="centerY" secondItem="0sx-Jb-oNV" secondAttribute="centerY" id="RoX-UN-1tg"/>
-                            <constraint firstItem="wIR-4u-6XS" firstAttribute="top" secondItem="0sx-Jb-oNV" secondAttribute="top" constant="5" id="SHm-R7-9mt"/>
-                            <constraint firstItem="Bv3-hh-cED" firstAttribute="leading" secondItem="0sx-Jb-oNV" secondAttribute="leading" constant="5" id="Vb2-cB-mAn"/>
-                            <constraint firstItem="Bv3-hh-cED" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wIR-4u-6XS" secondAttribute="bottom" constant="5" id="nTe-nQ-FZE"/>
-                            <constraint firstItem="0sx-Jb-oNV" firstAttribute="trailing" secondItem="Bv3-hh-cED" secondAttribute="trailing" constant="5" id="oig-Xk-PdZ"/>
-                            <constraint firstItem="Bv3-hh-cED" firstAttribute="centerX" secondItem="0sx-Jb-oNV" secondAttribute="centerX" id="uyq-V1-prG"/>
-                            <constraint firstItem="0sx-Jb-oNV" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bv3-hh-cED" secondAttribute="bottom" id="vWQ-Tc-mR5"/>
+                            <constraint firstItem="Bv3-hh-cED" firstAttribute="leading" secondItem="0sx-Jb-oNV" secondAttribute="leading" id="1cM-eb-ZjI"/>
+                            <constraint firstItem="Bv3-hh-cED" firstAttribute="top" secondItem="0sx-Jb-oNV" secondAttribute="top" id="EeU-LK-BDd"/>
+                            <constraint firstItem="0sx-Jb-oNV" firstAttribute="trailing" secondItem="Bv3-hh-cED" secondAttribute="trailing" id="RvH-09-o6l"/>
+                            <constraint firstItem="Bv3-hh-cED" firstAttribute="bottom" secondItem="0sx-Jb-oNV" secondAttribute="bottom" id="g1r-xW-RXi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="creatorLabel" destination="wIR-4u-6XS" id="afO-eK-gyg"/>
                         <outlet property="detailImageView" destination="Bv3-hh-cED" id="hj3-VQ-Fy5"/>
                     </connections>
                 </viewController>
@@ -146,7 +131,7 @@
     </scenes>
     <resources>
         <namedColor name="Background">
-            <color red="1" green="0.99607843137254903" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.99599999189376831" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
