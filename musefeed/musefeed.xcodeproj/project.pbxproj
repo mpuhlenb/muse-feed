@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */; };
+		A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F142B15F63800E98F92 /* ArtInstituteEndpoint.swift */; };
+		A9280F192B15FA7500E98F92 /* ArtInstituteArtworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F182B15FA7500E98F92 /* ArtInstituteArtworks.swift */; };
+		A9280F1B2B15FC3700E98F92 /* ArtInstituteApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F1A2B15FC3700E98F92 /* ArtInstituteApiService.swift */; };
 		A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */; };
 		A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */; };
 		A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */; };
@@ -64,6 +67,9 @@
 
 /* Begin PBXFileReference section */
 		A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionViewModel.swift; sourceTree = "<group>"; };
+		A9280F142B15F63800E98F92 /* ArtInstituteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtInstituteEndpoint.swift; sourceTree = "<group>"; };
+		A9280F182B15FA7500E98F92 /* ArtInstituteArtworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtInstituteArtworks.swift; sourceTree = "<group>"; };
+		A9280F1A2B15FC3700E98F92 /* ArtInstituteApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtInstituteApiService.swift; sourceTree = "<group>"; };
 		A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMusuemApiService.swift; sourceTree = "<group>"; };
 		A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtObjects.swift; sourceTree = "<group>"; };
 		A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
@@ -152,13 +158,23 @@
 			isa = PBXGroup;
 			children = (
 				A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */,
+				A9280F1A2B15FC3700E98F92 /* ArtInstituteApiService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A9280F172B15FA3A00E98F92 /* Art Institute API Models */ = {
+			isa = PBXGroup;
+			children = (
+				A9280F182B15FA7500E98F92 /* ArtInstituteArtworks.swift */,
+			);
+			path = "Art Institute API Models";
 			sourceTree = "<group>";
 		};
 		A94E4BB52AFBB5F600D10EF6 /* API Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9280F172B15FA3A00E98F92 /* Art Institute API Models */,
 				A94E4BB62AFBB60900D10EF6 /* Rijks API Models */,
 			);
 			path = "API Models";
@@ -310,6 +326,7 @@
 			children = (
 				A9852F052AF7E54F00AD7C5C /* Endpoint.swift */,
 				A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */,
+				A9280F142B15F63800E98F92 /* ArtInstituteEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -447,6 +464,7 @@
 			files = (
 				A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */,
 				A96EEA042B021AC9003189B7 /* MuseItem.swift in Sources */,
+				A9280F192B15FA7500E98F92 /* ArtInstituteArtworks.swift in Sources */,
 				A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */,
 				A96CFC732AFFADA7006C6383 /* UITableView+Cell.swift in Sources */,
 				A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */,
@@ -455,6 +473,7 @@
 				A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */,
 				A9D327512AFBA41E0057F86C /* Environment.swift in Sources */,
 				A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */,
+				A9280F1B2B15FC3700E98F92 /* ArtInstituteApiService.swift in Sources */,
 				A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */,
 				A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */,
 				A96EE9FA2B020EFA003189B7 /* MuseFeedViewModel.swift in Sources */,
@@ -462,6 +481,7 @@
 				A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */,
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */,
+				A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */,
 				A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */,
 				A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */,
 				A9FA97752B01052A00B35468 /* TableSection.swift in Sources */,

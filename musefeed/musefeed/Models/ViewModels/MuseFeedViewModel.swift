@@ -26,24 +26,35 @@ public class MuseFeedViewModel {
     
     func setFeedItems() async {
         guard let firstOption = selectedOptions.first, let secondOption = selectedOptions.last else { return }
-        await setItemsFor(feedOption: firstOption)
-        await setItemsFor(feedOption: secondOption)
+        firstFeedItems.removeAll()
+        secondFeedItems.removeAll()
+        await setItemsFor(feedOption: firstOption, in: .firstFeed)
+        await setItemsFor(feedOption: secondOption, in: .secondFeed)
     }
     
-    func setItemsFor(feedOption: FeedOption) async {
+    func setItemsFor(feedOption: FeedOption, in section: Section) async {
         // TODO: Expand once more services are added
         switch feedOption {
-        case .rijks, .metro, .photo:
+        case .rijks, .photo:
             let service = RijksMusuemApiService()
             let feedItems = await service.getCollectionItems().map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker )
+            }.shuffled().prefix(6)
+            switch section {
+            case .firstFeed:
+                firstFeedItems.append(contentsOf: feedItems)
+            case .secondFeed:
+                secondFeedItems.append(contentsOf: feedItems)
             }
-            let firstItems = feedItems.shuffled().prefix(6)
-            let secondItems = feedItems.shuffled().suffix(6)
-            firstFeedItems.append(contentsOf: firstItems)
-            secondFeedItems.append(contentsOf: secondItems)
-//            secondFeedItems = await service.getCollectionItems().suffix(6).map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker)
-                
-//            }
+        case .artInstitute:
+            let service = ArtInstituteApiService()
+            guard let data = await service.getArtworks() else { return }
+            let feedItems = data.data.map { return MuseItem(artwork: $0, imageBaseUrl: data.config.imageBaseUrl) }.shuffled().prefix(6)
+            switch section {
+            case .firstFeed:
+                firstFeedItems.append(contentsOf: feedItems)
+            case .secondFeed:
+                secondFeedItems.append(contentsOf: feedItems)
+            }
         }
     }
 }
