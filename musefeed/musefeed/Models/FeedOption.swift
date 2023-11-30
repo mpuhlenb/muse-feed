@@ -10,7 +10,7 @@ import Foundation
 enum FeedOption: String, CaseIterable {
     case rijks
     case artInstitute
-    case photo
+    case moma
 }
 
 extension FeedOption: FeedSelectionCellModel {
@@ -24,8 +24,8 @@ extension FeedOption: FeedSelectionCellModel {
             return "Rijks Museum"
         case .artInstitute:
             return "Chicago Art Institute"
-        case .photo:
-            return "Photo Thingy"
+        case .moma:
+            return "Museum of Modern Art"
         }
     }
 }
