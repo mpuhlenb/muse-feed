@@ -34,27 +34,29 @@ public class MuseFeedViewModel {
     
     func setItemsFor(feedOption: FeedOption, in section: Section) async {
         // TODO: Expand once more services are added
+        var feedItems: [MuseItem] = []
         switch feedOption {
-        case .rijks, .photo:
+        case .rijks:
             let service = RijksMusuemApiService()
-            let feedItems = await service.getCollectionItems().map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker )
+            let fetchedItems = await service.getCollectionItems().map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker )
             }.shuffled().prefix(6)
-            switch section {
-            case .firstFeed:
-                firstFeedItems.append(contentsOf: feedItems)
-            case .secondFeed:
-                secondFeedItems.append(contentsOf: feedItems)
-            }
+            feedItems.append(contentsOf: fetchedItems)
         case .artInstitute:
             let service = ArtInstituteApiService()
             guard let data = await service.getArtworks() else { return }
-            let feedItems = data.data.map { return MuseItem(artwork: $0, imageBaseUrl: data.config.imageBaseUrl) }.shuffled().prefix(6)
-            switch section {
-            case .firstFeed:
-                firstFeedItems.append(contentsOf: feedItems)
-            case .secondFeed:
-                secondFeedItems.append(contentsOf: feedItems)
-            }
+            let fetchedItems = data.data.map { return MuseItem(artwork: $0, imageBaseUrl: data.config.imageBaseUrl) }.shuffled().prefix(6)
+            feedItems.append(contentsOf: fetchedItems)
+        case .moma:
+            let service = MOMAService()
+            let objects = await service.getMOMAObjects()
+            let fetchedItems = objects.map { return MuseItem(id: "\($0.objectID)", title: $0.title, detailId: "\($0.objectID)", itemImageUrl: $0.primaryImage, maker: $0.artistDisplayName) }
+            feedItems.append(contentsOf: fetchedItems)
+        }
+        switch section {
+        case .firstFeed:
+            firstFeedItems.append(contentsOf: feedItems)
+        case .secondFeed:
+            secondFeedItems.append(contentsOf: feedItems)
         }
     }
 }
