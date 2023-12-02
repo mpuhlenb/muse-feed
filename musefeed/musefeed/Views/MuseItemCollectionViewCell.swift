@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: Move to own file
 extension UIImageView {
     func downloadImageData(from url: URL) async throws -> Data {
         let request = URLRequest(url: url)
@@ -15,13 +16,32 @@ extension UIImageView {
     }
     
     func setImage(from url: URL) async {
+        await showLoading()
         do {
             let data = try await self.downloadImageData(from: url)
             let image = UIImage(data: data)
+            await stopLoading()
             self.image = image
         } catch {
-            
+            await stopLoading()
+            // TODO: Catch what?
         }
+    }
+    
+    func showLoading() async {
+        var loading = UIActivityIndicatorView(style: .medium)
+        loading.translatesAutoresizingMaskIntoConstraints = false
+        loading.startAnimating()
+        loading.hidesWhenStopped = true
+        addSubview(loading)
+        loading.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        loading.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    }
+    
+    func stopLoading() async {
+        guard let loading = subviews.first as? UIActivityIndicatorView else { return }
+        loading.stopAnimating()
+        loading.removeFromSuperview()
     }
 }
 

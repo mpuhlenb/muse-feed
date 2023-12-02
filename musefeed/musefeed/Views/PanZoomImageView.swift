@@ -44,13 +44,7 @@ class PanZoomImageView: UIScrollView {
     
     func setScrollImage(with imageUrl: URL) {
         Task {
-            do {
-                let data = try await imageView.downloadImageData(from: imageUrl)
-                let image = UIImage(data: data)
-                imageView.image = image
-            } catch {
-                print("**** error getting image")
-            }
+            await imageView.setImage(from: imageUrl)
         }
     }
     
