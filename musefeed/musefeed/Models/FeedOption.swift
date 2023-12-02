@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FeedOption: String, CaseIterable {
+enum FeedOption: String, CaseIterable, Equatable {
     case rijks
     case artInstitute
     case moma
