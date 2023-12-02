@@ -15,15 +15,15 @@ enum RijksMuseumEndpoint: Endpoint {
     }
     
     var path: String {
-        return "/api/en/collection" // TODO: update 'en' to be dynamic to either en or nl
+        return "/api/en/collection"
     }
     
     var parameters: [String : String] {
         return [
             "key": "\(Environment.rijksApiKey)",
             "imgOnly": "True",
-            "p": "1", // TODO: set value to random between 1 to 100
-            "ps": "100"
+            "p": "\(Int.random(in: 1..<100))",
+            "ps": "15"
         ]
     }
     

@@ -24,8 +24,8 @@ enum ArtInstituteEndpoint: Endpoint {
         case .artworks:
             return [
                 "fields": "id,title,artist_display,description,image_id",
-                "page" : "1", // TODO: setup picking random page
-                "limit" : "100"]
+                "page" : "\(Int.random(in: 1..<100))", // TODO: setup picking random page
+                "limit" : "30"]
         case .art:
             return [
                 "" : ""

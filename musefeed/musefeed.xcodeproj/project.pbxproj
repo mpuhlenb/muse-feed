@@ -41,6 +41,7 @@
 		A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */; };
 		A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F002AF7B5E100AD7C5C /* APIError.swift */; };
 		A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F052AF7E54F00AD7C5C /* Endpoint.swift */; };
+		A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */; };
 		A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */; };
 		A9C2558F2B10D91500A5251C /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2558E2B10D91500A5251C /* ItemInfoView.swift */; };
 		A9C255912B10D9D700A5251C /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C255902B10D9D700A5251C /* ItemInfoViewController.swift */; };
@@ -108,6 +109,7 @@
 		A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvidable.swift; sourceTree = "<group>"; };
 		A9852F002AF7B5E100AD7C5C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A9852F052AF7E54F00AD7C5C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedSectionHeader.swift; sourceTree = "<group>"; };
 		A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImageView.swift; sourceTree = "<group>"; };
 		A9C2558E2B10D91500A5251C /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
 		A9C255902B10D9D700A5251C /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */,
 				A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */,
 				A9C2558E2B10D91500A5251C /* ItemInfoView.swift */,
+				A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */,
 				A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */,
 				A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */,
+				A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */,
 				A9280F242B160CB100E98F92 /* MOMAService.swift in Sources */,
 				A9FA97752B01052A00B35468 /* TableSection.swift in Sources */,
 				A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */,

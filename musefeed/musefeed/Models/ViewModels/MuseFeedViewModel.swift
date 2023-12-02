@@ -32,8 +32,17 @@ public class MuseFeedViewModel {
         await setItemsFor(feedOption: secondOption, in: .secondFeed)
     }
     
+    func refreshItems(in section: Section, feedOption: FeedOption) async {
+        switch section {
+        case .firstFeed:
+            firstFeedItems.removeAll()
+        case .secondFeed:
+            secondFeedItems.removeAll()
+        }
+        await setItemsFor(feedOption: feedOption, in: section)
+    }
+    
     func setItemsFor(feedOption: FeedOption, in section: Section) async {
-        // TODO: Expand once more services are added
         var feedItems: [MuseItem] = []
         switch feedOption {
         case .rijks:
