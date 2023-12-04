@@ -30,6 +30,7 @@ class MuseFeedSectionHeader: UICollectionReusableView {
         self.layer.masksToBounds = true
         sectionLabel.frame = CGRect(x: 10, y: 0 , width: self.frame.width, height: self.frame.height)
         sectionLabel.font = UIFont(name: "Montserratarm-Medium", size: 8)
+        sectionLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(sectionLabel)
         sectionLabel.contentMode = .center
         NSLayoutConstraint.activate([

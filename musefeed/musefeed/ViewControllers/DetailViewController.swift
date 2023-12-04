@@ -17,9 +17,6 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         title = museItem?.title
         setupInfoButton()
         setImage()
-        let infoButton = UIBarButtonItem(title: "", image: UIImage(systemName: "info.circle"), target: self, action: #selector(infoTapped(_:)))
-        infoButton.tintColor = .foreground
-        self.navigationItem.setRightBarButton(infoButton, animated: true)
     }
     
     private func setupInfoButton() {
@@ -35,7 +32,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @objc private func infoTapped(_ sender: UIBarButtonItem) {
         guard let item = museItem else { return }
-        var infoWindow = ItemInfoViewController(title: item.title, text: item.maker, buttonText: "Close")
+        let infoWindow = ItemInfoViewController(title: item.title, text: item.maker, buttonText: "Close")
         infoWindow.modalPresentationStyle = .popover
         infoWindow.popoverPresentationController?.barButtonItem = sender
         infoWindow.popoverPresentationController?.delegate = self
