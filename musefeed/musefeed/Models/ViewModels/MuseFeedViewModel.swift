@@ -16,6 +16,8 @@ public class MuseFeedViewModel {
     
     @Published var firstFeedItems: [MuseItem] = []
     @Published var secondFeedItems: [MuseItem] = []
+    @Published var firstFeedIsRefreshing: Bool = false
+    @Published var secondFeedIsRefreshing: Bool = false
     
     public let viewTitle = "Your Muses"
     var selectedOptions: [FeedOption]
@@ -32,14 +34,18 @@ public class MuseFeedViewModel {
         await setItemsFor(feedOption: secondOption, in: .secondFeed)
     }
     
-    func refreshItems(in section: Section, feedOption: FeedOption) async {
+    func refreshItems(in section: Section, feedOption: FeedOption) {
         switch section {
         case .firstFeed:
             firstFeedItems.removeAll()
+            firstFeedIsRefreshing = true
         case .secondFeed:
             secondFeedItems.removeAll()
+            secondFeedIsRefreshing = true
         }
-        await setItemsFor(feedOption: feedOption, in: section)
+        Task {
+            await setItemsFor(feedOption: feedOption, in: section)
+        }
     }
     
     func setItemsFor(feedOption: FeedOption, in section: Section) async {
@@ -64,8 +70,10 @@ public class MuseFeedViewModel {
         switch section {
         case .firstFeed:
             firstFeedItems.append(contentsOf: feedItems)
+            firstFeedIsRefreshing = false
         case .secondFeed:
             secondFeedItems.append(contentsOf: feedItems)
+            secondFeedIsRefreshing = false
         }
     }
 }

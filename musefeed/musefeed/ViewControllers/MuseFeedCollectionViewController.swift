@@ -57,12 +57,24 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
             switch kind {
             case UICollectionView.elementKindSectionHeader:
                 guard let viewModel = self.viewModel, let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MuseFeedSectionHeader.reuseId, for: indexPath) as? MuseFeedSectionHeader else { return UICollectionReusableView() }
+                let section = MuseFeedViewModel.Section.allCases[indexPath.section]
                 headerView.setupContent(for: viewModel.selectedOptions[indexPath.section])
-                headerView.setSectionText(with: viewModel.selectedOptions[indexPath.section].feedName)
                 headerView.backgroundColor = .foreground
-                headerView.sectionLabel.textColor = .background
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapRefreshFeed))
                 headerView.addGestureRecognizer(tapGesture)
+                switch section {
+                case .firstFeed:
+                        viewModel.$firstFeedIsRefreshing.sink { isRefreshing in
+                            guard let headerMuse = headerView.museOption, headerMuse == viewModel.selectedOptions[indexPath.section] else { return }
+                            headerView.setIsRefreshing(isRefreshing: isRefreshing)
+                        }.store(in: &self.cancellables)
+
+                case .secondFeed:
+                        viewModel.$secondFeedIsRefreshing.sink { isRefreshing in
+                            guard let headerMuse = headerView.museOption, headerMuse == viewModel.selectedOptions[indexPath.section] else { return }
+                            headerView.setIsRefreshing(isRefreshing: isRefreshing)
+                        }.store(in: &self.cancellables)
+                }
                 return headerView
             default:
                 return UICollectionReusableView()
@@ -115,9 +127,9 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
     @objc func didTapRefreshFeed(_ tapGesture: UITapGestureRecognizer) {
         guard let sectionHeader = tapGesture.view as? MuseFeedSectionHeader, let option = sectionHeader.museOption, let viewModel = viewModel, let sectionIndex = viewModel.selectedOptions.firstIndex(of: option) else { return }
         let section = MuseFeedViewModel.Section.allCases[sectionIndex]
-        Task {
-            await viewModel.refreshItems(in: section, feedOption: option)
-        }
+        
+            viewModel.refreshItems(in: section, feedOption: option)
+        
     }
 }
     // MARK: - Layout Handling

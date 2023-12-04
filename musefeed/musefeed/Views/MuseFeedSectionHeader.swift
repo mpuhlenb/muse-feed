@@ -11,7 +11,7 @@ class MuseFeedSectionHeader: UICollectionReusableView {
     static let reuseId = "HeaderView"
     
     let sectionLabel = UILabel()
-    let sectionRefreshButton = UIButton()
+    let refreshButton = UIButton()
     var museOption: FeedOption?
     
     override init(frame: CGRect) {
@@ -28,27 +28,36 @@ class MuseFeedSectionHeader: UICollectionReusableView {
         self.museOption = option
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
-        sectionLabel.frame = CGRect(x: 10, y: 0 , width: self.frame.width, height: self.frame.height)
-        sectionLabel.font = UIFont(name: "Montserratarm-Medium", size: 8)
-        sectionLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(sectionLabel)
-        sectionLabel.contentMode = .center
+        
+        // TODO: Fix up button sizing, font, image, tapping on header etc
+        refreshButton.frame = CGRect(x: 15, y: 0, width: self.frame.width, height: self.frame.height)
+        var config = UIButton.Configuration.plain()
+        config.imagePadding = 20
+        config.baseForegroundColor = .background
+        config.image = UIImage(systemName: "arrow.2.circlepath.circle.fill")
+        if let option = option {
+            config.attributedTitle = AttributedString(option.feedName, attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: "Verdana", size: 12)!]))
+        }
+
+        refreshButton.configuration = config
+        refreshButton.contentHorizontalAlignment = .left
+        refreshButton.contentVerticalAlignment = .center
+        refreshButton.translatesAutoresizingMaskIntoConstraints = false
+        refreshButton.imageView?.tintColor = .background
+        refreshButton.semanticContentAttribute = .forceRightToLeft
+        addSubview(refreshButton)
+        
         NSLayoutConstraint.activate([
-            sectionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            sectionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0),
-            sectionLabel.heightAnchor.constraint(equalTo: self.heightAnchor)
+            refreshButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            refreshButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0),
+            refreshButton.heightAnchor.constraint(equalTo: self.heightAnchor)
         ])
     }
     
-    // TODO: Update with animated refresh image?
-    func setSectionText(with feedName: String) {
-        let fullString = NSMutableAttributedString(string: feedName + "   ")
-        let imageAttachment = NSTextAttachment()
-        imageAttachment.image = UIImage(systemName: "arrow.2.circlepath.circle.fill")?.withTintColor(.background)
+    func setIsRefreshing(isRefreshing: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            self?.refreshButton.configuration?.showsActivityIndicator = isRefreshing
+        }
         
-        let imageString = NSAttributedString(attachment: imageAttachment)
-        fullString.append(imageString)
-        sectionLabel.isUserInteractionEnabled = true
-        sectionLabel.attributedText = fullString
     }
 }
