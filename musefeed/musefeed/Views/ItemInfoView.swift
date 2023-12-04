@@ -38,7 +38,7 @@ class ItemInfoView: UIView {
         infoTitle.textAlignment = .center
         
         // Popup Text
-        infoText.textColor = .secondary
+        infoText.textColor = .secondaryText
         infoText.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         infoText.numberOfLines = 0
         infoText.textAlignment = .center

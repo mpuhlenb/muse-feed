@@ -21,20 +21,8 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
     private var cancellables = Set<AnyCancellable>()
 
     var viewModel: MuseFeedViewModel?
-    var firstFeedItems: [MuseItem] = [] {
-        didSet {
-            if !firstFeedItems.isEmpty {
-                applySnapshot()
-            }
-        }
-    }
-    var secondFeedItems: [MuseItem] = [] {
-        didSet {
-            if !firstFeedItems.isEmpty {
-                applySnapshot()
-            }
-        }
-    }
+    var firstFeedItems: [MuseItem] = []
+    var secondFeedItems: [MuseItem] = []
     
     
     override func viewDidLoad() {
@@ -93,9 +81,11 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
     private func subscribeToViewModel() {
         viewModel?.$firstFeedItems.sink { [weak self] items in
             self?.firstFeedItems = items
+            self?.applySnapshot()
         }.store(in: &cancellables)
         viewModel?.$secondFeedItems.sink { [weak self] items in
             self?.secondFeedItems = items
+            self?.applySnapshot()
         }.store(in: &cancellables)
     }
     

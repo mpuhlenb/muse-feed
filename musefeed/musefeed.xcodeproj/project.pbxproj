@@ -29,6 +29,7 @@
 		A96EEA002B0218B4003189B7 /* MuseFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */; };
 		A96EEA022B021A3E003189B7 /* MuseItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */; };
 		A96EEA042B021AC9003189B7 /* MuseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EEA032B021AC9003189B7 /* MuseItem.swift */; };
+		A96FDBC82B1DC4BD00004834 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */; };
 		A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */; };
 		A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */; };
 		A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */; };
@@ -93,6 +94,7 @@
 		A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedCollectionViewController.swift; sourceTree = "<group>"; };
 		A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		A96EEA032B021AC9003189B7 /* MuseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseItem.swift; sourceTree = "<group>"; };
+		A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		A9852EC92AF7B1B700AD7C5C /* musefeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musefeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				A96CFC722AFFADA7006C6383 /* UITableView+Cell.swift */,
+				A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				A9C2558F2B10D91500A5251C /* ItemInfoView.swift in Sources */,
 				A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */,
 				A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */,
+				A96FDBC82B1DC4BD00004834 /* UIImageView+Helpers.swift in Sources */,
 				A94E4BBD2AFBBF9700D10EF6 /* Storyboarded.swift in Sources */,
 				A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */,
 			);
