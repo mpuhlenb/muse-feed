@@ -34,7 +34,7 @@ public class MuseFeedViewModel {
         await setItemsFor(feedOption: secondOption, in: .secondFeed)
     }
     
-    func refreshItems(in section: Section, feedOption: FeedOption) {
+    func refreshItems(in section: Section, feedOption: FeedOption) async {
         switch section {
         case .firstFeed:
             firstFeedItems.removeAll()
