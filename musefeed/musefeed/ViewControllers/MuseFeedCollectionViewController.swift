@@ -57,12 +57,24 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
             switch kind {
             case UICollectionView.elementKindSectionHeader:
                 guard let viewModel = self.viewModel, let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MuseFeedSectionHeader.reuseId, for: indexPath) as? MuseFeedSectionHeader else { return UICollectionReusableView() }
-                headerView.setupContent(for: viewModel.selectedOptions[indexPath.section])
-                headerView.setSectionText(with: viewModel.selectedOptions[indexPath.section].feedName)
+                let section = MuseFeedViewModel.Section.allCases[indexPath.section]
+                headerView.setupContent(for: viewModel.selectedOptions[indexPath.section], sectionIndex: indexPath.section)
                 headerView.backgroundColor = .foreground
-                headerView.sectionLabel.textColor = .background
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapRefreshFeed))
-                headerView.addGestureRecognizer(tapGesture)
+                headerView.refreshButton?.addGestureRecognizer(tapGesture)
+                switch section {
+                case .firstFeed:
+                        viewModel.$firstFeedIsRefreshing.sink { isRefreshing in
+                            guard let headerMuse = headerView.museOption, headerMuse == viewModel.selectedOptions[indexPath.section] else { return }
+                            headerView.refreshButton?.updateIsRefreshing(to: isRefreshing)
+                        }.store(in: &self.cancellables)
+
+                case .secondFeed:
+                        viewModel.$secondFeedIsRefreshing.sink { isRefreshing in
+                            guard let headerMuse = headerView.museOption, headerMuse == viewModel.selectedOptions[indexPath.section] else { return }
+                            headerView.refreshButton?.updateIsRefreshing(to: isRefreshing)
+                        }.store(in: &self.cancellables)
+                }
                 return headerView
             default:
                 return UICollectionReusableView()
@@ -113,11 +125,14 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
     }
     
     @objc func didTapRefreshFeed(_ tapGesture: UITapGestureRecognizer) {
-        guard let sectionHeader = tapGesture.view as? MuseFeedSectionHeader, let option = sectionHeader.museOption, let viewModel = viewModel, let sectionIndex = viewModel.selectedOptions.firstIndex(of: option) else { return }
+        
+        guard let refreshButton = tapGesture.view as? SectionButton, let sectionIndex = refreshButton.sectionIndex, let viewModel = viewModel else { return }
         let section = MuseFeedViewModel.Section.allCases[sectionIndex]
+        let option = viewModel.selectedOptions[sectionIndex]
         Task {
             await viewModel.refreshItems(in: section, feedOption: option)
         }
+        
     }
 }
     // MARK: - Layout Handling
@@ -135,7 +150,7 @@ extension MuseFeedCollectionViewController {
             section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
             
-            let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(20))
+            let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(22))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerFooterSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
             section.boundarySupplementaryItems = [sectionHeader]
             return section

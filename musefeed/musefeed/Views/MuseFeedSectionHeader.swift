@@ -10,13 +10,11 @@ import UIKit
 class MuseFeedSectionHeader: UICollectionReusableView {
     static let reuseId = "HeaderView"
     
-    let sectionLabel = UILabel()
-    let sectionRefreshButton = UIButton()
+    var refreshButton: SectionButton?
     var museOption: FeedOption?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupContent(for: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -24,31 +22,22 @@ class MuseFeedSectionHeader: UICollectionReusableView {
     }
     
     // TODO: update with actual sizing and fonts etc
-    func setupContent(for option: FeedOption?) {
+    func setupContent(for option: FeedOption?, sectionIndex: Int?) {
+        self.subviews.forEach { $0.removeFromSuperview() }
+        guard let option = option, let sectionIndex = sectionIndex else { return }
         self.museOption = option
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
-        sectionLabel.frame = CGRect(x: 10, y: 0 , width: self.frame.width, height: self.frame.height)
-        sectionLabel.font = UIFont(name: "Montserratarm-Medium", size: 8)
-        sectionLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(sectionLabel)
-        sectionLabel.contentMode = .center
+        self.contentMode = .scaleAspectFit
+        // TODO: Fix up font
+        self.refreshButton = SectionButton(frame: CGRect(x: 5, y: 0, width: self.frame.width, height: 20))
+        self.refreshButton?.setup(for: option, sectionIndex: sectionIndex)
+        guard let refreshButton = refreshButton else { return }
+        addSubview(refreshButton)
         NSLayoutConstraint.activate([
-            sectionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            sectionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0),
-            sectionLabel.heightAnchor.constraint(equalTo: self.heightAnchor)
+            refreshButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            refreshButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10.0),
+            refreshButton.heightAnchor.constraint(equalTo: self.heightAnchor)
         ])
-    }
-    
-    // TODO: Update with animated refresh image?
-    func setSectionText(with feedName: String) {
-        let fullString = NSMutableAttributedString(string: feedName + "   ")
-        let imageAttachment = NSTextAttachment()
-        imageAttachment.image = UIImage(systemName: "arrow.2.circlepath.circle.fill")?.withTintColor(.background)
-        
-        let imageString = NSAttributedString(attachment: imageAttachment)
-        fullString.append(imageString)
-        sectionLabel.isUserInteractionEnabled = true
-        sectionLabel.attributedText = fullString
     }
 }

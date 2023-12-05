@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */; };
+		A92662F92B1F318E00AC8F2C /* SectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92662F82B1F318E00AC8F2C /* SectionButton.swift */; };
 		A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F142B15F63800E98F92 /* ArtInstituteEndpoint.swift */; };
 		A9280F192B15FA7500E98F92 /* ArtInstituteArtworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F182B15FA7500E98F92 /* ArtInstituteArtworks.swift */; };
 		A9280F1B2B15FC3700E98F92 /* ArtInstituteApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F1A2B15FC3700E98F92 /* ArtInstituteApiService.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		A90C96B82AFE80AF00E27F07 /* FeedSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionViewModel.swift; sourceTree = "<group>"; };
+		A92662F82B1F318E00AC8F2C /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
 		A9280F142B15F63800E98F92 /* ArtInstituteEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtInstituteEndpoint.swift; sourceTree = "<group>"; };
 		A9280F182B15FA7500E98F92 /* ArtInstituteArtworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtInstituteArtworks.swift; sourceTree = "<group>"; };
 		A9280F1A2B15FC3700E98F92 /* ArtInstituteApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtInstituteApiService.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */,
 				A9C2558E2B10D91500A5251C /* ItemInfoView.swift */,
 				A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */,
+				A92662F82B1F318E00AC8F2C /* SectionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */,
 				A96CFC752AFFAEDD006C6383 /* FeedSelectionCellModel.swift in Sources */,
 				A9280F222B160C3F00E98F92 /* MOMAObject.swift in Sources */,
+				A92662F92B1F318E00AC8F2C /* SectionButton.swift in Sources */,
 				A96CFC7A2AFFB15F006C6383 /* FeedSelectionModalViewController.swift in Sources */,
 				A96EEA002B0218B4003189B7 /* MuseFeedCollectionViewController.swift in Sources */,
 				A9C2558F2B10D91500A5251C /* ItemInfoView.swift in Sources */,
