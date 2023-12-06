@@ -1,5 +1,5 @@
 //
-//  NewItemInfoView.swift
+//  ItemInfoView.swift
 //  musefeed
 //
 //  Created by Morris Uhlenbrauck on 12/5/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 // TODO: Refactor with custom label and constraints
-class NewItemInfoView: UIView {
+class ItemInfoView: UIView {
     var infoView: UIView = UIView(frame: .zero)
     var itemTitleLabel = UILabel(frame: .zero)
     var itemArtistLabel = UILabel(frame: .zero)

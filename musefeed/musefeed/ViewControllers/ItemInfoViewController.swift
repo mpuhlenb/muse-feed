@@ -18,10 +18,10 @@ class ItemInfoViewController: UIViewController {
     
     func setupInfoView() {
         guard let viewModel = viewModel else { return }
-        let newInfoView = NewItemInfoView()
-        newInfoView.setup(with: viewModel)
-        newInfoView.closeButton.addTarget(self, action: #selector(dissmisView), for: .touchUpInside)
-        view = newInfoView
+        let infoView = ItemInfoView()
+        infoView.setup(with: viewModel)
+        infoView.closeButton.addTarget(self, action: #selector(dissmisView), for: .touchUpInside)
+        view = infoView
         
     }
     
