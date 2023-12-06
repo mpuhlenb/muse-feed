@@ -8,20 +8,25 @@
 import UIKit
 
 class ItemInfoViewController: UIViewController {
-    private let infoView = ItemInfoView()
+    var viewModel: ItemInfoViewModel?
     
-    init(title: String, text: String, buttonText: String = "Close") {
+    init(viewModel: ItemInfoViewModel?) {
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+
+    }
+    
+    func setupInfoView() {
+        guard let viewModel = viewModel else { return }
+        let newInfoView = NewItemInfoView()
+        newInfoView.setup(with: viewModel)
+        newInfoView.closeButton.addTarget(self, action: #selector(dissmisView), for: .touchUpInside)
+        view = newInfoView
         
-        infoView.infoTitle.text = title
-        infoView.infoText.text = text
-        infoView.closeButton.titleLabel?.text = buttonText
-        infoView.closeButton.addTarget(self, action: #selector(dissmisView), for: .touchUpInside)
-        view = infoView
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     @objc func dissmisView() {

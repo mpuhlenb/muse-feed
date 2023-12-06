@@ -53,7 +53,7 @@ public class MuseFeedViewModel {
         switch feedOption {
         case .rijks:
             let service = RijksMusuemApiService()
-            let fetchedItems = await service.getCollectionItems().map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker )
+            let fetchedItems = await service.getCollectionItems().map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker, feed: .rijks )
             }.shuffled().prefix(6)
             feedItems.append(contentsOf: fetchedItems)
         case .artInstitute:
@@ -64,7 +64,7 @@ public class MuseFeedViewModel {
         case .moma:
             let service = MOMAService()
             let objects = await service.getMOMAObjects()
-            let fetchedItems = objects.map { return MuseItem(id: "\($0.objectID)", title: $0.title, detailId: "\($0.objectID)", itemImageUrl: $0.primaryImage, maker: $0.artistDisplayName) }
+            let fetchedItems = objects.map { return MuseItem(id: "\($0.objectID)", title: $0.title, detailId: "\($0.objectID)", itemImageUrl: $0.primaryImage, maker: $0.artistDisplayName, feed: .moma) }
             feedItems.append(contentsOf: fetchedItems)
         }
         switch section {

@@ -15,7 +15,14 @@ enum FeedOption: String, CaseIterable, Equatable {
 
 extension FeedOption: FeedSelectionCellModel {
     var feedUrlString: String {
-        return ""
+        switch self {
+        case .rijks:
+            return "https://www.rijksmuseum.nl/en" // TODO: make this toggle to locale NL or EN
+        case .artInstitute:
+            return "https://www.artic.edu/"
+        case .moma:
+            return "https://www.moma.org/"
+        }
     }
     
     var feedName: String {

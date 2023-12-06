@@ -32,7 +32,9 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @objc private func infoTapped(_ sender: UIBarButtonItem) {
         guard let item = museItem else { return }
-        let infoWindow = ItemInfoViewController(title: item.title, text: item.maker, buttonText: "Close")
+        let infoViewModel = ItemInfoViewModel(itemTitle: item.title, itemArtist: item.maker, itemOrigin: item.feed?.feedName ?? "", feedUrl: item.sourceLink)
+        let infoWindow = ItemInfoViewController(viewModel: infoViewModel)
+        infoWindow.setupInfoView()
         infoWindow.modalPresentationStyle = .popover
         infoWindow.popoverPresentationController?.barButtonItem = sender
         infoWindow.popoverPresentationController?.delegate = self
