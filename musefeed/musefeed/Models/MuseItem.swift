@@ -12,17 +12,19 @@ class MuseItem: Hashable {
     var title: String
     var detailId: String
     var itemImageUrl: URL?
-    var link: URL?
+    var sourceLink: URL?
     var maker: String
+    var feed: FeedOption?
     
-    init(id: String, title: String, detailId: String,  itemImageUrl: String? = nil, link: URL? = nil, maker: String) {
+    init(id: String, title: String, detailId: String,  itemImageUrl: String? = nil, link: URL? = nil, maker: String, feed: FeedOption) {
         self.id = id
         self.title = title
         self.detailId = detailId
-        self.link = link
+        self.sourceLink = URL(string: feed.feedUrlString)
         self.maker = maker
         guard let urlString = itemImageUrl, let imageUrl = URL(string: urlString) else { return }
         self.itemImageUrl = imageUrl
+        self.feed = feed
     }
     
     init(artwork: ArtInstituteArtwork, imageBaseUrl: String) {
@@ -30,6 +32,8 @@ class MuseItem: Hashable {
         self.title = artwork.title
         self.detailId = ""
         self.maker = artwork.artist
+        self.feed = .artInstitute
+        self.sourceLink = URL(string: FeedOption.artInstitute.feedUrlString)
         if let imageId = artwork.imageId {
             let artUrlString = imageBaseUrl + "/\(imageId)" + "/full/843,/0/default.jpg"
             self.itemImageUrl = URL(string: artUrlString)
