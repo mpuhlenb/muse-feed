@@ -16,4 +16,8 @@ struct DeviceConfiguration {
     static var isLandscape: Bool {
         return UIDevice.current.orientation.isLandscape
     }
+    
+    static var loadingTag: Int {
+        return 350
+    }
 }

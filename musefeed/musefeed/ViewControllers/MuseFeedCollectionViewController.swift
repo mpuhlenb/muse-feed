@@ -34,6 +34,9 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         collectionView.backgroundColor = .background
         getItems()
         subscribeToViewModel()
+        Task {
+            await view.showLoading()
+        }
     }
     
     func makeDataSource() -> DataSource {
@@ -105,6 +108,7 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
             self?.secondFeedItems = items
             self?.applySnapshot()
         }.store(in: &cancellables)
+        
     }
     
     func applySnapshot(animatingDifferences: Bool = true) {
@@ -113,6 +117,9 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         guard firstFeedItems.count != 0, secondFeedItems.count != 0 else { return }
         snapshot.appendItems(firstFeedItems, toSection: .firstFeed)
         snapshot.appendItems(secondFeedItems, toSection: .secondFeed)
+        Task {
+            await view.stopLoading()
+        }
         dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     

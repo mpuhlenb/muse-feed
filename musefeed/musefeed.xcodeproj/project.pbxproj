@@ -34,6 +34,7 @@
 		A96EEA042B021AC9003189B7 /* MuseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EEA032B021AC9003189B7 /* MuseItem.swift */; };
 		A96FDBC82B1DC4BD00004834 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */; };
 		A97DDD252B21DC1C00D6D13F /* DeviceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DDD242B21DC1C00D6D13F /* DeviceConfiguration.swift */; };
+		A97DDD272B22184200D6D13F /* UIView+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DDD262B22184200D6D13F /* UIView+Spinner.swift */; };
 		A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */; };
 		A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */; };
 		A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */; };
@@ -102,6 +103,7 @@
 		A96EEA032B021AC9003189B7 /* MuseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseItem.swift; sourceTree = "<group>"; };
 		A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		A97DDD242B21DC1C00D6D13F /* DeviceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfiguration.swift; sourceTree = "<group>"; };
+		A97DDD262B22184200D6D13F /* UIView+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Spinner.swift"; sourceTree = "<group>"; };
 		A9852EC92AF7B1B700AD7C5C /* musefeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musefeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				A96CFC722AFFADA7006C6383 /* UITableView+Cell.swift */,
 				A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */,
+				A97DDD262B22184200D6D13F /* UIView+Spinner.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */,
 				A9D327512AFBA41E0057F86C /* Environment.swift in Sources */,
 				A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */,
+				A97DDD272B22184200D6D13F /* UIView+Spinner.swift in Sources */,
 				A9280F1B2B15FC3700E98F92 /* ArtInstituteApiService.swift in Sources */,
 				A9280F1D2B160ADC00E98F92 /* MOMAEndpoint.swift in Sources */,
 				A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */,
