@@ -8,7 +8,11 @@
 import Foundation
 
 struct MOMAService: APIDataProvidable {
-    var session: URLSession = URLSession.shared
+    var session: URLSession
+    
+    init(session: URLSession) {
+        self.session = session
+    }
     
     // TODO: Refactor better way to get 6 items with images, not all items images.
     func getMOMAObjects() async -> [MOMAObject] {

@@ -8,7 +8,11 @@
 import Foundation
 
 struct RijksMusuemApiService: APIDataProvidable {
-    var session: URLSession = URLSession.shared
+    var session: URLSession
+    
+    init(session: URLSession) {
+        self.session = session
+    }
     
     func getCollectionItems() async -> [RijksArtObject] {
         do {

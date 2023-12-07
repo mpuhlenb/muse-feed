@@ -19,6 +19,8 @@ public class MuseFeedViewModel {
     @Published var firstFeedIsRefreshing: Bool = false
     @Published var secondFeedIsRefreshing: Bool = false
     
+    var session: URLSession = URLSession.shared
+    
     public let viewTitle = "Your Muses"
     var selectedOptions: [FeedOption]
     
@@ -52,17 +54,17 @@ public class MuseFeedViewModel {
         var feedItems: [MuseItem] = []
         switch feedOption {
         case .rijks:
-            let service = RijksMusuemApiService()
+            let service = RijksMusuemApiService(session: session)
             let fetchedItems = await service.getCollectionItems().map { return MuseItem(id: $0.id, title: $0.title, detailId: $0.objectNumber, itemImageUrl: $0.webImage.url, maker: $0.principalOrFirstMaker, feed: .rijks )
             }.shuffled().prefix(6)
             feedItems.append(contentsOf: fetchedItems)
         case .artInstitute:
-            let service = ArtInstituteApiService()
+            let service = ArtInstituteApiService(session: session)
             guard let data = await service.getArtworks() else { return }
             let fetchedItems = data.data.map { return MuseItem(artwork: $0, imageBaseUrl: data.config.imageBaseUrl) }.shuffled().prefix(6)
             feedItems.append(contentsOf: fetchedItems)
         case .moma:
-            let service = MOMAService()
+            let service = MOMAService(session: session)
             let objects = await service.getMOMAObjects()
             let fetchedItems = objects.map { return MuseItem(id: "\($0.objectID)", title: $0.title, detailId: "\($0.objectID)", itemImageUrl: $0.primaryImage, maker: $0.artistDisplayName, feed: .moma) }
             feedItems.append(contentsOf: fetchedItems)

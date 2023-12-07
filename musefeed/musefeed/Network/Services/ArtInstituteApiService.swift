@@ -8,7 +8,11 @@
 import Foundation
 
 struct ArtInstituteApiService: APIDataProvidable {
-    var session: URLSession = URLSession.shared
+    var session: URLSession
+    
+    init(session: URLSession) {
+        self.session = session
+    }
     
     func getArtworks() async -> ArtInstituteArtworks? {
         do {

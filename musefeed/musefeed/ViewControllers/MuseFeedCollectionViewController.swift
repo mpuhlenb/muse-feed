@@ -138,7 +138,6 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
     }
     
     @objc func didTapRefreshFeed(_ tapGesture: UITapGestureRecognizer) {
-        
         guard let refreshButton = tapGesture.view as? SectionButton, let sectionIndex = refreshButton.sectionIndex, let viewModel = viewModel else { return }
         let section = MuseFeedViewModel.Section.allCases[sectionIndex]
         let option = viewModel.selectedOptions[sectionIndex]
