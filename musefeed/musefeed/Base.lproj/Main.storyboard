@@ -14,19 +14,37 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="GetStartedViewController" id="BYZ-38-t0r" customClass="GetStartedViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xCq-08-LpM">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="oP1-YD-rJn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Get Started">
-                            <color key="baseForegroundColor" red="1" green="0.99607843137254903" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="tappedGetStarted" destination="BYZ-38-t0r" eventType="touchUpInside" id="rtq-Vz-yYI"/>
-                        </connections>
-                    </button>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOx-7r-ETq">
+                                <rect key="frame" x="121.66666666666669" y="421" width="150" height="35"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="4ru-YU-Dtq"/>
+                                    <constraint firstAttribute="height" constant="35" id="Zdj-vA-Q7v"/>
+                                </constraints>
+                                <color key="tintColor" name="Foreground"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Get Started">
+                                    <color key="baseForegroundColor" name="Foreground"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedGetStarted" destination="BYZ-38-t0r" eventType="touchUpInside" id="nQv-DQ-YyX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F3I-s9-5jU"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="rOx-7r-ETq" firstAttribute="centerX" secondItem="F3I-s9-5jU" secondAttribute="centerX" id="73M-V7-VJe"/>
+                            <constraint firstItem="rOx-7r-ETq" firstAttribute="centerY" secondItem="F3I-s9-5jU" secondAttribute="centerY" id="z25-5s-HMn"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="getStartedButton" destination="xCq-08-LpM" id="kie-Zl-zBO"/>
+                        <outlet property="getStartedButton" destination="rOx-7r-ETq" id="Hi9-DS-1XE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,6 +157,9 @@
     <resources>
         <namedColor name="Background">
             <color red="1" green="0.99599999189376831" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Foreground">
+            <color red="0.48199999332427979" green="0.2630000114440918" blue="0.35699999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

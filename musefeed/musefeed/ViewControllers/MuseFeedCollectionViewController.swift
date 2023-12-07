@@ -39,6 +39,7 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         }
     }
     
+    // MARK: - Diffable Data Source
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, museItem) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MuseItemCollectionViewCell
@@ -123,6 +124,7 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
+    // MARK: - Actions
     @IBAction func didTapItem(_ sender: UITapGestureRecognizer) {
         guard let indexPath = collectionView.indexPathForItem(at: sender.location(in: self.collectionView)) else { return }
         let section = MuseFeedViewModel.Section.allCases[indexPath.section]
