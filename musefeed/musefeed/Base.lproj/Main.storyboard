@@ -37,7 +37,7 @@
         <scene sceneID="R68-XS-Qhi">
             <objects>
                 <collectionViewController storyboardIdentifier="MuseFeedCollectionViewController" id="qGe-cc-w55" customClass="MuseFeedCollectionViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="ocg-3E-gIG">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="ocg-3E-gIG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wv5-Yk-QZd">
@@ -80,6 +80,7 @@
                             <outlet property="delegate" destination="qGe-cc-w55" id="8bB-2b-oet"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAe-xL-skU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +109,7 @@
                             <constraint firstItem="Bv3-hh-cED" firstAttribute="bottom" secondItem="0sx-Jb-oNV" secondAttribute="bottom" id="g1r-xW-RXi"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="detailImageView" destination="Bv3-hh-cED" id="hj3-VQ-Fy5"/>
                     </connections>
@@ -126,6 +128,7 @@
                         <viewLayoutGuide key="safeArea" id="Udi-P8-Eu5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmL-dg-zoZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
