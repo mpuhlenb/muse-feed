@@ -26,20 +26,4 @@ extension UIImageView {
             // TODO: Catch what?
         }
     }
-    
-    func showLoading() async {
-        let loading = UIActivityIndicatorView(style: .medium)
-        loading.translatesAutoresizingMaskIntoConstraints = false
-        loading.startAnimating()
-        loading.hidesWhenStopped = true
-        addSubview(loading)
-        loading.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        loading.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    }
-    
-    func stopLoading() async {
-        guard let loading = subviews.first as? UIActivityIndicatorView else { return }
-        loading.stopAnimating()
-        loading.removeFromSuperview()
-    }
 }
