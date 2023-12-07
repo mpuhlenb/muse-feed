@@ -33,6 +33,7 @@
 		A96EEA022B021A3E003189B7 /* MuseItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */; };
 		A96EEA042B021AC9003189B7 /* MuseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EEA032B021AC9003189B7 /* MuseItem.swift */; };
 		A96FDBC82B1DC4BD00004834 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */; };
+		A97DDD252B21DC1C00D6D13F /* DeviceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DDD242B21DC1C00D6D13F /* DeviceConfiguration.swift */; };
 		A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */; };
 		A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */; };
 		A9852ED12AF7B1B700AD7C5C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */; };
@@ -100,6 +101,7 @@
 		A96EEA012B021A3E003189B7 /* MuseItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		A96EEA032B021AC9003189B7 /* MuseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseItem.swift; sourceTree = "<group>"; };
 		A96FDBC72B1DC4BD00004834 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
+		A97DDD242B21DC1C00D6D13F /* DeviceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfiguration.swift; sourceTree = "<group>"; };
 		A9852EC92AF7B1B700AD7C5C /* musefeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musefeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852ECC2AF7B1B700AD7C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9852ECE2AF7B1B700AD7C5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A9FA97702B01049400B35468 /* TableDataSource.swift */,
+				A97DDD242B21DC1C00D6D13F /* DeviceConfiguration.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */,
 				A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */,
 				A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */,
+				A97DDD252B21DC1C00D6D13F /* DeviceConfiguration.swift in Sources */,
 				A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */,
 				A9280F242B160CB100E98F92 /* MOMAService.swift in Sources */,
 				A9FA97752B01052A00B35468 /* TableSection.swift in Sources */,

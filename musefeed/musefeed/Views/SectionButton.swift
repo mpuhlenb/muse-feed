@@ -20,7 +20,9 @@ class SectionButton: UIButton {
     }
     
     func setup(for option: FeedOption?, sectionIndex: Int?) {
-        let imageConfig = UIImage.SymbolConfiguration(pointSize: 10)
+        let imagePointSize = DeviceConfiguration.isPad ? 15.0 : 10.0
+        let buttonFontSize = DeviceConfiguration.isPad ? 17.0 : 12.0
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: imagePointSize)
         let image = UIImage(systemName: "arrow.2.circlepath.circle.fill", withConfiguration: imageConfig)
         self.sectionIndex = sectionIndex
         guard let option = option else { return }
@@ -30,7 +32,7 @@ class SectionButton: UIButton {
         config.imagePadding = 2
         config.image = image
         self.configuration = config
-        self.configuration?.attributedTitle = AttributedString(option.feedName, attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: "Verdana", size: 12)!]))
+        self.configuration?.attributedTitle = AttributedString(option.feedName, attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: "Verdana", size: buttonFontSize)!]))
         self.contentHorizontalAlignment = .left
         self.contentVerticalAlignment = .center
         self.translatesAutoresizingMaskIntoConstraints = false

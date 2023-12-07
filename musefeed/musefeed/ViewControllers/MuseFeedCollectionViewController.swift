@@ -67,12 +67,18 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
                         viewModel.$firstFeedIsRefreshing.sink { isRefreshing in
                             guard let headerMuse = headerView.museOption, headerMuse == viewModel.selectedOptions[indexPath.section] else { return }
                             headerView.refreshButton?.updateIsRefreshing(to: isRefreshing)
+                            DispatchQueue.main.async {
+                                collectionView.isUserInteractionEnabled = !isRefreshing
+                            }
                         }.store(in: &self.cancellables)
 
                 case .secondFeed:
                         viewModel.$secondFeedIsRefreshing.sink { isRefreshing in
                             guard let headerMuse = headerView.museOption, headerMuse == viewModel.selectedOptions[indexPath.section] else { return }
                             headerView.refreshButton?.updateIsRefreshing(to: isRefreshing)
+                            DispatchQueue.main.async {
+                                collectionView.isUserInteractionEnabled = !isRefreshing
+                            }
                         }.store(in: &self.cancellables)
                 }
                 return headerView
@@ -139,19 +145,22 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
 extension MuseFeedCollectionViewController {
     func configureLayout() {
         collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let widthRatio = UIDevice.current.orientation.isLandscape ? 0.25 : 0.9
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
+            let widthRatio = DeviceConfiguration.isLandscape ? 0.4 : 0.6
+            let headerHeight = DeviceConfiguration.isPad ? 35.0 : 22.0
+            let sectionInset = DeviceConfiguration.isPad ? 15.0 : 10.0
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(widthRatio), heightDimension: .fractionalHeight(0.35))
+            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(widthRatio), heightDimension: .fractionalHeight(0.4))
             let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0)
+            section.contentInsets = NSDirectionalEdgeInsets(top: sectionInset, leading: 0, bottom: sectionInset, trailing: 0)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
             
-            let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(22))
+            let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(headerHeight))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerFooterSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+            sectionHeader.extendsBoundary = true
             section.boundarySupplementaryItems = [sectionHeader]
             return section
         })
