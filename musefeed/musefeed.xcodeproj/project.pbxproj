@@ -124,10 +124,8 @@
 		A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImageView.swift; sourceTree = "<group>"; };
 		A9C255902B10D9D700A5251C /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
 		A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		A9D3274C2AFB9CE20057F86C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
-		A9EB0FA52B29B79E00031C6A /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
 		A9FA97702B01049400B35468 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		A9FA97722B0104BD00B35468 /* FeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOption.swift; sourceTree = "<group>"; };
 		A9FA97742B01052A00B35468 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
@@ -283,9 +281,7 @@
 		A9852EC02AF7B1B700AD7C5C = {
 			isa = PBXGroup;
 			children = (
-				A9EB0FA52B29B79E00031C6A /* DebugConfig.xcconfig */,
 				A9D3274D2AFBA1520057F86C /* Environment.swift */,
-				A9D3274C2AFB9CE20057F86C /* Config.xcconfig */,
 				A9852ECB2AF7B1B700AD7C5C /* musefeed */,
 				A9852EE22AF7B1B800AD7C5C /* musefeedTests */,
 				A9852EEC2AF7B1B800AD7C5C /* musefeedUITests */,
@@ -602,7 +598,6 @@
 /* Begin XCBuildConfiguration section */
 		A9852EF12AF7B1B800AD7C5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9D3274C2AFB9CE20057F86C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -666,7 +661,6 @@
 		};
 		A9852EF22AF7B1B800AD7C5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9D3274C2AFB9CE20057F86C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -723,7 +717,6 @@
 		};
 		A9852EF42AF7B1B800AD7C5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9EB0FA52B29B79E00031C6A /* DebugConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
