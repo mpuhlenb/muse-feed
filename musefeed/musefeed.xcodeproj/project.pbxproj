@@ -127,6 +127,7 @@
 		A9D3274C2AFB9CE20057F86C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
+		A9EB0FA52B29B79E00031C6A /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
 		A9FA97702B01049400B35468 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		A9FA97722B0104BD00B35468 /* FeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOption.swift; sourceTree = "<group>"; };
 		A9FA97742B01052A00B35468 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
@@ -282,6 +283,7 @@
 		A9852EC02AF7B1B700AD7C5C = {
 			isa = PBXGroup;
 			children = (
+				A9EB0FA52B29B79E00031C6A /* DebugConfig.xcconfig */,
 				A9D3274D2AFBA1520057F86C /* Environment.swift */,
 				A9D3274C2AFB9CE20057F86C /* Config.xcconfig */,
 				A9852ECB2AF7B1B700AD7C5C /* musefeed */,
@@ -721,11 +723,15 @@
 		};
 		A9852EF42AF7B1B800AD7C5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9EB0FA52B29B79E00031C6A /* DebugConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PVFMYLWH58;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = PVFMYLWH58;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = musefeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -739,6 +745,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.mpuhlenb.musefeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "musefeed-dev";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -750,8 +760,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PVFMYLWH58;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = PVFMYLWH58;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = musefeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -765,6 +778,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.mpuhlenb.musefeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "musefeed-dev";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -853,7 +870,7 @@
 				A9852EF22AF7B1B800AD7C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A9852EF32AF7B1B800AD7C5C /* Build configuration list for PBXNativeTarget "musefeed" */ = {
 			isa = XCConfigurationList;
@@ -862,7 +879,7 @@
 				A9852EF52AF7B1B800AD7C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A9852EF62AF7B1B800AD7C5C /* Build configuration list for PBXNativeTarget "musefeedTests" */ = {
 			isa = XCConfigurationList;
@@ -871,7 +888,7 @@
 				A9852EF82AF7B1B800AD7C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A9852EF92AF7B1B800AD7C5C /* Build configuration list for PBXNativeTarget "musefeedUITests" */ = {
 			isa = XCConfigurationList;
@@ -880,7 +897,7 @@
 				A9852EFB2AF7B1B800AD7C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
