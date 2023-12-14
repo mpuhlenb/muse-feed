@@ -10,7 +10,17 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo &quot;$RIJKS_API_KEY&quot;&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo &apos;Start setting RIJKS api key...&apos;&#10;scriptFilePath=&quot;${SRCROOT}/set_keys.sh&quot;&#10;if [ -f $scriptFilePath ]&#10;then&#10;    . $scriptFilePath&#10;fi&#10;configFilePath=&quot;${SRCROOT}/DebugConfig.xcconfig&quot;&#10;echo &quot;RIJKS_API_KEY = ${RIJKS_API_KEY_VALUE}&quot; &gt;&gt; $configFilePath&#10;&#10;"
+               shellToInvoke = "/bin/bash">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "A9852EC82AF7B1B700AD7C5C"
+                     BuildableName = "musefeed.app"
+                     BlueprintName = "musefeed"
+                     ReferencedContainer = "container:musefeed.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
             </ActionContent>
          </ExecutionAction>
       </PreActions>
