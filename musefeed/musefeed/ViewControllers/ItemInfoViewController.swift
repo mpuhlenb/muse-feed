@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ItemInfoViewController: UIViewController {
+class ItemInfoViewController: UIViewController, Storyboarded {
+    var coordinator: MainCoordinator?
+    
     var viewModel: ItemInfoViewModel?
     
     init(viewModel: ItemInfoViewModel?) {

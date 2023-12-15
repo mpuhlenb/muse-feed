@@ -33,13 +33,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     @objc private func infoTapped(_ sender: UIBarButtonItem) {
         guard let item = museItem else { return }
         let infoViewModel = ItemInfoViewModel(itemTitle: item.title, itemArtist: item.maker, itemOrigin: item.feed?.feedName ?? "", feedUrl: item.sourceLink)
-        let infoWindow = ItemInfoViewController(viewModel: infoViewModel)
-        infoWindow.setupInfoView()
-        infoWindow.modalPresentationStyle = .popover
-        infoWindow.popoverPresentationController?.barButtonItem = sender
-        infoWindow.popoverPresentationController?.delegate = self
-        infoWindow.popoverPresentationController?.permittedArrowDirections = .up
-        self.present(infoWindow, animated: true)
+        coordinator?.presentInfoPopUp(with: infoViewModel, from: sender, delegate: self)
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {

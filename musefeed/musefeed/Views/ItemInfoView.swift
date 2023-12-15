@@ -104,11 +104,19 @@ class ItemInfoView: UIView {
     private func addViewConstraints() {
         // PopupView constraints
         infoView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            infoView.widthAnchor.constraint(equalToConstant: 293),
-            infoView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            infoView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        if DeviceConfiguration.isPad {
+            NSLayoutConstraint.activate([
+                infoView.widthAnchor.constraint(equalToConstant: 293),
+                infoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                infoView.topAnchor.constraint(equalTo: self.topAnchor, constant: 13),
+                infoView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
+        } else {
+            NSLayoutConstraint.activate([
+                infoView.widthAnchor.constraint(equalToConstant: 293),
+                infoView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                infoView.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
+        }
         
         // PopupTitle constraints
         itemTitleLabel.translatesAutoresizingMaskIntoConstraints = false

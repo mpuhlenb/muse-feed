@@ -43,4 +43,16 @@ class MainCoordinator: Coordinator {
         vc.museItem = item
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    func presentInfoPopUp(with viewModel: ItemInfoViewModel, from sender: UIBarButtonItem, delegate: UIPopoverPresentationControllerDelegate) {
+        let vc = ItemInfoViewController.instantiate()
+        vc.coordinator = self
+        vc.viewModel = viewModel
+        vc.setupInfoView()
+        vc.modalPresentationStyle = .popover
+        vc.popoverPresentationController?.barButtonItem = sender
+        vc.view.inputViewController?.popoverPresentationController?.delegate = delegate
+        vc.view.inputViewController?.popoverPresentationController?.permittedArrowDirections = .up
+        navigationController.present(vc, animated: true)
+    }
 }
