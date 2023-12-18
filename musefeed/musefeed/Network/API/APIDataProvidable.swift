@@ -22,12 +22,12 @@ extension APIDataProvidable {
         urlComponents.queryItems = endpoint.parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
-        guard let url = urlComponents.url else { return .failure(.requestFailed(description: "")) }
+        guard let url = urlComponents.url else { return .failure(.requestFailed(description: "Invalid url serialization")) }
         let request = URLRequest(url: url)
         do {
            return try await fetch(type: responseModel, with: request)
-        } catch {
-            return .failure(.requestFailed(description: ""))
+        } catch (let error as ApiError) {
+            return .failure(.requestFailed(description: error.customDescription))
         }
     }
     

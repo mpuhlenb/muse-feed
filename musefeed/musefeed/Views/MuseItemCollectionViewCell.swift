@@ -13,10 +13,14 @@ class MuseItemCollectionViewCell: UICollectionViewCell {
     
     var museItem: MuseItem? {
         didSet {
-            guard let imageUrl = museItem?.itemImageUrl else { return }
-            Task {
-                await itemImageView.setImage(from: imageUrl)
-                itemImageView.contentMode = .scaleAspectFill
+            if let imageUrl = museItem?.itemImageUrl {
+                Task {
+                    await itemImageView.setImage(from: imageUrl)
+                    itemImageView.contentMode = .scaleAspectFill
+                }
+            } else {
+                itemImageView.image = UIImage(systemName: "photo.fill")
+                itemImageView.contentMode = .scaleAspectFit
             }
         }
     }

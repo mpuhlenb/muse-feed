@@ -41,6 +41,14 @@ class MuseItem: Hashable {
         
     }
     
+    // Helper init for empty item
+    init() {
+        self.id = ""
+        self.title = ""
+        self.detailId = ""
+        self.maker = ""
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

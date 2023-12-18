@@ -18,6 +18,8 @@ public class MuseFeedViewModel {
     @Published var secondFeedItems: [MuseItem] = []
     @Published var firstFeedIsRefreshing: Bool = false
     @Published var secondFeedIsRefreshing: Bool = false
+    @Published var firstFeedIsEmpty: Bool = false
+    @Published var secondFeedIsEmpty: Bool = false
     
     var session: URLSession = URLSession.shared
     
@@ -60,8 +62,8 @@ public class MuseFeedViewModel {
             feedItems.append(contentsOf: fetchedItems)
         case .artInstitute:
             let service = ArtInstituteApiService(session: session)
-            guard let data = await service.getArtworks() else { return }
-            let fetchedItems = data.data.map { return MuseItem(artwork: $0, imageBaseUrl: data.config.imageBaseUrl) }.shuffled().prefix(6)
+            let data = await service.getArtworks()
+            let fetchedItems = data?.data.map { return MuseItem(artwork: $0, imageBaseUrl: data?.config.imageBaseUrl ?? "") }.shuffled().prefix(6) ?? []
             feedItems.append(contentsOf: fetchedItems)
         case .moma:
             let service = MOMAService(session: session)
@@ -71,10 +73,14 @@ public class MuseFeedViewModel {
         }
         switch section {
         case .firstFeed:
-            firstFeedItems.append(contentsOf: feedItems)
+            firstFeedIsEmpty = feedItems.isEmpty
+            let appendItems = firstFeedIsEmpty ? [MuseItem()] : feedItems
+            firstFeedItems.append(contentsOf: appendItems)
             firstFeedIsRefreshing = false
         case .secondFeed:
-            secondFeedItems.append(contentsOf: feedItems)
+            secondFeedIsEmpty = feedItems.isEmpty
+            let appendItems = secondFeedIsEmpty ? [MuseItem()] : feedItems
+            secondFeedItems.append(contentsOf: appendItems)
             secondFeedIsRefreshing = false
         }
     }

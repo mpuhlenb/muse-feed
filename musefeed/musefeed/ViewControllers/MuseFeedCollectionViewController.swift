@@ -109,7 +109,16 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
             self?.secondFeedItems = items
             self?.applySnapshot()
         }.store(in: &cancellables)
-        
+        viewModel?.$firstFeedIsEmpty.sink { [weak self] isEmpty in
+            if isEmpty {
+                self?.showEmptyFeedAlert(for: .firstFeed)
+            }
+        }.store(in: &cancellables)
+        viewModel?.$secondFeedIsEmpty.sink { [weak self] isEmpty in
+            if isEmpty {
+                self?.showEmptyFeedAlert(for: .secondFeed)
+            }
+        }.store(in: &cancellables)
     }
     
     func applySnapshot(animatingDifferences: Bool = true) {
@@ -122,6 +131,17 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
             await view.stopLoading()
         }
         dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
+    }
+    
+    func showEmptyFeedAlert(for section: MuseFeedViewModel.Section) {
+        let sectionIndex = section == .firstFeed ? 0 : 1
+        let feedTitle = viewModel?.selectedOptions[sectionIndex].feedName ?? ""
+        let alert = UIAlertController(title: "Failure loading images", message: "The \(feedTitle) failed to load. Please tap refresh to try again or navigate back to select a different feed", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Failure", style: .cancel)
+        alert.addAction(alertAction)
+        DispatchQueue.main.async {
+            self.present(alert, animated: false)
+        }
     }
     
     // MARK: - Actions
