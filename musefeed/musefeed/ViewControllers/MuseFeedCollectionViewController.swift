@@ -63,7 +63,6 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
                 guard let viewModel = self.viewModel, let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MuseFeedSectionHeader.reuseId, for: indexPath) as? MuseFeedSectionHeader else { return UICollectionReusableView() }
                 let section = MuseFeedViewModel.Section.allCases[indexPath.section]
                 headerView.setupContent(for: viewModel.selectedOptions[indexPath.section], sectionIndex: indexPath.section)
-                headerView.backgroundColor = .foreground
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapRefreshFeed))
                 headerView.refreshButton?.addGestureRecognizer(tapGesture)
                 switch section {
