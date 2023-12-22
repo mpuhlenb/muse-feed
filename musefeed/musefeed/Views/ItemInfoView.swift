@@ -7,21 +7,30 @@
 
 import UIKit
 // TODO: Refactor with custom label and constraints
-class ItemInfoView: UIView {
-    var infoView: UIView = UIView(frame: .zero)
+class ItemInfoView: UIView, PopUpViewable {
+    var popUpView: UIView = UIView(frame: .zero)
     var itemTitleLabel = UILabel(frame: .zero)
     var itemArtistLabel = UILabel(frame: .zero)
-    var itemFeedTextUrl = UITextView(frame: .zero) //UILabel(frame: .zero)
-    var closeButton = UIButton(type: .roundedRect)
+    var itemFeedTextUrl = UITextView(frame: .zero)
+    var closeButton: UIButton = UIButton(frame: .zero)
     let borderWidth: CGFloat = 2.0
     private var viewModel: ItemInfoViewModel?
     
     init() {
         super.init(frame: .zero)
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    func setup(for type: PopUp) {
+        switch type {
+        case .info(let viewModel):
+            setup(with: viewModel)
+        case .tutorial:
+            break
+        }
     }
     
     func setup(with viewModel: ItemInfoViewModel) {
@@ -29,20 +38,20 @@ class ItemInfoView: UIView {
         setupInfoView()
         setupLabels()
         setupCloseButton()
-        infoView.addSubview(itemTitleLabel)
-        infoView.addSubview(itemArtistLabel)
-        infoView.addSubview(itemFeedTextUrl)
-        infoView.addSubview(closeButton)
-        addSubview(infoView)
+        popUpView.addSubview(itemTitleLabel)
+        popUpView.addSubview(itemArtistLabel)
+        popUpView.addSubview(itemFeedTextUrl)
+        popUpView.addSubview(closeButton)
+        addSubview(popUpView)
         addViewConstraints()
     }
     
     private func setupInfoView() {
-        infoView.backgroundColor = .background
-        infoView.layer.borderWidth = borderWidth
-        infoView.layer.cornerRadius = 10.0
-        infoView.layer.masksToBounds = true
-        infoView.layer.borderColor = UIColor.secondaryText.cgColor
+        popUpView.backgroundColor = .background
+        popUpView.layer.borderWidth = borderWidth
+        popUpView.layer.cornerRadius = 10.0
+        popUpView.layer.masksToBounds = true
+        popUpView.layer.borderColor = UIColor.secondaryText.cgColor
     }
     
     private func setupLabels() {
@@ -101,29 +110,29 @@ class ItemInfoView: UIView {
         
     }
     
-    private func addViewConstraints() {
+    internal func addViewConstraints() {
         // PopupView constraints
-        infoView.translatesAutoresizingMaskIntoConstraints = false
+        popUpView.translatesAutoresizingMaskIntoConstraints = false
         if DeviceConfiguration.isPad {
             NSLayoutConstraint.activate([
-                infoView.widthAnchor.constraint(equalToConstant: 293),
-                infoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                infoView.topAnchor.constraint(equalTo: self.topAnchor, constant: 13),
-                infoView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+                popUpView.widthAnchor.constraint(equalToConstant: 293),
+                popUpView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                popUpView.topAnchor.constraint(equalTo: self.topAnchor, constant: 13),
+                popUpView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
         } else {
             NSLayoutConstraint.activate([
-                infoView.widthAnchor.constraint(equalToConstant: 293),
-                infoView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                infoView.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
+                popUpView.widthAnchor.constraint(equalToConstant: 293),
+                popUpView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                popUpView.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
         }
         
         // PopupTitle constraints
         itemTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            itemTitleLabel.leadingAnchor.constraint(equalTo: infoView.leadingAnchor, constant: borderWidth),
-            itemTitleLabel.trailingAnchor.constraint(equalTo: infoView.trailingAnchor, constant: -borderWidth),
-            itemTitleLabel.topAnchor.constraint(equalTo: infoView.topAnchor, constant: borderWidth),
+            itemTitleLabel.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor, constant: borderWidth),
+            itemTitleLabel.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -borderWidth),
+            itemTitleLabel.topAnchor.constraint(equalTo: popUpView.topAnchor, constant: borderWidth),
             itemTitleLabel.heightAnchor.constraint(equalToConstant: 55)
             ])
         
@@ -133,8 +142,8 @@ class ItemInfoView: UIView {
         NSLayoutConstraint.activate([
             itemArtistLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 67),
             itemArtistLabel.topAnchor.constraint(equalTo: itemTitleLabel.bottomAnchor, constant: 0),
-            itemArtistLabel.leadingAnchor.constraint(equalTo: infoView.leadingAnchor, constant: 15),
-            itemArtistLabel.trailingAnchor.constraint(equalTo: infoView.trailingAnchor, constant: -15),
+            itemArtistLabel.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor, constant: 15),
+            itemArtistLabel.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -15),
             itemArtistLabel.bottomAnchor.constraint(equalTo: itemFeedTextUrl.topAnchor, constant: -3)
             ])
         
@@ -142,8 +151,8 @@ class ItemInfoView: UIView {
         NSLayoutConstraint.activate([
             itemFeedTextUrl.heightAnchor.constraint(greaterThanOrEqualToConstant: 30),
             itemFeedTextUrl.topAnchor.constraint(equalTo: itemArtistLabel.bottomAnchor, constant: 0),
-            itemFeedTextUrl.trailingAnchor.constraint(equalTo: infoView.trailingAnchor, constant: -15),
-            itemFeedTextUrl.leadingAnchor.constraint(equalTo: infoView.leadingAnchor, constant: 15),
+            itemFeedTextUrl.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -15),
+            itemFeedTextUrl.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor, constant: 15),
             itemFeedTextUrl.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -5)
         ])
 
@@ -151,9 +160,9 @@ class ItemInfoView: UIView {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             closeButton.heightAnchor.constraint(equalToConstant: 44),
-            closeButton.centerXAnchor.constraint(equalTo: infoView.centerXAnchor),
+            closeButton.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor),
             closeButton.widthAnchor.constraint(equalToConstant: 100),
-            closeButton.bottomAnchor.constraint(equalTo: infoView.bottomAnchor, constant: -borderWidth)
+            closeButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -borderWidth)
             ])
     }
 }
