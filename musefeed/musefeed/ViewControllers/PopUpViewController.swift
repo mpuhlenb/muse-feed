@@ -1,5 +1,5 @@
 //
-//  ItemInfoViewController.swift
+//  PopUpViewController.swift
 //  musefeed
 //
 //  Created by Morris Uhlenbrauck on 11/24/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemInfoViewController: UIViewController, Storyboarded {
+class PopUpViewController: UIViewController, Storyboarded {
     var coordinator: MainCoordinator?
     
     var viewModel: ItemInfoViewModel?

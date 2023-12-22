@@ -50,7 +50,7 @@
 		A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */; };
 		A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */; };
 		A9BD70AE2B32F2760017286A /* CAGradientLayer+SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD70AD2B32F2760017286A /* CAGradientLayer+SectionHeader.swift */; };
-		A9C255912B10D9D700A5251C /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C255902B10D9D700A5251C /* ItemInfoViewController.swift */; };
+		A9C255912B10D9D700A5251C /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C255902B10D9D700A5251C /* PopUpViewController.swift */; };
 		A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */; };
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
 		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
@@ -126,7 +126,7 @@
 		A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedSectionHeader.swift; sourceTree = "<group>"; };
 		A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImageView.swift; sourceTree = "<group>"; };
 		A9BD70AD2B32F2760017286A /* CAGradientLayer+SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SectionHeader.swift"; sourceTree = "<group>"; };
-		A9C255902B10D9D700A5251C /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
+		A9C255902B10D9D700A5251C /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 				A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */,
 				A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */,
 				A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */,
-				A9C255902B10D9D700A5251C /* ItemInfoViewController.swift */,
+				A9C255902B10D9D700A5251C /* PopUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -526,7 +526,7 @@
 				A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */,
 				A9852ECD2AF7B1B700AD7C5C /* AppDelegate.swift in Sources */,
 				A96EE9FA2B020EFA003189B7 /* MuseFeedViewModel.swift in Sources */,
-				A9C255912B10D9D700A5251C /* ItemInfoViewController.swift in Sources */,
+				A9C255912B10D9D700A5251C /* PopUpViewController.swift in Sources */,
 				A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */,
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A92662FB2B1F33DC00AC8F2C /* ItemInfoView.swift in Sources */,

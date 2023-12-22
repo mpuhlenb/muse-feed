@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="66" y="-2"/>
         </scene>
-        <!--Item Info View Controller-->
+        <!--Pop Up View Controller-->
         <scene sceneID="KjB-Xe-pcy">
             <objects>
-                <viewController storyboardIdentifier="ItemInfoViewController" id="h6k-i4-uwJ" customClass="ItemInfoViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopUpViewController" id="h6k-i4-uwJ" customClass="PopUpViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="43W-yQ-tny">
                         <rect key="frame" x="0.0" y="0.0" width="293" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
