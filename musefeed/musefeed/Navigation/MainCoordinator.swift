@@ -47,8 +47,9 @@ class MainCoordinator: Coordinator {
     func presentInfoPopUp(with viewModel: ItemInfoViewModel, from sender: UIBarButtonItem, delegate: UIPopoverPresentationControllerDelegate) {
         let vc = ItemInfoViewController.instantiate()
         vc.coordinator = self
-        vc.viewModel = viewModel
-        vc.setupInfoView()
+//        vc.viewModel = viewModel
+//        vc.setupInfoView()
+        vc.setup(for: .info(viewModel))
         vc.modalPresentationStyle = .popover
         vc.popoverPresentationController?.barButtonItem = sender
         vc.view.inputViewController?.popoverPresentationController?.delegate = delegate

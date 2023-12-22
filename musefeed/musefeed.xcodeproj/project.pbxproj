@@ -54,6 +54,7 @@
 		A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */; };
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
 		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
+		A9E6AE872B35984A00CE840C /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE862B35984A00CE840C /* PopUpView.swift */; };
 		A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97702B01049400B35468 /* TableDataSource.swift */; };
 		A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97722B0104BD00B35468 /* FeedOption.swift */; };
 		A9FA97752B01052A00B35468 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97742B01052A00B35468 /* TableSection.swift */; };
@@ -129,6 +130,7 @@
 		A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
+		A9E6AE862B35984A00CE840C /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		A9FA97702B01049400B35468 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		A9FA97722B0104BD00B35468 /* FeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOption.swift; sourceTree = "<group>"; };
 		A9FA97742B01052A00B35468 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */,
 				A92662F82B1F318E00AC8F2C /* SectionButton.swift */,
 				A92662FA2B1F33DC00AC8F2C /* ItemInfoView.swift */,
+				A9E6AE862B35984A00CE840C /* PopUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */,
 				A97DDD252B21DC1C00D6D13F /* DeviceConfiguration.swift in Sources */,
 				A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */,
+				A9E6AE872B35984A00CE840C /* PopUpView.swift in Sources */,
 				A9280F242B160CB100E98F92 /* MOMAService.swift in Sources */,
 				A9FA97752B01052A00B35468 /* TableSection.swift in Sources */,
 				A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */,
