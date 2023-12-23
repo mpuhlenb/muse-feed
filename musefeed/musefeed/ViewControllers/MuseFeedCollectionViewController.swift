@@ -38,6 +38,24 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
             await view.showLoading()
         }
     }
+
+    func displayTutorial() {
+        if !Defaults.tutorialHasBeenViewed {
+            viewModel?.setTutorialHasBeenViewed()
+            coordinator?.presentFeedTutorialPopUp(in: self.view, delegate: self)
+        }
+    }
+    
+    func showEmptyFeedAlert(for section: MuseFeedViewModel.Section) {
+        let sectionIndex = section == .firstFeed ? 0 : 1
+        let feedTitle = viewModel?.selectedOptions[sectionIndex].feedName ?? ""
+        let alert = UIAlertController(title: "Failure loading images", message: "The \(feedTitle) failed to load. Please tap refresh to try again or navigate back to select a different feed", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Failure", style: .cancel)
+        alert.addAction(alertAction)
+        DispatchQueue.main.async {
+            self.present(alert, animated: false)
+        }
+    }
     
     // MARK: - Diffable Data Source
     func makeDataSource() -> DataSource {
@@ -128,19 +146,11 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         snapshot.appendItems(secondFeedItems, toSection: .secondFeed)
         Task {
             await view.stopLoading()
+            DispatchQueue.main.async {
+                self.displayTutorial()
+            }
         }
         dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
-    }
-    
-    func showEmptyFeedAlert(for section: MuseFeedViewModel.Section) {
-        let sectionIndex = section == .firstFeed ? 0 : 1
-        let feedTitle = viewModel?.selectedOptions[sectionIndex].feedName ?? ""
-        let alert = UIAlertController(title: "Failure loading images", message: "The \(feedTitle) failed to load. Please tap refresh to try again or navigate back to select a different feed", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Failure", style: .cancel)
-        alert.addAction(alertAction)
-        DispatchQueue.main.async {
-            self.present(alert, animated: false)
-        }
     }
     
     // MARK: - Actions
@@ -191,6 +201,14 @@ extension MuseFeedCollectionViewController {
             section.boundarySupplementaryItems = [sectionHeader]
             return section
         })
+    }
+}
+
+    // MARK: - Popover Presentation Delegate
+extension MuseFeedCollectionViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        // Force popover style
+        return UIModalPresentationStyle.none
     }
 }
 

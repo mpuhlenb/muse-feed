@@ -84,4 +84,9 @@ public class MuseFeedViewModel {
             secondFeedIsRefreshing = false
         }
     }
+    
+    func setTutorialHasBeenViewed() {
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: Defaults.TutorialViewed)
+    }
 }

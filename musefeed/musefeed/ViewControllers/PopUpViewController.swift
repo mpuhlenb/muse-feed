@@ -17,7 +17,7 @@ class PopUpViewController: UIViewController, Storyboarded {
         case .info:
             popUp = ItemInfoView()
         case .tutorial:
-            break
+            popUp = FeedTutorialView()
         }
         popUp?.setup(for: type)
         popUp?.closeButton.addTarget(self, action: #selector(dissmisView), for: .touchUpInside)

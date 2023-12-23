@@ -61,7 +61,7 @@
                         <viewLayoutGuide key="safeArea" id="ehs-Mm-mfU"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <value key="contentSizeForViewInPopover" type="size" width="293" height="250"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="293" height="250"/>

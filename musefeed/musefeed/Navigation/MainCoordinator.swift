@@ -47,13 +47,23 @@ class MainCoordinator: Coordinator {
     func presentInfoPopUp(with viewModel: ItemInfoViewModel, from sender: UIBarButtonItem, delegate: UIPopoverPresentationControllerDelegate) {
         let vc = PopUpViewController.instantiate()
         vc.coordinator = self
-//        vc.viewModel = viewModel
-//        vc.setupInfoView()
         vc.setup(for: .info(viewModel))
         vc.modalPresentationStyle = .popover
-        vc.popoverPresentationController?.barButtonItem = sender
-        vc.view.inputViewController?.popoverPresentationController?.delegate = delegate
-        vc.view.inputViewController?.popoverPresentationController?.permittedArrowDirections = .up
+        vc.popoverPresentationController?.sourceItem = sender
+        vc.popoverPresentationController?.delegate = delegate
+        vc.popoverPresentationController?.permittedArrowDirections = .up
+        navigationController.present(vc, animated: true)
+    }
+    
+    func presentFeedTutorialPopUp(in view: UIView, delegate: UIPopoverPresentationControllerDelegate) {
+        let vc = PopUpViewController.instantiate()
+        vc.coordinator = self
+        vc.setup(for: .tutorial)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.popoverPresentationController?.sourceView = view
+        vc.popoverPresentationController?.sourceRect = view.bounds
+        vc.popoverPresentationController?.delegate = delegate
         navigationController.present(vc, animated: true)
     }
 }

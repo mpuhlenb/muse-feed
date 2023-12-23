@@ -14,15 +14,8 @@ class ItemInfoView: UIView, PopUpViewable {
     var itemFeedTextUrl = UITextView(frame: .zero)
     var closeButton: UIButton = UIButton(frame: .zero)
     let borderWidth: CGFloat = 2.0
+    
     private var viewModel: ItemInfoViewModel?
-    
-    init() {
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
     
     func setup(for type: PopUp) {
         switch type {

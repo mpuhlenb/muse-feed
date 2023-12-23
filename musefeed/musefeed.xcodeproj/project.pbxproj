@@ -55,6 +55,8 @@
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
 		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
 		A9E6AE872B35984A00CE840C /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE862B35984A00CE840C /* PopUpView.swift */; };
+		A9E6AE892B359D7F00CE840C /* FeedTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */; };
+		A9F590EB2B371A1200FC25CE /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F590EA2B371A1200FC25CE /* Defaults.swift */; };
 		A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97702B01049400B35468 /* TableDataSource.swift */; };
 		A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97722B0104BD00B35468 /* FeedOption.swift */; };
 		A9FA97752B01052A00B35468 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97742B01052A00B35468 /* TableSection.swift */; };
@@ -131,6 +133,8 @@
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
 		A9E6AE862B35984A00CE840C /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTutorialView.swift; sourceTree = "<group>"; };
+		A9F590EA2B371A1200FC25CE /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A9FA97702B01049400B35468 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		A9FA97722B0104BD00B35468 /* FeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOption.swift; sourceTree = "<group>"; };
 		A9FA97742B01052A00B35468 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 			children = (
 				A9FA97702B01049400B35468 /* TableDataSource.swift */,
 				A97DDD242B21DC1C00D6D13F /* DeviceConfiguration.swift */,
+				A9F590EA2B371A1200FC25CE /* Defaults.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				A92662F82B1F318E00AC8F2C /* SectionButton.swift */,
 				A92662FA2B1F33DC00AC8F2C /* ItemInfoView.swift */,
 				A9E6AE862B35984A00CE840C /* PopUpView.swift */,
+				A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -521,6 +527,7 @@
 				A9D327512AFBA41E0057F86C /* Environment.swift in Sources */,
 				A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */,
 				A97DDD272B22184200D6D13F /* UIView+Spinner.swift in Sources */,
+				A9F590EB2B371A1200FC25CE /* Defaults.swift in Sources */,
 				A9280F1B2B15FC3700E98F92 /* ArtInstituteApiService.swift in Sources */,
 				A9280F1D2B160ADC00E98F92 /* MOMAEndpoint.swift in Sources */,
 				A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */,
@@ -530,6 +537,7 @@
 				A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */,
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A92662FB2B1F33DC00AC8F2C /* ItemInfoView.swift in Sources */,
+				A9E6AE892B359D7F00CE840C /* FeedTutorialView.swift in Sources */,
 				A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */,
 				A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */,
 				A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */,
