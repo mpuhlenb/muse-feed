@@ -23,7 +23,6 @@ class MuseFeedSectionHeader: UICollectionReusableView {
     
     // TODO: update with actual sizing and fonts etc
     func setupContent(for option: FeedOption?, sectionIndex: Int?) {
-        self.subviews.forEach { $0.removeFromSuperview() }
         guard let option = option, let sectionIndex = sectionIndex else { return }
         self.museOption = option
         setupGradientLayer()
