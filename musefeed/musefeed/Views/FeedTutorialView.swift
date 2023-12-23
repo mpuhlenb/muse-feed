@@ -49,7 +49,14 @@ class FeedTutorialView: UIView, PopUpViewable {
         tutorialTextView.numberOfLines = 0
         tutorialTextView.textAlignment = .center
         tutorialTextView.contentMode = .center
-        tutorialTextView.text = "We show you 6 random images from each of your chosen feeds. Press refresh  to get a new set of images."
+        let fullString = NSMutableAttributedString(string: "We show you 6 random images from each of your chosen feeds. Press refresh ")
+        let refreshImageAttachment = NSTextAttachment()
+        refreshImageAttachment.image = UIImage(systemName: "arrow.2.circlepath.circle.fill")?.withTintColor(.foreground)
+       let refreshString = NSAttributedString(attachment: refreshImageAttachment)
+        fullString.append(refreshString)
+        let endString = NSAttributedString(string: " to get a new set of images.")
+        fullString.append(endString)
+        tutorialTextView.attributedText = fullString
     }
     
     func setupButton() {
@@ -84,7 +91,7 @@ class FeedTutorialView: UIView, PopUpViewable {
             closeButton.heightAnchor.constraint(equalToConstant: 44),
             closeButton.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor),
             closeButton.widthAnchor.constraint(equalToConstant: 100),
-            closeButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -borderWidth)
+            closeButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -12)
         ])
     }
     
