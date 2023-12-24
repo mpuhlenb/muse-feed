@@ -17,9 +17,12 @@ class FeedSelectionTableViewCell: UITableViewCell {
         contentConfig.text = cellModel?.feedName
         contentConfig.textProperties.color = UIColor(resource: .foreground)
         if state.isHighlighted || state.isSelected {
-            contentConfig.image = UIImage(systemName: "checkmark")
-            contentConfig.image?.withTintColor(.secondaryText)
+            contentConfig.image = UIImage(systemName: "checkmark.square.fill")
+        } else {
+            contentConfig.image = UIImage(systemName: "square")
         }
+        contentConfig.image?.withTintColor(.secondaryText)
+
         contentConfiguration = contentConfig
         self.backgroundColor = UIColor(resource: .background)
     }
