@@ -196,7 +196,7 @@ extension MuseFeedCollectionViewController {
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
             
             let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(headerHeight))
-            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerFooterSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerFooterSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
             sectionHeader.extendsBoundary = true
             section.boundarySupplementaryItems = [sectionHeader]
             return section
