@@ -34,17 +34,28 @@
                                     <action selector="tappedGetStarted" destination="BYZ-38-t0r" eventType="touchUpInside" id="nQv-DQ-YyX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUo-hb-06q">
+                                <rect key="frame" x="25" y="375.66666666666669" width="343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F3I-s9-5jU"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="F3I-s9-5jU" firstAttribute="trailing" secondItem="iUo-hb-06q" secondAttribute="trailing" constant="25" id="1GF-aV-8Xz"/>
                             <constraint firstItem="rOx-7r-ETq" firstAttribute="centerX" secondItem="F3I-s9-5jU" secondAttribute="centerX" id="73M-V7-VJe"/>
+                            <constraint firstItem="iUo-hb-06q" firstAttribute="centerX" secondItem="F3I-s9-5jU" secondAttribute="centerX" id="BKD-rM-VCc"/>
+                            <constraint firstItem="iUo-hb-06q" firstAttribute="leading" secondItem="F3I-s9-5jU" secondAttribute="leading" constant="25" id="Xdz-Zt-3Xs"/>
+                            <constraint firstItem="rOx-7r-ETq" firstAttribute="top" secondItem="iUo-hb-06q" secondAttribute="bottom" constant="25" id="awQ-g6-O5J"/>
                             <constraint firstItem="rOx-7r-ETq" firstAttribute="centerY" secondItem="F3I-s9-5jU" secondAttribute="centerY" id="z25-5s-HMn"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="getStartedButton" destination="rOx-7r-ETq" id="Hi9-DS-1XE"/>
+                        <outlet property="welcomeLabel" destination="iUo-hb-06q" id="VRG-df-3Xv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
