@@ -15,6 +15,7 @@ class FeedSelectionModalViewController: UIViewController, Storyboarded {
     var feedDataSource: TableDataSource
     var viewModel: FeedSelectionViewModel?
     var feedButton: UIButton?
+    var tableLabel: UILabel?
     
     var numberOfSelectedFeeds: Int {
         return feedTableView.visibleCells.lazy.filter({ $0.isSelected }).count
@@ -101,6 +102,30 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50)
+        let headerView = UITableViewHeaderFooterView(frame: frame)
+        headerView.contentView.contentMode = .left
+        tableLabel = UILabel(frame: frame)
+        tableLabel?.layer.masksToBounds = true
+        tableLabel?.translatesAutoresizingMaskIntoConstraints = false
+        tableLabel?.text = "Select 2 feeds for viewing:"
+        tableLabel?.textColor = .foreground
+        guard let tableLabel = tableLabel else { return UIView() }
+        headerView.addSubview(tableLabel)
+        NSLayoutConstraint.activate([
+            tableLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 10),
+            tableLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
+            tableLabel.heightAnchor.constraint(equalToConstant: 50),
+            tableLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor)
+        ])
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
         footerView.contentView.contentMode = .center
@@ -111,7 +136,7 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
            feedButton?.layer.cornerRadius = 10.0
            feedButton?.layer.masksToBounds = true
         feedButton?.translatesAutoresizingMaskIntoConstraints = false
-        feedButton?.setTitle("Get Items", for: .normal)
+        feedButton?.setTitle("Inspire Me!", for: .normal)
         feedButton?.setTitleColor(.background, for: .normal)
         feedButton?.setTitleColor(.secondaryText, for: .disabled)
         feedButton?.backgroundColor = .foreground

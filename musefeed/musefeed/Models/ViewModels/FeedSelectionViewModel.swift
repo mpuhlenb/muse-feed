@@ -11,7 +11,7 @@ import Combine
 
 
 public class FeedSelectionViewModel {
-    public let viewTitle = "Feed Selections (Choose 2)"
+    public let viewTitle = "Choose Your Feeds"
     @Published var shouldButtonEnable: Bool = false
     
     func shouldButtonEnable(for selectedItems: Int) {
