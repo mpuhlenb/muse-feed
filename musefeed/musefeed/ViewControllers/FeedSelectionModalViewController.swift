@@ -131,7 +131,7 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
         footerView.contentView.contentMode = .center
         feedButton = UIButton(type: .system)
         feedButton?.addTarget(self, action: #selector(getItemsAction), for: .touchUpInside)
-        feedButton?.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
+        feedButton?.frame = CGRect(x: 0, y: 0, width: 300, height: 44)
         feedButton?.layer.borderWidth = 1.5
            feedButton?.layer.cornerRadius = 10.0
            feedButton?.layer.masksToBounds = true
@@ -145,6 +145,7 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
         guard let feedButton = feedButton else { return footerView }
         footerView.addSubview(feedButton)
         NSLayoutConstraint.activate([
+            feedButton.heightAnchor.constraint(equalToConstant: 44),
             feedButton.widthAnchor.constraint(equalToConstant: 150),
             feedButton.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
             feedButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor)

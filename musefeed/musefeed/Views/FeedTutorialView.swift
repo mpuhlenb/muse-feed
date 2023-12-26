@@ -10,7 +10,7 @@ import UIKit
 class FeedTutorialView: UIView, PopUpViewable {
     var popUpView: UIView = UIView(frame: .zero)
     
-    var closeButton: UIButton = UIButton(frame: .zero)
+    var closeButton: UIButton = UIButton(type: .system)
     
     
     var tutorialTextView: UILabel = UILabel(frame: .zero)
@@ -54,7 +54,8 @@ class FeedTutorialView: UIView, PopUpViewable {
         refreshImageAttachment.image = UIImage(systemName: "arrow.2.circlepath.circle.fill")?.withTintColor(.foreground)
        let refreshString = NSAttributedString(attachment: refreshImageAttachment)
         fullString.append(refreshString)
-        let endString = NSAttributedString(string: " to get a new set of images.")
+        let endString = NSAttributedString(string: " to get a new set of images.\n\nTap on an image for a closer look and to view details like the work’s title and creator.")
+        
         fullString.append(endString)
         tutorialTextView.attributedText = fullString
     }
@@ -64,6 +65,7 @@ class FeedTutorialView: UIView, PopUpViewable {
         closeButton.layer.borderWidth = 1.5
         closeButton.layer.cornerRadius = 10.0
         closeButton.setTitleColor(UIColor.background, for: .normal)
+        closeButton.layer.borderColor = UIColor.clear.cgColor
         closeButton.setTitle("Close", for: .normal)
         closeButton.backgroundColor = .foreground
     }

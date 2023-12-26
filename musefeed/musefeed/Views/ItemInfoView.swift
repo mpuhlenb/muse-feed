@@ -12,7 +12,7 @@ class ItemInfoView: UIView, PopUpViewable {
     var itemTitleLabel = UILabel(frame: .zero)
     var itemArtistLabel = UILabel(frame: .zero)
     var itemFeedTextUrl = UITextView(frame: .zero)
-    var closeButton: UIButton = UIButton(frame: .zero)
+    var closeButton: UIButton = UIButton(type: .system)
     let borderWidth: CGFloat = 2.0
     
     private var viewModel: ItemInfoViewModel?
@@ -97,6 +97,7 @@ class ItemInfoView: UIView, PopUpViewable {
         closeButton.layer.borderWidth = 1.5
         closeButton.layer.cornerRadius = 10.0
         closeButton.setTitleColor(UIColor.background, for: .normal)
+        closeButton.layer.borderColor = UIColor.clear.cgColor
         closeButton.setTitle("Close", for: .normal)
         closeButton.backgroundColor = .foreground
         
@@ -123,9 +124,9 @@ class ItemInfoView: UIView, PopUpViewable {
         // PopupTitle constraints
         itemTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            itemTitleLabel.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor, constant: borderWidth),
-            itemTitleLabel.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -borderWidth),
-            itemTitleLabel.topAnchor.constraint(equalTo: popUpView.topAnchor, constant: borderWidth),
+            itemTitleLabel.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor, constant: (borderWidth + 5)),
+            itemTitleLabel.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -(borderWidth + 5)),
+            itemTitleLabel.topAnchor.constraint(equalTo: popUpView.topAnchor, constant: (borderWidth + 5)),
             itemTitleLabel.heightAnchor.constraint(equalToConstant: 55)
             ])
         
@@ -155,7 +156,7 @@ class ItemInfoView: UIView, PopUpViewable {
             closeButton.heightAnchor.constraint(equalToConstant: 44),
             closeButton.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor),
             closeButton.widthAnchor.constraint(equalToConstant: 100),
-            closeButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -borderWidth)
+            closeButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -12)
             ])
     }
 }

@@ -16,7 +16,11 @@ class GetStartedViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Welcome to Muse Feed! Are you ready to be inspired by images from museums across the globe? You never know what you might discover!"
+        getStartedButton.layer.borderWidth = 1.5
+        getStartedButton.layer.cornerRadius = 10.0
+        let welcomeText = NSMutableAttributedString(string: "Welcome to Muse Feed!\n\nAre you ready to be inspired by images from museums across the globe?\n\nYou never know what you might discover!")
+        welcomeText.addAttribute(.font, value: UIFont.systemFont(ofSize: 25.0), range: NSMakeRange(0, 21))
+        welcomeLabel.attributedText = welcomeText
         welcomeLabel.textColor = .foreground
 
     }

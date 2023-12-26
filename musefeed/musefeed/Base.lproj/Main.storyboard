@@ -20,15 +20,15 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOx-7r-ETq">
                                 <rect key="frame" x="121.66666666666669" y="421" width="150" height="35"/>
-                                <color key="backgroundColor" name="Background"/>
+                                <color key="backgroundColor" name="Foreground"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="4ru-YU-Dtq"/>
                                     <constraint firstAttribute="height" constant="35" id="Zdj-vA-Q7v"/>
                                 </constraints>
-                                <color key="tintColor" name="Foreground"/>
+                                <color key="tintColor" name="Background"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Get Started">
-                                    <color key="baseForegroundColor" name="Foreground"/>
+                                    <color key="baseForegroundColor" name="Background"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="tappedGetStarted" destination="BYZ-38-t0r" eventType="touchUpInside" id="nQv-DQ-YyX"/>

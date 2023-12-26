@@ -23,7 +23,7 @@ public class MuseFeedViewModel {
     
     var session: URLSession = URLSession.shared
     
-    public let viewTitle = "Your Muses"
+    public let viewTitle = "Muse Feeds"
     var selectedOptions: [FeedOption]
     
     init(selectedOptions: [FeedOption]) {
