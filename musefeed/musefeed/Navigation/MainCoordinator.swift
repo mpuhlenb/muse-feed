@@ -11,21 +11,34 @@ class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
+    var termsButton: UIBarButtonItem?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.navigationBar.backgroundColor = .background
+        self.navigationController.toolbar.backgroundColor = .background
+        self.navigationController.toolbar.barTintColor = .foreground
     }
     
     func start() {
         let vc = GetStartedViewController.instantiate()
         vc.coordinator = self
+        termsButton = UIBarButtonItem(title: "Terms & Conditions", style: .plain, target: self, action: #selector(displayTerms))
+        let emptyItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        if let termsButton = termsButton {
+            vc.setToolbarItems([emptyItem, termsButton, emptyItem], animated: true)
+        }
         navigationController.pushViewController(vc, animated: false)
     }
     
     func showFeedsModal() {
         let vc = FeedSelectionModalViewController.instantiate()
         vc.coordinator = self
+        termsButton = UIBarButtonItem(title: "Terms & Conditions", style: .plain, target: self, action: #selector(displayTerms))
+        let emptyItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        if let termsButton = termsButton {
+            vc.setToolbarItems([emptyItem, termsButton, emptyItem], animated: true)
+        }
         vc.viewModel = FeedSelectionViewModel()
         navigationController.pushViewController(vc, animated: false)
     }
@@ -65,5 +78,9 @@ class MainCoordinator: Coordinator {
         vc.popoverPresentationController?.sourceRect = view.bounds
         vc.popoverPresentationController?.delegate = delegate
         navigationController.present(vc, animated: true)
+    }
+    
+    @objc func displayTerms() {
+        print("***** terms tapped")
     }
 }

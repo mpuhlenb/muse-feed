@@ -16,6 +16,7 @@ class GetStartedViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        coordinator?.navigationController.setToolbarHidden(false, animated: false)
         getStartedButton.layer.borderWidth = 1.5
         getStartedButton.layer.cornerRadius = 10.0
         let welcomeText = NSMutableAttributedString(string: "Welcome to Muse Feed!\n\nAre you ready to be inspired by images from museums across the globe?\n\nYou never know what you might discover!")

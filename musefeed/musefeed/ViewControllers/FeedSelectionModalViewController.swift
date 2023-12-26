@@ -40,6 +40,7 @@ class FeedSelectionModalViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        coordinator?.navigationController.setToolbarHidden(false, animated: false)
         title = viewModel?.viewTitle
         feedTableView.register(FeedSelectionTableViewCell.self)
         feedTableView.delegate = self
@@ -121,7 +122,7 @@ extension FeedSelectionModalViewController: UITableViewDelegate {
             tableLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 10),
             tableLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             tableLabel.heightAnchor.constraint(equalToConstant: 50),
-            tableLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor)
+            tableLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
         ])
         return headerView
     }
