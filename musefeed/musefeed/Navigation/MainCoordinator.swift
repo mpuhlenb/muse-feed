@@ -11,7 +11,10 @@ class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-    var termsButton: UIBarButtonItem?
+    
+    var toolBarButtons: [UIBarButtonItem] {
+        return [emptyItem, termsButton, privacyButton, emptyItem]
+    }
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -23,23 +26,15 @@ class MainCoordinator: Coordinator {
     func start() {
         let vc = GetStartedViewController.instantiate()
         vc.coordinator = self
-        termsButton = UIBarButtonItem(title: "Terms & Conditions", style: .plain, target: self, action: #selector(displayTerms))
-        let emptyItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        if let termsButton = termsButton {
-            vc.setToolbarItems([emptyItem, termsButton, emptyItem], animated: true)
-        }
+        vc.setToolbarItems(toolBarButtons, animated: false)
         navigationController.pushViewController(vc, animated: false)
     }
     
     func showFeedsModal() {
         let vc = FeedSelectionModalViewController.instantiate()
         vc.coordinator = self
-        termsButton = UIBarButtonItem(title: "Terms & Conditions", style: .plain, target: self, action: #selector(displayTerms))
-        let emptyItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        if let termsButton = termsButton {
-            vc.setToolbarItems([emptyItem, termsButton, emptyItem], animated: true)
-        }
         vc.viewModel = FeedSelectionViewModel()
+        vc.setToolbarItems(toolBarButtons, animated: false)
         navigationController.pushViewController(vc, animated: false)
     }
     
@@ -82,5 +77,9 @@ class MainCoordinator: Coordinator {
     
     @objc func displayTerms() {
         print("***** terms tapped")
+    }
+    
+    @objc func displayPrivacy() {
+        print("***** privacy tapped")
     }
 }
