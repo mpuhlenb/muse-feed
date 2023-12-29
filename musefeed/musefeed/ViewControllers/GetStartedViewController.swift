@@ -12,6 +12,7 @@ class GetStartedViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var backgroundView: UIImageView!
+    @IBOutlet var contentBackground: UIView!
     @IBOutlet var getStartedButton: UIButton!
     
     override func viewDidLoad() {
@@ -19,6 +20,11 @@ class GetStartedViewController: UIViewController, Storyboarded {
         backgroundView.image = UIImage(resource: .welcomeBackground)
         coordinator?.navigationController.navigationBar.backgroundColor = .clear
         coordinator?.navigationController.setToolbarHidden(false, animated: false)
+        contentBackground.layer.borderWidth = 1.5
+        contentBackground.layer.cornerRadius = 10.0
+        contentBackground.backgroundColor = .background
+        contentBackground.layer.borderColor = UIColor.clear.cgColor
+        contentBackground.alpha = 0.6
         getStartedButton.layer.borderWidth = 1.5
         getStartedButton.layer.cornerRadius = 10.0
         let welcomeText = NSMutableAttributedString(string: "Welcome to Muse Feed!\n\nAre you ready to be inspired by images from museums across the globe?\n\nYou never know what you might discover!")
