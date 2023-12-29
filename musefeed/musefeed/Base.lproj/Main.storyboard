@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-75-WZ1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOx-7r-ETq">
                                 <rect key="frame" x="121.66666666666669" y="421" width="150" height="35"/>
                                 <color key="backgroundColor" name="Foreground"/>
@@ -47,20 +50,24 @@
                             <constraint firstItem="F3I-s9-5jU" firstAttribute="trailing" secondItem="iUo-hb-06q" secondAttribute="trailing" constant="25" id="1GF-aV-8Xz"/>
                             <constraint firstItem="rOx-7r-ETq" firstAttribute="centerX" secondItem="F3I-s9-5jU" secondAttribute="centerX" id="73M-V7-VJe"/>
                             <constraint firstItem="iUo-hb-06q" firstAttribute="centerX" secondItem="F3I-s9-5jU" secondAttribute="centerX" id="BKD-rM-VCc"/>
+                            <constraint firstAttribute="trailing" secondItem="nzN-75-WZ1" secondAttribute="trailing" id="Miw-bT-MCj"/>
                             <constraint firstItem="iUo-hb-06q" firstAttribute="leading" secondItem="F3I-s9-5jU" secondAttribute="leading" constant="25" id="Xdz-Zt-3Xs"/>
+                            <constraint firstAttribute="bottom" secondItem="nzN-75-WZ1" secondAttribute="bottom" id="Zgr-UW-bJq"/>
                             <constraint firstItem="rOx-7r-ETq" firstAttribute="top" secondItem="iUo-hb-06q" secondAttribute="bottom" constant="25" id="awQ-g6-O5J"/>
+                            <constraint firstItem="nzN-75-WZ1" firstAttribute="top" secondItem="oP1-YD-rJn" secondAttribute="top" id="dru-rX-umF"/>
+                            <constraint firstItem="nzN-75-WZ1" firstAttribute="leading" secondItem="oP1-YD-rJn" secondAttribute="leading" id="hDy-A8-K0W"/>
                             <constraint firstItem="rOx-7r-ETq" firstAttribute="centerY" secondItem="F3I-s9-5jU" secondAttribute="centerY" id="z25-5s-HMn"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="backgroundView" destination="nzN-75-WZ1" id="ykg-cV-I9E"/>
                         <outlet property="getStartedButton" destination="rOx-7r-ETq" id="Hi9-DS-1XE"/>
                         <outlet property="welcomeLabel" destination="iUo-hb-06q" id="VRG-df-3Xv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66" y="-2"/>
+            <point key="canvasLocation" x="64.885496183206101" y="-2.1126760563380285"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="KjB-Xe-pcy">
@@ -176,7 +183,6 @@
                         <viewLayoutGuide key="safeArea" id="Udi-P8-Eu5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmL-dg-zoZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,7 +195,7 @@
             <color red="1" green="0.99599999189376831" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Foreground">
-            <color red="0.48199999332427979" green="0.2630000114440918" blue="0.35699999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.4823529411764706" green="0.2627450980392157" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -18,8 +18,8 @@ class MainCoordinator: Coordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.navigationController.navigationBar.backgroundColor = .background
-        self.navigationController.toolbar.backgroundColor = .background
+        self.navigationController.navigationBar.backgroundColor = .clear
+        self.navigationController.toolbar.backgroundColor = .clear
         self.navigationController.toolbar.barTintColor = .foreground
     }
     
@@ -41,6 +41,7 @@ class MainCoordinator: Coordinator {
     func showMuseFeed(for feeds: [FeedOption]) {
         let vc = MuseFeedCollectionViewController.instantiate()
         vc.coordinator = self
+        self.navigationController.navigationBar.backgroundColor = .background
         vc.viewModel = MuseFeedViewModel(selectedOptions: feeds)
         navigationController.pushViewController(vc, animated: false)
     }
@@ -49,6 +50,7 @@ class MainCoordinator: Coordinator {
         let vc  = DetailViewController.instantiate()
         vc.coordinator = self
         vc.museItem = item
+        self.navigationController.navigationBar.backgroundColor = .background
         navigationController.pushViewController(vc, animated: false)
     }
     

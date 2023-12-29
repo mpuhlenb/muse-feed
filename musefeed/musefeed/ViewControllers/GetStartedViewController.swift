@@ -11,21 +11,27 @@ class GetStartedViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     @IBOutlet var welcomeLabel: UILabel!
-    
+    @IBOutlet var backgroundView: UIImageView!
     @IBOutlet var getStartedButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundView.image = UIImage(resource: .welcomeBackground)
+        coordinator?.navigationController.navigationBar.backgroundColor = .clear
         coordinator?.navigationController.setToolbarHidden(false, animated: false)
         getStartedButton.layer.borderWidth = 1.5
         getStartedButton.layer.cornerRadius = 10.0
         let welcomeText = NSMutableAttributedString(string: "Welcome to Muse Feed!\n\nAre you ready to be inspired by images from museums across the globe?\n\nYou never know what you might discover!")
         welcomeText.addAttribute(.font, value: UIFont.systemFont(ofSize: 25.0), range: NSMakeRange(0, 21))
         welcomeLabel.attributedText = welcomeText
-        welcomeLabel.textColor = .foreground
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        coordinator?.navigationController.navigationBar.backgroundColor = .clear
+    }
+    
     @IBAction func tappedGetStarted() {
         coordinator?.showFeedsModal()
     }
