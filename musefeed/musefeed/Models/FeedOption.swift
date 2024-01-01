@@ -10,7 +10,7 @@ import Foundation
 enum FeedOption: String, CaseIterable, Equatable {
     case rijks
     case artInstitute
-    case moma
+    case nymet
 }
 
 extension FeedOption: FeedSelectionCellModel {
@@ -20,7 +20,7 @@ extension FeedOption: FeedSelectionCellModel {
             return "https://www.rijksmuseum.nl/en" // TODO: make this toggle to locale NL or EN
         case .artInstitute:
             return "https://www.artic.edu/"
-        case .moma:
+        case .nymet:
             return "https://www.moma.org/"
         }
     }
@@ -31,7 +31,7 @@ extension FeedOption: FeedSelectionCellModel {
             return "Rijks Museum"
         case .artInstitute:
             return "Chicago Art Institute"
-        case .moma:
+        case .nymet:
             return "Museum of Modern Art"
         }
     }
@@ -42,7 +42,7 @@ extension FeedOption: FeedSelectionCellModel {
             return "The national museum of the Netherlands offering access to 400,000 collection objects spanning the years 1200 to today, from masterpieces to model ships."
         case .artInstitute:
             return "Explore thousands of artworks from every corner of the globe, from renowned icons to lesser-known works."
-        case .moma:
+        case .nymet:
             return "Iconic New York City institution provides access to over 400,000 rare and beautiful objects from around the world representing over 5,000 years of art."
         }
     }

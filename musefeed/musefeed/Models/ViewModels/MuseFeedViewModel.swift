@@ -65,10 +65,10 @@ public class MuseFeedViewModel {
             let data = await service.getArtworks()
             let fetchedItems = data?.data.map { return MuseItem(artwork: $0, imageBaseUrl: data?.config.imageBaseUrl ?? "") }.shuffled().prefix(6) ?? []
             feedItems.append(contentsOf: fetchedItems)
-        case .moma:
+        case .nymet:
             let service = NYMetService(session: session)
             let objects = await service.getMOMAObjects()
-            let fetchedItems = objects.map { return MuseItem(id: "\($0.objectID)", title: $0.title, detailId: "\($0.objectID)", itemImageUrl: $0.primaryImage, maker: $0.artistDisplayName, feed: .moma) }
+            let fetchedItems = objects.map { return MuseItem(id: "\($0.objectID)", title: $0.title, detailId: "\($0.objectID)", itemImageUrl: $0.primaryImage, maker: $0.artistDisplayName, feed: .nymet) }
             feedItems.append(contentsOf: fetchedItems)
         }
         switch section {
