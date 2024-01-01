@@ -29,7 +29,7 @@ struct MOMAService: APIDataProvidable {
     
     func getMOMAObject(with id: Int) async  -> MOMAObject? {
         do {
-            let result = try await requestAPIData(endpoint: MOMAEndpoint.object(id), responseModel: MOMAObject.self)
+            let result = try await requestAPIData(endpoint: NYMetEndpoint.object(id), responseModel: MOMAObject.self)
             switch result {
             case .success(let object):
                 return object
@@ -43,7 +43,7 @@ struct MOMAService: APIDataProvidable {
     // TODO: Refactor to cache all available ids, refresh if stale.
     private func getMOMAObjectIds() async -> [Int] {
         do {
-            let result = try await requestAPIData(endpoint: MOMAEndpoint.objectIds, responseModel: MOMAObjectIds.self)
+            let result = try await requestAPIData(endpoint: NYMetEndpoint.objectIds, responseModel: MOMAObjectIds.self)
             switch result {
             case .success(let ids):
                 let fifteenIds = Array(ids.objectIDs.shuffled().prefix(15))

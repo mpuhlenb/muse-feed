@@ -1,5 +1,5 @@
 //
-//  MOMAEndpoint.swift
+//  NYMetEndpoint.swift
 //  musefeed
 //
 //  Created by Morris Uhlenbrauck on 11/28/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MOMAEndpoint: Endpoint {
+enum NYMetEndpoint: Endpoint {
     case objectIds
     case object(Int)
     
