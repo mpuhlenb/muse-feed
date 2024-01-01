@@ -1,5 +1,5 @@
 //
-//  FeedSelectionModalViewController.swift
+//  FeedSelectionViewController.swift
 //  musefeed
 //
 //  Created by Morris Uhlenbrauck on 11/11/23.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class FeedSelectionModalViewController: UIViewController, Storyboarded {
+class FeedSelectionViewController: UIViewController, Storyboarded, UIPopoverPresentationControllerDelegate {
     
     var coordinator: MainCoordinator?
     var feedTableView: TableView
@@ -34,13 +34,14 @@ class FeedSelectionModalViewController: UIViewController, Storyboarded {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         feedTableView.intialize()
+        navigationController?.setToolbarHidden(false, animated: false)
         view.addSubview(feedTableView)
         NSLayoutConstraint.activate(feedTableView.layoutConstraints(in: view))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coordinator?.navigationController.setToolbarHidden(false, animated: false)
+        navigationController?.setToolbarHidden(false, animated: false)
         title = viewModel?.viewTitle
         feedTableView.register(FeedSelectionTableViewCell.self)
         feedTableView.delegate = self
@@ -74,9 +75,14 @@ class FeedSelectionModalViewController: UIViewController, Storyboarded {
         }
         coordinator?.showMuseFeed(for: feedOptions)
     }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        // Force popover style
+        return UIModalPresentationStyle.none
+    }
 }
 
-extension FeedSelectionModalViewController: UITableViewDelegate {
+extension FeedSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.shouldButtonEnable(for: numberOfSelectedFeeds)
     }

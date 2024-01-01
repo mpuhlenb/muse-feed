@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="-1576.3358778625955" y="345.77464788732397"/>
         </scene>
-        <!--Feed Selection Modal View Controller-->
+        <!--Feed Selection View Controller-->
         <scene sceneID="udj-RP-BcL">
             <objects>
-                <viewController storyboardIdentifier="FeedSelectionModalViewController" modalPresentationStyle="pageSheet" id="Zus-97-dkJ" customClass="FeedSelectionModalViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedSelectionViewController" modalPresentationStyle="pageSheet" id="Zus-97-dkJ" customClass="FeedSelectionViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0y9-GI-UHk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

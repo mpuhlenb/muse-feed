@@ -8,6 +8,7 @@
 import UIKit
 // TODO: Refactor with custom label and constraints
 class ItemInfoView: UIView, PopUpViewable {
+    
     var popUpView: UIView = UIView(frame: .zero)
     var itemTitleLabel = UILabel(frame: .zero)
     var itemArtistLabel = UILabel(frame: .zero)
@@ -15,19 +16,10 @@ class ItemInfoView: UIView, PopUpViewable {
     var closeButton: UIButton = UIButton(type: .system)
     let borderWidth: CGFloat = 2.0
     
-    private var viewModel: ItemInfoViewModel?
+    var viewModel: ItemInfoViewModel?
     
-    func setup(for type: PopUp) {
-        switch type {
-        case .info(let viewModel):
-            setup(with: viewModel)
-        case .tutorial:
-            break
-        }
-    }
-    
-    func setup(with viewModel: ItemInfoViewModel) {
-        self.viewModel = viewModel
+    func setup() {
+        guard let viewModel = viewModel else { return }
         setupInfoView()
         setupLabels()
         setupCloseButton()

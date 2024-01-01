@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GetStartedViewController: UIViewController, Storyboarded {
+class GetStartedViewController: UIViewController, Storyboarded, UIPopoverPresentationControllerDelegate {
 
     weak var coordinator: MainCoordinator?
     @IBOutlet var welcomeLabel: UILabel!
@@ -19,7 +19,7 @@ class GetStartedViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         backgroundView.image = UIImage(resource: .welcomeBackground)
         coordinator?.navigationController.navigationBar.backgroundColor = .clear
-        coordinator?.navigationController.setToolbarHidden(false, animated: false)
+        navigationController?.setToolbarHidden(false, animated: false)
         contentBackground.layer.borderWidth = 1.5
         contentBackground.layer.cornerRadius = 10.0
         contentBackground.backgroundColor = .background
@@ -35,11 +35,21 @@ class GetStartedViewController: UIViewController, Storyboarded {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        navigationController?.setToolbarHidden(false, animated: true)
         coordinator?.navigationController.navigationBar.backgroundColor = .clear
+        let defaults = UserDefaults.standard
+        if !defaults.bool(forKey: Defaults.TermsViewed) {
+            coordinator?.presentTermsPopUp(in: view, delegate: self)
+        }
     }
     
     @IBAction func tappedGetStarted() {
-        coordinator?.showFeedsModal()
+        coordinator?.showFeedsSelection()
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        // Force popover style
+        return UIModalPresentationStyle.none
     }
 }
 

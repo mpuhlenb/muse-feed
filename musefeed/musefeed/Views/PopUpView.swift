@@ -10,11 +10,12 @@ import UIKit
 enum PopUp {
     case info(ItemInfoViewModel)
     case tutorial
+    case terms
 }
 
 protocol PopUpViewable {
     var popUpView: UIView { get set }
     var closeButton: UIButton { get set }
-    func setup(for type: PopUp)
+    func setup()
     func addViewConstraints()
 }

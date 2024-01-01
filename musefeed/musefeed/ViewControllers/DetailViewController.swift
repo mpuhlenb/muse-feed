@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         title = museItem?.title
         setupInfoButton()
         setImage()
+        navigationController?.setToolbarHidden(true, animated: false)
     }
     
     private func setupInfoButton() {

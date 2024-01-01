@@ -29,7 +29,8 @@ extension MainCoordinator: ToolBarUsable {
     }
     
     @objc func tappedTermsButton() {
-        self.displayTerms()
+        guard let view = navigationController.topViewController?.view, let delegate = navigationController.topViewController as? UIPopoverPresentationControllerDelegate else { return }
+        self.presentTermsPopUp(in: view, delegate: delegate)
     }
     
     @objc func tappedPrivacyButton() {

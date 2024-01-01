@@ -8,29 +8,23 @@
 import UIKit
 
 class FeedTutorialView: UIView, PopUpViewable {
+    func setup() {
+        setupPopUpView()
+        setupTextView()
+        setupButton()
+        popUpView.addSubview(tutorialTextView)
+        popUpView.addSubview(closeButton)
+        addSubview(popUpView)
+        self.backgroundColor = .clear
+        addViewConstraints()
+    }
+    
     var popUpView: UIView = UIView(frame: .zero)
     
     var closeButton: UIButton = UIButton(type: .system)
     
-    
     var tutorialTextView: UILabel = UILabel(frame: .zero)
     let borderWidth: CGFloat = 2.0
-    
-    func setup(for type: PopUp) {
-        switch type {
-        case .info:
-            break
-        case .tutorial:
-            setupPopUpView()
-            setupTextView()
-            setupButton()
-            popUpView.addSubview(tutorialTextView)
-            popUpView.addSubview(closeButton)
-            addSubview(popUpView)
-            self.backgroundColor = .clear
-            addViewConstraints()
-        }
-    }
     
     func setupPopUpView() {
         popUpView.backgroundColor = .background

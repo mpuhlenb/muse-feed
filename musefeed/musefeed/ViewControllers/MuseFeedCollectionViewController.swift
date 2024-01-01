@@ -37,6 +37,7 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
         Task {
             await view.showLoading()
         }
+        navigationController?.setToolbarHidden(true, animated: false)
     }
 
     func displayTutorial() {

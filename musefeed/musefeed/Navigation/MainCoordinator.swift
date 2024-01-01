@@ -30,8 +30,9 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func showFeedsModal() {
-        let vc = FeedSelectionModalViewController.instantiate()
+    
+    func showFeedsSelection() {
+        let vc = FeedSelectionViewController.instantiate()
         vc.coordinator = self
         vc.viewModel = FeedSelectionViewModel()
         vc.setToolbarItems(toolBarButtons, animated: false)
@@ -69,7 +70,19 @@ class MainCoordinator: Coordinator {
         let vc = PopUpViewController.instantiate()
         vc.coordinator = self
         vc.setup(for: .tutorial)
-        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.popoverPresentationController?.sourceView = view
+        vc.view.frame = view.bounds
+        vc.popoverPresentationController?.delegate = delegate
+        navigationController.present(vc, animated: true)
+    }
+    
+    func presentTermsPopUp(in view: UIView, delegate: UIPopoverPresentationControllerDelegate) {
+        let vc = PopUpViewController.instantiate()
+        vc.coordinator = self
+        vc.setup(for: .terms)
+        vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.popoverPresentationController?.sourceView = view
         vc.popoverPresentationController?.sourceRect = view.bounds
@@ -77,11 +90,8 @@ class MainCoordinator: Coordinator {
         navigationController.present(vc, animated: true)
     }
     
-    @objc func displayTerms() {
-        print("***** terms tapped")
-    }
-    
-    @objc func displayPrivacy() {
-        print("***** privacy tapped")
+    func displayPrivacy() {
+        guard let privacyUrl = Defaults.privacyUrl else { return }
+        UIApplication.shared.open(privacyUrl)
     }
 }

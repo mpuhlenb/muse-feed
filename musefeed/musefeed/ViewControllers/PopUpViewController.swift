@@ -14,12 +14,16 @@ class PopUpViewController: UIViewController, Storyboarded {
     
     func setup(for type: PopUp) {
         switch type {
-        case .info:
+        case .info(let viewModel):
             popUp = ItemInfoView()
+            guard let popUp = popUp as? ItemInfoView else { return }
+            popUp.viewModel = viewModel
         case .tutorial:
             popUp = FeedTutorialView()
+        case .terms:
+            popUp = TermsView()
         }
-        popUp?.setup(for: type)
+        popUp?.setup()
         popUp?.closeButton.addTarget(self, action: #selector(dissmisView), for: .touchUpInside)
         guard let popUp = popUp as? UIView else { return }
         view = popUp

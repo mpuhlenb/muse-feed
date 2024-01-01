@@ -27,7 +27,7 @@
 		A96CFC732AFFADA7006C6383 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC722AFFADA7006C6383 /* UITableView+Cell.swift */; };
 		A96CFC752AFFAEDD006C6383 /* FeedSelectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC742AFFAEDD006C6383 /* FeedSelectionCellModel.swift */; };
 		A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */; };
-		A96CFC7A2AFFB15F006C6383 /* FeedSelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */; };
+		A96CFC7A2AFFB15F006C6383 /* FeedSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC792AFFB15F006C6383 /* FeedSelectionViewController.swift */; };
 		A96CFC7C2AFFB249006C6383 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CFC7B2AFFB249006C6383 /* TableView.swift */; };
 		A96EE9FA2B020EFA003189B7 /* MuseFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EE9F92B020EFA003189B7 /* MuseFeedViewModel.swift */; };
 		A96EEA002B0218B4003189B7 /* MuseFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */; };
@@ -51,6 +51,8 @@
 		A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852F052AF7E54F00AD7C5C /* Endpoint.swift */; };
 		A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */; };
 		A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */; };
+		A9C118CB2B40221800F23E53 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C118CA2B40221800F23E53 /* TermsView.swift */; };
+		A9C118CD2B409DBD00F23E53 /* TermsAndConditions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A9C118CC2B409DBD00F23E53 /* TermsAndConditions.pdf */; };
 		A9C255912B10D9D700A5251C /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C255902B10D9D700A5251C /* PopUpViewController.swift */; };
 		A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */; };
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
@@ -102,7 +104,7 @@
 		A96CFC722AFFADA7006C6383 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 		A96CFC742AFFAEDD006C6383 /* FeedSelectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionCellModel.swift; sourceTree = "<group>"; };
 		A96CFC772AFFB036006C6383 /* FeedSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionTableViewCell.swift; sourceTree = "<group>"; };
-		A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionModalViewController.swift; sourceTree = "<group>"; };
+		A96CFC792AFFB15F006C6383 /* FeedSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectionViewController.swift; sourceTree = "<group>"; };
 		A96CFC7B2AFFB249006C6383 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		A96EE9F92B020EFA003189B7 /* MuseFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedViewModel.swift; sourceTree = "<group>"; };
 		A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedCollectionViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,8 @@
 		A9852F052AF7E54F00AD7C5C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedSectionHeader.swift; sourceTree = "<group>"; };
 		A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImageView.swift; sourceTree = "<group>"; };
+		A9C118CA2B40221800F23E53 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		A9C118CC2B409DBD00F23E53 /* TermsAndConditions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TermsAndConditions.pdf; sourceTree = "<group>"; };
 		A9C255902B10D9D700A5251C /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -246,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				A9852ED02AF7B1B700AD7C5C /* GetStartedViewController.swift */,
-				A96CFC792AFFB15F006C6383 /* FeedSelectionModalViewController.swift */,
+				A96CFC792AFFB15F006C6383 /* FeedSelectionViewController.swift */,
 				A96EE9FF2B0218B4003189B7 /* MuseFeedCollectionViewController.swift */,
 				A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */,
 				A9C255902B10D9D700A5251C /* PopUpViewController.swift */,
@@ -290,6 +294,7 @@
 				A9E6AE862B35984A00CE840C /* PopUpView.swift */,
 				A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */,
 				A980CE482B386E4C000B986F /* GradientView.swift */,
+				A9C118CA2B40221800F23E53 /* TermsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 		A9852EC02AF7B1B700AD7C5C = {
 			isa = PBXGroup;
 			children = (
+				A9C118CC2B409DBD00F23E53 /* TermsAndConditions.pdf */,
 				A947BB242B2AFA2A00C35F32 /* DebugConfig.xcconfig */,
 				A9D3274D2AFBA1520057F86C /* Environment.swift */,
 				A9852ECB2AF7B1B700AD7C5C /* musefeed */,
@@ -490,6 +496,7 @@
 			files = (
 				A9852ED92AF7B1B800AD7C5C /* LaunchScreen.storyboard in Resources */,
 				A9852ED62AF7B1B800AD7C5C /* Assets.xcassets in Resources */,
+				A9C118CD2B409DBD00F23E53 /* TermsAndConditions.pdf in Resources */,
 				A9852ED42AF7B1B700AD7C5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +556,7 @@
 				A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */,
 				A9E6AE872B35984A00CE840C /* PopUpView.swift in Sources */,
 				A9280F242B160CB100E98F92 /* MOMAService.swift in Sources */,
+				A9C118CB2B40221800F23E53 /* TermsView.swift in Sources */,
 				A9FA97752B01052A00B35468 /* TableSection.swift in Sources */,
 				A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */,
 				A9852F062AF7E54F00AD7C5C /* Endpoint.swift in Sources */,
@@ -556,7 +564,7 @@
 				A980CE492B386E4C000B986F /* GradientView.swift in Sources */,
 				A9280F222B160C3F00E98F92 /* MOMAObject.swift in Sources */,
 				A92662F92B1F318E00AC8F2C /* SectionButton.swift in Sources */,
-				A96CFC7A2AFFB15F006C6383 /* FeedSelectionModalViewController.swift in Sources */,
+				A96CFC7A2AFFB15F006C6383 /* FeedSelectionViewController.swift in Sources */,
 				A96EEA002B0218B4003189B7 /* MuseFeedCollectionViewController.swift in Sources */,
 				A94E4BC12AFBC6DF00D10EF6 /* MainCoordinator.swift in Sources */,
 				A9852ECF2AF7B1B700AD7C5C /* SceneDelegate.swift in Sources */,
