@@ -211,19 +211,19 @@
 			path = "Art Institute API Models";
 			sourceTree = "<group>";
 		};
-		A9280F1E2B160BF200E98F92 /* MOMA API Models */ = {
+		A9280F1E2B160BF200E98F92 /* NY Met API Models */ = {
 			isa = PBXGroup;
 			children = (
 				A9280F1F2B160C1100E98F92 /* NYMetObjectIds.swift */,
 				A9280F212B160C3F00E98F92 /* NYMetObject.swift */,
 			);
-			path = "MOMA API Models";
+			path = "NY Met API Models";
 			sourceTree = "<group>";
 		};
 		A94E4BB52AFBB5F600D10EF6 /* API Models */ = {
 			isa = PBXGroup;
 			children = (
-				A9280F1E2B160BF200E98F92 /* MOMA API Models */,
+				A9280F1E2B160BF200E98F92 /* NY Met API Models */,
 				A9280F172B15FA3A00E98F92 /* Art Institute API Models */,
 				A94E4BB62AFBB60900D10EF6 /* Rijks API Models */,
 			);
