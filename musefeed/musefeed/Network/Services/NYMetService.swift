@@ -15,9 +15,9 @@ struct NYMetService: APIDataProvidable {
     }
     
     // TODO: Refactor better way to get 6 items with images, not all items images.
-    func getMOMAObjects() async -> [MOMAObject] {
+    func getMOMAObjects() async -> [NYMetObject] {
         let ids = await getMOMAObjectIds()
-        var objects: [MOMAObject] = []
+        var objects: [NYMetObject] = []
         for id in ids {
             if let object = await getMOMAObject(with: id) {
                 objects.append(object)
@@ -27,9 +27,9 @@ struct NYMetService: APIDataProvidable {
         return sixObjects
     }
     
-    func getMOMAObject(with id: Int) async  -> MOMAObject? {
+    func getMOMAObject(with id: Int) async  -> NYMetObject? {
         do {
-            let result = try await requestAPIData(endpoint: NYMetEndpoint.object(id), responseModel: MOMAObject.self)
+            let result = try await requestAPIData(endpoint: NYMetEndpoint.object(id), responseModel: NYMetObject.self)
             switch result {
             case .success(let object):
                 return object
@@ -43,7 +43,7 @@ struct NYMetService: APIDataProvidable {
     // TODO: Refactor to cache all available ids, refresh if stale.
     private func getMOMAObjectIds() async -> [Int] {
         do {
-            let result = try await requestAPIData(endpoint: NYMetEndpoint.objectIds, responseModel: MOMAObjectIds.self)
+            let result = try await requestAPIData(endpoint: NYMetEndpoint.objectIds, responseModel: NYMetObjectIds.self)
             switch result {
             case .success(let ids):
                 let fifteenIds = Array(ids.objectIDs.shuffled().prefix(15))

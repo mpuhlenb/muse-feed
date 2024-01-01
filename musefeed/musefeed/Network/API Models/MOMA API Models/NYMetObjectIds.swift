@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct MOMAObjectIds: Decodable {
+struct NYMetObjectIds: Decodable {
     let objectIDs: [Int]
 }

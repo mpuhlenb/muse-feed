@@ -1,5 +1,5 @@
 //
-//  MOMAObject.swift
+//  NYMetObject.swift
 //  musefeed
 //
 //  Created by Morris Uhlenbrauck on 11/28/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MOMAObject: Decodable {
+struct NYMetObject: Decodable {
     let objectID: Int
     let title: String
     let artistDisplayName: String
