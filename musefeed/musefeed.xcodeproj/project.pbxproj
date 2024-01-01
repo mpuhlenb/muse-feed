@@ -17,7 +17,7 @@
 		A9280F1D2B160ADC00E98F92 /* NYMetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F1C2B160ADC00E98F92 /* NYMetEndpoint.swift */; };
 		A9280F202B160C1100E98F92 /* MOMAObjectIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F1F2B160C1100E98F92 /* MOMAObjectIds.swift */; };
 		A9280F222B160C3F00E98F92 /* MOMAObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F212B160C3F00E98F92 /* MOMAObject.swift */; };
-		A9280F242B160CB100E98F92 /* MOMAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F232B160CB100E98F92 /* MOMAService.swift */; };
+		A9280F242B160CB100E98F92 /* NYMetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F232B160CB100E98F92 /* NYMetService.swift */; };
 		A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */; };
 		A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */; };
 		A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */; };
@@ -94,7 +94,7 @@
 		A9280F1C2B160ADC00E98F92 /* NYMetEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetEndpoint.swift; sourceTree = "<group>"; };
 		A9280F1F2B160C1100E98F92 /* MOMAObjectIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOMAObjectIds.swift; sourceTree = "<group>"; };
 		A9280F212B160C3F00E98F92 /* MOMAObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOMAObject.swift; sourceTree = "<group>"; };
-		A9280F232B160CB100E98F92 /* MOMAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOMAService.swift; sourceTree = "<group>"; };
+		A9280F232B160CB100E98F92 /* NYMetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetService.swift; sourceTree = "<group>"; };
 		A947BB242B2AFA2A00C35F32 /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
 		A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMusuemApiService.swift; sourceTree = "<group>"; };
 		A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtObjects.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 			children = (
 				A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */,
 				A9280F1A2B15FC3700E98F92 /* ArtInstituteApiService.swift */,
-				A9280F232B160CB100E98F92 /* MOMAService.swift */,
+				A9280F232B160CB100E98F92 /* NYMetService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -559,7 +559,7 @@
 				A97DDD252B21DC1C00D6D13F /* DeviceConfiguration.swift in Sources */,
 				A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */,
 				A9E6AE872B35984A00CE840C /* PopUpView.swift in Sources */,
-				A9280F242B160CB100E98F92 /* MOMAService.swift in Sources */,
+				A9280F242B160CB100E98F92 /* NYMetService.swift in Sources */,
 				A9C118CB2B40221800F23E53 /* TermsView.swift in Sources */,
 				A9FA97752B01052A00B35468 /* TableSection.swift in Sources */,
 				A9852F012AF7B5E100AD7C5C /* APIError.swift in Sources */,

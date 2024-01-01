@@ -1,5 +1,5 @@
 //
-//  MOMAService.swift
+//  NYMetService.swift
 //  musefeed
 //
 //  Created by Morris Uhlenbrauck on 11/28/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MOMAService: APIDataProvidable {
+struct NYMetService: APIDataProvidable {
     var session: URLSession
     
     init(session: URLSession) {
