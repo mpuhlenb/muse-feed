@@ -21,7 +21,7 @@ extension FeedOption: FeedSelectionCellModel {
         case .artInstitute:
             return "https://www.artic.edu/"
         case .nymet:
-            return "https://www.moma.org/"
+            return "https://www.metmuseum.org/"
         }
     }
     
@@ -32,7 +32,7 @@ extension FeedOption: FeedSelectionCellModel {
         case .artInstitute:
             return "Chicago Art Institute"
         case .nymet:
-            return "Museum of Modern Art"
+            return "The Metropolitan Museum of Art"
         }
     }
     
