@@ -10,4 +10,5 @@ import Foundation
 protocol FeedSelectionCellModel {
     var feedName: String { get }
     var feedUrlString: String { get }
+    var feedDescription: String { get }
 }

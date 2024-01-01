@@ -35,4 +35,15 @@ extension FeedOption: FeedSelectionCellModel {
             return "Museum of Modern Art"
         }
     }
+    
+    var feedDescription: String {
+        switch self {
+        case .rijks:
+            return "The national museum of the Netherlands offering access to 400,000 collection objects spanning the years 1200 to today, from masterpieces to model ships."
+        case .artInstitute:
+            return "Explore thousands of artworks from every corner of the globe, from renowned icons to lesser-known works."
+        case .moma:
+            return "Iconic New York City institution provides access to over 400,000 rare and beautiful objects from around the world representing over 5,000 years of art."
+        }
+    }
 }
