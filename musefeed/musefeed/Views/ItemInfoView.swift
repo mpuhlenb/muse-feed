@@ -19,7 +19,7 @@ class ItemInfoView: UIView, PopUpViewable {
     var viewModel: ItemInfoViewModel?
     
     func setup() {
-        guard let viewModel = viewModel else { return }
+        guard viewModel != nil else { return }
         setupInfoView()
         setupLabels()
         setupCloseButton()
@@ -92,8 +92,6 @@ class ItemInfoView: UIView, PopUpViewable {
         closeButton.layer.borderColor = UIColor.clear.cgColor
         closeButton.setTitle("Close", for: .normal)
         closeButton.backgroundColor = .foreground
-        
-        
     }
     
     internal func addViewConstraints() {
