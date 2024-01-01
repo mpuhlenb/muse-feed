@@ -53,7 +53,6 @@
 		A995BB192B1896E4000F3125 /* MuseFeedSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */; };
 		A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */; };
 		A9C118CB2B40221800F23E53 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C118CA2B40221800F23E53 /* TermsView.swift */; };
-		A9C118CD2B409DBD00F23E53 /* TermsAndConditions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A9C118CC2B409DBD00F23E53 /* TermsAndConditions.pdf */; };
 		A9C255912B10D9D700A5251C /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C255902B10D9D700A5251C /* PopUpViewController.swift */; };
 		A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */; };
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
@@ -135,7 +134,6 @@
 		A995BB182B1896E4000F3125 /* MuseFeedSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedSectionHeader.swift; sourceTree = "<group>"; };
 		A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImageView.swift; sourceTree = "<group>"; };
 		A9C118CA2B40221800F23E53 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
-		A9C118CC2B409DBD00F23E53 /* TermsAndConditions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TermsAndConditions.pdf; sourceTree = "<group>"; };
 		A9C255902B10D9D700A5251C /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 		A9852EC02AF7B1B700AD7C5C = {
 			isa = PBXGroup;
 			children = (
-				A9C118CC2B409DBD00F23E53 /* TermsAndConditions.pdf */,
 				A947BB242B2AFA2A00C35F32 /* DebugConfig.xcconfig */,
 				A9D3274D2AFBA1520057F86C /* Environment.swift */,
 				A9852ECB2AF7B1B700AD7C5C /* musefeed */,
@@ -499,7 +496,6 @@
 			files = (
 				A9852ED92AF7B1B800AD7C5C /* LaunchScreen.storyboard in Resources */,
 				A9852ED62AF7B1B800AD7C5C /* Assets.xcassets in Resources */,
-				A9C118CD2B409DBD00F23E53 /* TermsAndConditions.pdf in Resources */,
 				A9852ED42AF7B1B700AD7C5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
