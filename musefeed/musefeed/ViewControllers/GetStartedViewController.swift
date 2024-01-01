@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GetStartedViewController: UIViewController, Storyboarded, UIPopoverPresentationControllerDelegate {
+class GetStartedViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     @IBOutlet var welcomeLabel: UILabel!
@@ -45,11 +45,6 @@ class GetStartedViewController: UIViewController, Storyboarded, UIPopoverPresent
     
     @IBAction func tappedGetStarted() {
         coordinator?.showFeedsSelection()
-    }
-    
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        // Force popover style
-        return UIModalPresentationStyle.none
     }
 }
 

@@ -204,12 +204,3 @@ extension MuseFeedCollectionViewController {
         })
     }
 }
-
-    // MARK: - Popover Presentation Delegate
-extension MuseFeedCollectionViewController: UIPopoverPresentationControllerDelegate {
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        // Force popover style
-        return UIModalPresentationStyle.none
-    }
-}
-

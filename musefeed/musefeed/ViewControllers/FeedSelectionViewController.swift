@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class FeedSelectionViewController: UIViewController, Storyboarded, UIPopoverPresentationControllerDelegate {
+class FeedSelectionViewController: UIViewController, Storyboarded {
     
     var coordinator: MainCoordinator?
     var feedTableView: TableView
@@ -74,11 +74,6 @@ class FeedSelectionViewController: UIViewController, Storyboarded, UIPopoverPres
             }
         }
         coordinator?.showMuseFeed(for: feedOptions)
-    }
-    
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        // Force popover style
-        return UIModalPresentationStyle.none
     }
 }
 
