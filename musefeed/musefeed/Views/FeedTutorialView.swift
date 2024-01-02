@@ -43,7 +43,7 @@ class FeedTutorialView: UIView, PopUpViewable {
         tutorialTextView.numberOfLines = 0
         tutorialTextView.textAlignment = .center
         tutorialTextView.contentMode = .center
-        let fullString = NSMutableAttributedString(string: "We show you 6 random images from each of your chosen feeds. Press refresh ")
+        let fullString = NSMutableAttributedString(string: "We show you up to 6 random images from each of your chosen feeds. Press refresh ")
         let refreshImageAttachment = NSTextAttachment()
         refreshImageAttachment.image = UIImage(systemName: "arrow.2.circlepath.circle.fill")?.withTintColor(.foreground)
        let refreshString = NSAttributedString(attachment: refreshImageAttachment)

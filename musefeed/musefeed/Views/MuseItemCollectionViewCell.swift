@@ -11,6 +11,11 @@ class MuseItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImageView.image = nil
+    }
+    
     var museItem: MuseItem? {
         didSet {
             if let imageUrl = museItem?.itemImageUrl {

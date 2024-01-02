@@ -32,7 +32,7 @@ extension FeedOption: FeedSelectionCellModel {
         case .artInstitute:
             return "Art Institute of Chicago"
         case .nymet:
-            return "The Metropolitan Museum of Art"
+            return "Metropolitan Museum of Art"
         }
     }
     
