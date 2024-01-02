@@ -28,11 +28,11 @@ extension FeedOption: FeedSelectionCellModel {
     var feedName: String {
         switch self {
         case .rijks:
-            return "Rijks Museum"
+            return "Rijksmuseum"
         case .artInstitute:
-            return "Chicago Art Institute"
+            return "Art Institute of Chicago"
         case .nymet:
-            return "The Metropolitan Museum of Art"
+            return "Metropolitan Museum of Art"
         }
     }
     

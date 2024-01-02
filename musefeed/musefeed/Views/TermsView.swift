@@ -59,7 +59,9 @@ class TermsView: UIView, PopUpViewable {
     
     private func setupAcceptButton() {
         acceptanceButton.frame = CGRect(x:0, y: 0, width: popUpView.frame.width, height: 44)
-        acceptanceButton.setTitle("Check box to accept Terms and Conditions", for: .normal)
+        acceptanceButton.setTitle("I agree to the Terms and Conditions and understand the Content Warning, including that the app may display NSFW images", for: .normal)
+        acceptanceButton.titleLabel?.numberOfLines = 0
+        acceptanceButton.titleLabel?.adjustsFontSizeToFitWidth = true
         acceptanceButton.tintColor = .foreground
         acceptanceButton.layer.borderColor = UIColor.clear.cgColor
         acceptanceButton.backgroundColor = .clear
@@ -114,8 +116,8 @@ class TermsView: UIView, PopUpViewable {
         NSLayoutConstraint.activate([
             acceptanceButton.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor),
             acceptanceButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor),
-            acceptanceButton.topAnchor.constraint(equalTo: termsPdfView.bottomAnchor, constant: 5),
-            acceptanceButton.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -5),
+            acceptanceButton.topAnchor.constraint(equalTo: termsPdfView.bottomAnchor, constant: 10),
+            acceptanceButton.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -10),
             acceptanceButton.heightAnchor.constraint(equalToConstant: 44),
             acceptanceButton.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor)
         ])
