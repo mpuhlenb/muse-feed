@@ -103,7 +103,7 @@
         <scene sceneID="R68-XS-Qhi">
             <objects>
                 <collectionViewController storyboardIdentifier="MuseFeedCollectionViewController" id="qGe-cc-w55" customClass="MuseFeedCollectionViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="ocg-3E-gIG">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" scrollEnabled="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="ocg-3E-gIG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wv5-Yk-QZd">
@@ -146,7 +146,7 @@
                             <outlet property="delegate" destination="qGe-cc-w55" id="8bB-2b-oet"/>
                         </connections>
                     </collectionView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAe-xL-skU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,14 +187,13 @@
         <!--Feed Selection View Controller-->
         <scene sceneID="udj-RP-BcL">
             <objects>
-                <viewController storyboardIdentifier="FeedSelectionViewController" modalPresentationStyle="pageSheet" id="Zus-97-dkJ" customClass="FeedSelectionViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedSelectionViewController" id="Zus-97-dkJ" customClass="FeedSelectionViewController" customModule="musefeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0y9-GI-UHk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Udi-P8-Eu5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmL-dg-zoZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

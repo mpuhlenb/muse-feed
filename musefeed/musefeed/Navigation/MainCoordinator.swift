@@ -19,8 +19,9 @@ class MainCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.navigationBar.backgroundColor = .clear
+        self.navigationController.navigationBar.barTintColor = .background
         self.navigationController.toolbar.backgroundColor = .clear
-        self.navigationController.toolbar.barTintColor = .foreground
+        self.navigationController.toolbar.barTintColor = .background
     }
     
     func start() {
@@ -35,7 +36,6 @@ class MainCoordinator: Coordinator {
         let vc = FeedSelectionViewController.instantiate()
         vc.coordinator = self
         vc.viewModel = FeedSelectionViewModel()
-        vc.setToolbarItems(toolBarButtons, animated: false)
         navigationController.pushViewController(vc, animated: false)
     }
     

@@ -16,7 +16,8 @@ class FeedSelectionViewController: UIViewController, Storyboarded {
     var viewModel: FeedSelectionViewModel?
     var feedButton: UIButton?
     var tableLabel: UILabel?
-    
+    private let headerFooterHeight: CGFloat = DeviceConfiguration.isPad ? 50 : 40
+    private let headerFooterItemHeight: CGFloat = DeviceConfiguration.isPad ? 44 : 36
     var numberOfSelectedFeeds: Int {
         return feedTableView.visibleCells.lazy.filter({ $0.isSelected }).count
     }
@@ -25,7 +26,7 @@ class FeedSelectionViewController: UIViewController, Storyboarded {
     
     
     required init?(coder: NSCoder) {
-        self.feedTableView = TableView(style: .plain)
+        self.feedTableView = TableView(style: .grouped)
         self.feedDataSource = TableDataSource(feedTableView)
         super.init(coder: coder)
         
@@ -34,14 +35,15 @@ class FeedSelectionViewController: UIViewController, Storyboarded {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         feedTableView.intialize()
-        navigationController?.setToolbarHidden(false, animated: false)
+        navigationController?.setToolbarHidden(true, animated: false)
+        navigationController?.toolbar.backgroundColor = .clear
         view.addSubview(feedTableView)
         NSLayoutConstraint.activate(feedTableView.layoutConstraints(in: view))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setToolbarHidden(false, animated: false)
+        navigationController?.setToolbarHidden(true, animated: false)
         title = viewModel?.viewTitle
         feedTableView.register(FeedSelectionTableViewCell.self)
         feedTableView.delegate = self
@@ -101,17 +103,18 @@ extension FeedSelectionViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 50
+        return headerFooterHeight
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return headerFooterHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50)
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: headerFooterHeight)
         let headerView = UITableViewHeaderFooterView(frame: frame)
         headerView.contentView.contentMode = .left
+        headerView.backgroundView?.backgroundColor = .clear
         tableLabel = UILabel(frame: frame)
         tableLabel?.layer.masksToBounds = true
         tableLabel?.translatesAutoresizingMaskIntoConstraints = false
@@ -122,18 +125,18 @@ extension FeedSelectionViewController: UITableViewDelegate {
         NSLayoutConstraint.activate([
             tableLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 10),
             tableLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            tableLabel.heightAnchor.constraint(equalToConstant: 50),
+            tableLabel.heightAnchor.constraint(equalToConstant: headerFooterItemHeight),
             tableLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
         ])
         return headerView
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        let footerView = UITableViewHeaderFooterView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: headerFooterHeight))
         footerView.contentView.contentMode = .center
         feedButton = UIButton(type: .system)
         feedButton?.addTarget(self, action: #selector(getItemsAction), for: .touchUpInside)
-        feedButton?.frame = CGRect(x: 0, y: 0, width: 300, height: 44)
+        feedButton?.frame = CGRect(x: 0, y: 0, width: 300, height: headerFooterItemHeight)
         feedButton?.layer.borderWidth = 1.5
            feedButton?.layer.cornerRadius = 10.0
            feedButton?.layer.masksToBounds = true
@@ -145,9 +148,10 @@ extension FeedSelectionViewController: UITableViewDelegate {
         feedButton?.isEnabled = viewModel?.shouldButtonEnable ?? false
         feedButton?.isOpaque = true
         guard let feedButton = feedButton else { return footerView }
+        footerView.backgroundView?.backgroundColor = .clear
         footerView.addSubview(feedButton)
         NSLayoutConstraint.activate([
-            feedButton.heightAnchor.constraint(equalToConstant: 44),
+            feedButton.heightAnchor.constraint(equalToConstant: headerFooterItemHeight),
             feedButton.widthAnchor.constraint(equalToConstant: 150),
             feedButton.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
             feedButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor)
