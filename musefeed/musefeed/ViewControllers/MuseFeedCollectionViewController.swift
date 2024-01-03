@@ -183,8 +183,8 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
 extension MuseFeedCollectionViewController {
     func configureLayout() {
         collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let widthRatio = DeviceConfiguration.isLandscape ? 0.4 : 0.6
-            let headerHeight = DeviceConfiguration.isPad ? 35.0 : 22.0
+            let widthRatio = DeviceConfiguration.isLandscape ? 0.6 : 0.6
+            let headerHeight = DeviceConfiguration.isPad ? 35.0 : 27.0
             let sectionInset = DeviceConfiguration.isPad ? 15.0 : 10.0
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)

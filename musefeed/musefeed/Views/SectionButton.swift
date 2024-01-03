@@ -20,8 +20,8 @@ class SectionButton: UIButton {
     }
     
     func setup(for option: FeedOption?, sectionIndex: Int?) {
-        let imagePointSize = DeviceConfiguration.isPad ? 15.0 : 10.0
-        let buttonFontSize = DeviceConfiguration.isPad ? 17.0 : 12.0
+        let imagePointSize = 15.0
+        let buttonFontSize = 17.0
         let imageConfig = UIImage.SymbolConfiguration(pointSize: imagePointSize)
         let image = UIImage(systemName: "arrow.2.circlepath.circle.fill", withConfiguration: imageConfig)
         self.sectionIndex = sectionIndex
