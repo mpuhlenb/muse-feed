@@ -17,11 +17,15 @@ protocol ToolBarUsable {
 
 extension MainCoordinator: ToolBarUsable {
     var termsButton: UIBarButtonItem {
-        return UIBarButtonItem(title: "Terms & Conditions", style: .plain, target: self, action: #selector(tappedTermsButton))
+        let button = UIBarButtonItem(title: "Terms & Conditions", style: .plain, target: self, action: #selector(tappedTermsButton))
+        button.tintColor = .black
+        return button
     }
     
     var privacyButton: UIBarButtonItem {
-        return UIBarButtonItem(title: "Privacy Policy", style: .plain, target: self, action: #selector(tappedPrivacyButton))
+        let button = UIBarButtonItem(title: "Privacy Policy", style: .plain, target: self, action: #selector(tappedPrivacyButton))
+        button.tintColor = .black
+        return button
     }
     
     var emptyItem: UIBarButtonItem {
