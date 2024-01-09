@@ -13,6 +13,7 @@ extension UITableView {
     }
 
     func reuse<T: UITableViewCell>(_ type: T.Type, _ indexPath: IndexPath) -> T {
+        // swiftlint:disable force_cast
         dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }
 }

@@ -142,7 +142,7 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
     func applySnapshot(animatingDifferences: Bool = true) {
         var snapshot = Snapshot()
         snapshot.appendSections([.firstFeed, .secondFeed])
-        guard firstFeedItems.count != 0, secondFeedItems.count != 0 else { return }
+        guard !firstFeedItems.isEmpty, !secondFeedItems.isEmpty else { return }
         snapshot.appendItems(firstFeedItems, toSection: .firstFeed)
         snapshot.appendItems(secondFeedItems, toSection: .secondFeed)
         Task {
