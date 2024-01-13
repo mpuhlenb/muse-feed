@@ -124,17 +124,13 @@ final class MuseFeedViewModelTests: XCTestCase {
         let refreshObjects = RijksArtObjects(artObjects: [item, item, item, item])
         let expectation = XCTestExpectation(description: "Items refreshed")
         do {
-            mockSession.results = try [.success(JSONEncoder().encode(objects))]
+            mockSession.results = try [.success(JSONEncoder().encode(objects)),
+                                       .success(JSONEncoder().encode(refreshObjects))]
         } catch {}
         
         await viewModel.setItemsFor(feedOption: .rijks, in: .firstFeed)
         
         XCTAssertEqual(viewModel.firstFeedItems.count, 2)
-        
-        do {
-            mockSession.results.removeAll()
-            mockSession.results = try [.success(JSONEncoder().encode(refreshObjects))]
-        } catch {}
         
         viewModel.$firstFeedIsRefreshing.dropFirst().sink { isRefreshing in
             if !isRefreshing {
