@@ -21,13 +21,14 @@ public class MuseFeedViewModel {
     @Published var firstFeedIsEmpty: Bool = false
     @Published var secondFeedIsEmpty: Bool = false
     
-    var session: URLSession = URLSession.shared
+    var session: URLSessionable
     
     public let viewTitle = "Muse Feeds"
     var selectedOptions: [FeedOption]
     
-    init(selectedOptions: [FeedOption]) {
+    init(selectedOptions: [FeedOption], session: URLSessionable = URLSession.shared) {
         self.selectedOptions = selectedOptions
+        self.session = session
     }
     
     func setFeedItems() async {

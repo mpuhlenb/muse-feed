@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct RijksArtObjects: Decodable {
+struct RijksArtObjects: Codable {
     let artObjects: [RijksArtObject]
 }
 
-struct RijksArtObject: Decodable {
+struct RijksArtObject: Codable {
     let id: String
     let title: String
     let objectNumber: String
@@ -20,7 +20,7 @@ struct RijksArtObject: Decodable {
     let webImage: RijksWebImage
 }
 
-struct RijksWebImage: Decodable {
+struct RijksWebImage: Codable {
     let guid: String
     let width: Int
     let height: Int

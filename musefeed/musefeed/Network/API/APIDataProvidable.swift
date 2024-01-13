@@ -8,7 +8,7 @@
 import Foundation
 
 protocol APIDataProvidable {
-    var session: URLSession { get }
+    var session: URLSessionable { get }
     func fetch<T: Decodable>(type: T.Type, with request: URLRequest) async throws -> Result<T, ApiError>
     func requestAPIData<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> Result<T, ApiError>
 }
@@ -26,7 +26,7 @@ extension APIDataProvidable {
         let request = URLRequest(url: url)
         do {
            return try await fetch(type: responseModel, with: request)
-        } catch (let error as ApiError) {
+        } catch let error as ApiError {
             return .failure(.requestFailed(description: error.customDescription))
         }
     }

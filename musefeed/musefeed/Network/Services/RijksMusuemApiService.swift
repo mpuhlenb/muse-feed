@@ -8,9 +8,9 @@
 import Foundation
 
 struct RijksMusuemApiService: APIDataProvidable {
-    var session: URLSession
+    var session: URLSessionable
     
-    init(session: URLSession) {
+    init(session: URLSessionable) {
         self.session = session
     }
     

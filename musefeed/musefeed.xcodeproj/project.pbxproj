@@ -18,6 +18,7 @@
 		A9280F202B160C1100E98F92 /* NYMetObjectIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F1F2B160C1100E98F92 /* NYMetObjectIds.swift */; };
 		A9280F222B160C3F00E98F92 /* NYMetObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F212B160C3F00E98F92 /* NYMetObject.swift */; };
 		A9280F242B160CB100E98F92 /* NYMetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F232B160CB100E98F92 /* NYMetService.swift */; };
+		A93817EB2B52C8AC0056C458 /* URLSession+URLSessionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93817EA2B52C8AC0056C458 /* URLSession+URLSessionable.swift */; };
 		A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */; };
 		A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */; };
 		A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */; };
@@ -43,7 +44,6 @@
 		A9852ED42AF7B1B700AD7C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED22AF7B1B700AD7C5C /* Main.storyboard */; };
 		A9852ED62AF7B1B800AD7C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED52AF7B1B800AD7C5C /* Assets.xcassets */; };
 		A9852ED92AF7B1B800AD7C5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED72AF7B1B800AD7C5C /* LaunchScreen.storyboard */; };
-		A9852EE42AF7B1B800AD7C5C /* musefeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EE32AF7B1B800AD7C5C /* musefeedTests.swift */; };
 		A9852EEE2AF7B1B800AD7C5C /* musefeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EED2AF7B1B800AD7C5C /* musefeedUITests.swift */; };
 		A9852EF02AF7B1B800AD7C5C /* musefeedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EEF2AF7B1B800AD7C5C /* musefeedUITestsLaunchTests.swift */; };
 		A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */; };
@@ -65,6 +65,7 @@
 		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
 		A9E6AE872B35984A00CE840C /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE862B35984A00CE840C /* PopUpView.swift */; };
 		A9E6AE892B359D7F00CE840C /* FeedTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */; };
+		A9F1E83D2B52B25B002B615A /* MuseFeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F1E83C2B52B25B002B615A /* MuseFeedViewModelTests.swift */; };
 		A9F590EB2B371A1200FC25CE /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F590EA2B371A1200FC25CE /* Defaults.swift */; };
 		A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97702B01049400B35468 /* TableDataSource.swift */; };
 		A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97722B0104BD00B35468 /* FeedOption.swift */; };
@@ -100,6 +101,7 @@
 		A9280F1F2B160C1100E98F92 /* NYMetObjectIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetObjectIds.swift; sourceTree = "<group>"; };
 		A9280F212B160C3F00E98F92 /* NYMetObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetObject.swift; sourceTree = "<group>"; };
 		A9280F232B160CB100E98F92 /* NYMetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetService.swift; sourceTree = "<group>"; };
+		A93817EA2B52C8AC0056C458 /* URLSession+URLSessionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+URLSessionable.swift"; sourceTree = "<group>"; };
 		A947BB242B2AFA2A00C35F32 /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
 		A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMusuemApiService.swift; sourceTree = "<group>"; };
 		A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtObjects.swift; sourceTree = "<group>"; };
@@ -129,7 +131,6 @@
 		A9852ED82AF7B1B800AD7C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9852EDA2AF7B1B800AD7C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9852EDF2AF7B1B800AD7C5C /* musefeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musefeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9852EE32AF7B1B800AD7C5C /* musefeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musefeedTests.swift; sourceTree = "<group>"; };
 		A9852EE92AF7B1B800AD7C5C /* musefeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musefeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852EED2AF7B1B800AD7C5C /* musefeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musefeedUITests.swift; sourceTree = "<group>"; };
 		A9852EEF2AF7B1B800AD7C5C /* musefeedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musefeedUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
 		A9E6AE862B35984A00CE840C /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTutorialView.swift; sourceTree = "<group>"; };
+		A9F1E83C2B52B25B002B615A /* MuseFeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedViewModelTests.swift; sourceTree = "<group>"; };
 		A9F590EA2B371A1200FC25CE /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A9FA97702B01049400B35468 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		A9FA97722B0104BD00B35468 /* FeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOption.swift; sourceTree = "<group>"; };
@@ -361,7 +363,7 @@
 		A9852EE22AF7B1B800AD7C5C /* musefeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				A9852EE32AF7B1B800AD7C5C /* musefeedTests.swift */,
+				A9F1E83C2B52B25B002B615A /* MuseFeedViewModelTests.swift */,
 			);
 			path = musefeedTests;
 			sourceTree = "<group>";
@@ -391,6 +393,7 @@
 			children = (
 				A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */,
 				A9852F002AF7B5E100AD7C5C /* APIError.swift */,
+				A93817EA2B52C8AC0056C458 /* URLSession+URLSessionable.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A92662FB2B1F33DC00AC8F2C /* ItemInfoView.swift in Sources */,
 				A9E6AE892B359D7F00CE840C /* FeedTutorialView.swift in Sources */,
+				A93817EB2B52C8AC0056C458 /* URLSession+URLSessionable.swift in Sources */,
 				A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */,
 				A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */,
 				A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */,
@@ -627,7 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9852EE42AF7B1B800AD7C5C /* musefeedTests.swift in Sources */,
+				A9F1E83D2B52B25B002B615A /* MuseFeedViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

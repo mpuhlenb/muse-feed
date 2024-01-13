@@ -8,9 +8,9 @@
 import Foundation
 
 struct NYMetService: APIDataProvidable {
-    var session: URLSession
+    var session: URLSessionable
     
-    init(session: URLSession) {
+    init(session: URLSessionable) {
         self.session = session
     }
     
@@ -27,7 +27,7 @@ struct NYMetService: APIDataProvidable {
         return sixObjects
     }
     
-    func getMOMAObject(with id: Int) async  -> NYMetObject? {
+    func getMOMAObject(with id: Int) async -> NYMetObject? {
         do {
             let result = try await requestAPIData(endpoint: NYMetEndpoint.object(id), responseModel: NYMetObject.self)
             switch result {

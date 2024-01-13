@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ArtInstituteArtworks: Decodable {
+struct ArtInstituteArtworks: Codable {
     let data: [ArtInstituteArtwork]
     let config: ArtInstituteImageConfig
 }
 
-struct ArtInstituteArtwork: Decodable {
+struct ArtInstituteArtwork: Codable {
     let id: Int
     let title: String
     let artist: String
@@ -28,7 +28,7 @@ struct ArtInstituteArtwork: Decodable {
     }
 }
 
-struct ArtInstituteImageConfig: Decodable {
+struct ArtInstituteImageConfig: Codable {
     var imageBaseUrl: String
     
     enum CodingKeys: String, CodingKey {
