@@ -50,8 +50,8 @@ class MuseFeedCollectionViewController: UICollectionViewController, Storyboarded
     func showEmptyFeedAlert(for section: MuseFeedViewModel.Section) {
         let sectionIndex = section == .firstFeed ? 0 : 1
         let feedTitle = viewModel?.selectedOptions[sectionIndex].feedName ?? ""
-        let alert = UIAlertController(title: "Failure loading images", message: "The \(feedTitle) failed to load. Please tap refresh to try again or navigate back to select a different feed", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Failure", style: .cancel)
+        let alert = UIAlertController(title: "Feed Slow", message: "The \(feedTitle) timed out returning images. Please tap refresh button in the feed header to try again or navigate back to select a different feed", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel)
         alert.addAction(alertAction)
         DispatchQueue.main.async {
             self.present(alert, animated: false)

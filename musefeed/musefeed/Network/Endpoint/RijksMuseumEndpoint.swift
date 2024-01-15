@@ -22,8 +22,8 @@ enum RijksMuseumEndpoint: Endpoint {
         return [
             "key": "\(Environment.rijksApiKey)",
             "imgOnly": "True",
-            "p": "\(Int.random(in: 1..<100))",
-            "ps": "15"
+            "p": "\(Int.random(in: 1..<500))",
+            "ps": "20"
         ]
     }
     
