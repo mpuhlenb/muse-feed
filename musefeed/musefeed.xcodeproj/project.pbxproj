@@ -18,6 +18,7 @@
 		A9280F202B160C1100E98F92 /* NYMetObjectIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F1F2B160C1100E98F92 /* NYMetObjectIds.swift */; };
 		A9280F222B160C3F00E98F92 /* NYMetObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F212B160C3F00E98F92 /* NYMetObject.swift */; };
 		A9280F242B160CB100E98F92 /* NYMetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9280F232B160CB100E98F92 /* NYMetService.swift */; };
+		A93817EB2B52C8AC0056C458 /* URLSession+URLSessionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93817EA2B52C8AC0056C458 /* URLSession+URLSessionable.swift */; };
 		A94E4BB42AFBB58F00D10EF6 /* RijksMusuemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */; };
 		A94E4BB82AFBB64200D10EF6 /* RijksArtObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */; };
 		A94E4BBB2AFBBF4F00D10EF6 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E4BBA2AFBBF4F00D10EF6 /* NavigationCoordinator.swift */; };
@@ -43,7 +44,6 @@
 		A9852ED42AF7B1B700AD7C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED22AF7B1B700AD7C5C /* Main.storyboard */; };
 		A9852ED62AF7B1B800AD7C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED52AF7B1B800AD7C5C /* Assets.xcassets */; };
 		A9852ED92AF7B1B800AD7C5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9852ED72AF7B1B800AD7C5C /* LaunchScreen.storyboard */; };
-		A9852EE42AF7B1B800AD7C5C /* musefeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EE32AF7B1B800AD7C5C /* musefeedTests.swift */; };
 		A9852EEE2AF7B1B800AD7C5C /* musefeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EED2AF7B1B800AD7C5C /* musefeedUITests.swift */; };
 		A9852EF02AF7B1B800AD7C5C /* musefeedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EEF2AF7B1B800AD7C5C /* musefeedUITestsLaunchTests.swift */; };
 		A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */; };
@@ -55,14 +55,18 @@
 		A99E556F2B443BA800DA1A75 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99E556E2B443BA800DA1A75 /* ImageCache.swift */; };
 		A99E55712B44612200DA1A75 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99E55702B44612200DA1A75 /* ImageLoader.swift */; };
 		A99E55732B44648600DA1A75 /* UIImage+DecodedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99E55722B44648600DA1A75 /* UIImage+DecodedImage.swift */; };
+		A9A77BD92B4D696D00567B75 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = A9A77BD82B4D696D00567B75 /* Nimble */; };
+		A9A77BDC2B4D6A0300567B75 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = A9A77BDB2B4D6A0300567B75 /* Quick */; };
 		A9AEB8982B0E42C3009E573D /* PanZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */; };
 		A9C118CB2B40221800F23E53 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C118CA2B40221800F23E53 /* TermsView.swift */; };
 		A9C255912B10D9D700A5251C /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C255902B10D9D700A5251C /* PopUpViewController.swift */; };
+		A9C3DFC72B5407D0000ECBBA /* MuseFeedViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3DFC62B5407D0000ECBBA /* MuseFeedViewModelSpec.swift */; };
 		A9CD1E3C2B0E0D8C0044C086 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */; };
 		A9D327502AFBA3760057F86C /* RijksMuseumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */; };
 		A9D327512AFBA41E0057F86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3274D2AFBA1520057F86C /* Environment.swift */; };
 		A9E6AE872B35984A00CE840C /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE862B35984A00CE840C /* PopUpView.swift */; };
 		A9E6AE892B359D7F00CE840C /* FeedTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */; };
+		A9F1E83D2B52B25B002B615A /* MuseFeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F1E83C2B52B25B002B615A /* MuseFeedViewModelTests.swift */; };
 		A9F590EB2B371A1200FC25CE /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F590EA2B371A1200FC25CE /* Defaults.swift */; };
 		A9FA97712B01049400B35468 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97702B01049400B35468 /* TableDataSource.swift */; };
 		A9FA97732B0104BD00B35468 /* FeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA97722B0104BD00B35468 /* FeedOption.swift */; };
@@ -98,6 +102,7 @@
 		A9280F1F2B160C1100E98F92 /* NYMetObjectIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetObjectIds.swift; sourceTree = "<group>"; };
 		A9280F212B160C3F00E98F92 /* NYMetObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetObject.swift; sourceTree = "<group>"; };
 		A9280F232B160CB100E98F92 /* NYMetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYMetService.swift; sourceTree = "<group>"; };
+		A93817EA2B52C8AC0056C458 /* URLSession+URLSessionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+URLSessionable.swift"; sourceTree = "<group>"; };
 		A947BB242B2AFA2A00C35F32 /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
 		A94E4BB32AFBB58F00D10EF6 /* RijksMusuemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMusuemApiService.swift; sourceTree = "<group>"; };
 		A94E4BB72AFBB64200D10EF6 /* RijksArtObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksArtObjects.swift; sourceTree = "<group>"; };
@@ -127,7 +132,6 @@
 		A9852ED82AF7B1B800AD7C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9852EDA2AF7B1B800AD7C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9852EDF2AF7B1B800AD7C5C /* musefeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musefeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9852EE32AF7B1B800AD7C5C /* musefeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musefeedTests.swift; sourceTree = "<group>"; };
 		A9852EE92AF7B1B800AD7C5C /* musefeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musefeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9852EED2AF7B1B800AD7C5C /* musefeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musefeedUITests.swift; sourceTree = "<group>"; };
 		A9852EEF2AF7B1B800AD7C5C /* musefeedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musefeedUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -143,11 +147,13 @@
 		A9AEB8972B0E42C3009E573D /* PanZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImageView.swift; sourceTree = "<group>"; };
 		A9C118CA2B40221800F23E53 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		A9C255902B10D9D700A5251C /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		A9C3DFC62B5407D0000ECBBA /* MuseFeedViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedViewModelSpec.swift; sourceTree = "<group>"; };
 		A9CD1E3B2B0E0D8C0044C086 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9D3274D2AFBA1520057F86C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A9D3274F2AFBA3760057F86C /* RijksMuseumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RijksMuseumEndpoint.swift; sourceTree = "<group>"; };
 		A9E6AE862B35984A00CE840C /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		A9E6AE882B359D7F00CE840C /* FeedTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTutorialView.swift; sourceTree = "<group>"; };
+		A9F1E83C2B52B25B002B615A /* MuseFeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseFeedViewModelTests.swift; sourceTree = "<group>"; };
 		A9F590EA2B371A1200FC25CE /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A9FA97702B01049400B35468 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		A9FA97722B0104BD00B35468 /* FeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedOption.swift; sourceTree = "<group>"; };
@@ -166,6 +172,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A77BDC2B4D6A0300567B75 /* Quick in Frameworks */,
+				A9A77BD92B4D696D00567B75 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +365,8 @@
 		A9852EE22AF7B1B800AD7C5C /* musefeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				A9852EE32AF7B1B800AD7C5C /* musefeedTests.swift */,
+				A9F1E83C2B52B25B002B615A /* MuseFeedViewModelTests.swift */,
+				A9C3DFC62B5407D0000ECBBA /* MuseFeedViewModelSpec.swift */,
 			);
 			path = musefeedTests;
 			sourceTree = "<group>";
@@ -387,6 +396,7 @@
 			children = (
 				A9852EFE2AF7B49500AD7C5C /* APIDataProvidable.swift */,
 				A9852F002AF7B5E100AD7C5C /* APIError.swift */,
+				A93817EA2B52C8AC0056C458 /* URLSession+URLSessionable.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -412,6 +422,7 @@
 				A9852EC52AF7B1B700AD7C5C /* Sources */,
 				A9852EC62AF7B1B700AD7C5C /* Frameworks */,
 				A9852EC72AF7B1B700AD7C5C /* Resources */,
+				A9A77BD32B4D65D600567B75 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -436,6 +447,10 @@
 				A9852EE12AF7B1B800AD7C5C /* PBXTargetDependency */,
 			);
 			name = musefeedTests;
+			packageProductDependencies = (
+				A9A77BD82B4D696D00567B75 /* Nimble */,
+				A9A77BDB2B4D6A0300567B75 /* Quick */,
+			);
 			productName = musefeedTests;
 			productReference = A9852EDF2AF7B1B800AD7C5C /* musefeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -490,6 +505,10 @@
 				Base,
 			);
 			mainGroup = A9852EC02AF7B1B700AD7C5C;
+			packageReferences = (
+				A9A77BD72B4D696D00567B75 /* XCRemoteSwiftPackageReference "Nimble" */,
+				A9A77BDA2B4D6A0300567B75 /* XCRemoteSwiftPackageReference "Quick" */,
+			);
 			productRefGroup = A9852ECA2AF7B1B700AD7C5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -529,6 +548,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A9A77BD32B4D65D600567B75 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9852EC52AF7B1B700AD7C5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -561,6 +600,7 @@
 				A9852EFF2AF7B49500AD7C5C /* APIDataProvidable.swift in Sources */,
 				A92662FB2B1F33DC00AC8F2C /* ItemInfoView.swift in Sources */,
 				A9E6AE892B359D7F00CE840C /* FeedTutorialView.swift in Sources */,
+				A93817EB2B52C8AC0056C458 /* URLSession+URLSessionable.swift in Sources */,
 				A90C96B92AFE80AF00E27F07 /* FeedSelectionViewModel.swift in Sources */,
 				A9280F152B15F63800E98F92 /* ArtInstituteEndpoint.swift in Sources */,
 				A96CFC782AFFB036006C6383 /* FeedSelectionTableViewCell.swift in Sources */,
@@ -594,7 +634,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9852EE42AF7B1B800AD7C5C /* musefeedTests.swift in Sources */,
+				A9F1E83D2B52B25B002B615A /* MuseFeedViewModelTests.swift in Sources */,
+				A9C3DFC72B5407D0000ECBBA /* MuseFeedViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +813,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PVFMYLWH58;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = PVFMYLWH58;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = musefeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -804,6 +846,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PVFMYLWH58;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = musefeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -939,6 +982,38 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A9A77BD72B4D696D00567B75 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		A9A77BDA2B4D6A0300567B75 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A9A77BD82B4D696D00567B75 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9A77BD72B4D696D00567B75 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		A9A77BDB2B4D6A0300567B75 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9A77BDA2B4D6A0300567B75 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9852EC12AF7B1B700AD7C5C /* Project object */;
 }

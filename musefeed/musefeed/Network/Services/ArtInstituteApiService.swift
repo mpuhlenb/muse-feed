@@ -8,9 +8,9 @@
 import Foundation
 
 struct ArtInstituteApiService: APIDataProvidable {
-    var session: URLSession
+    var session: URLSessionable
     
-    init(session: URLSession) {
+    init(session: URLSessionable) {
         self.session = session
     }
     

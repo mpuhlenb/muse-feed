@@ -17,7 +17,7 @@ extension Storyboarded where Self: UIViewController {
         let fullName = NSStringFromClass(self)
         let className = fullName.components(separatedBy: ".")[1]
         let storyboad = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
+        // swiftlint:disable force_cast
         return storyboad.instantiateViewController(withIdentifier: className) as! Self
     }
 }

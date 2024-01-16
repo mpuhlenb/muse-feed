@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct NYMetObjectIds: Decodable {
+struct NYMetObjectIds: Codable {
     let objectIDs: [Int]
 }
